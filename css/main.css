@@ -1901,7 +1901,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff3be7;
+  background: #b8cfff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3040,4 +3040,7 @@ hr {
 }
 .post-button a:hover {
   color: #7784ba;
+}
+#live2dcanvas {
+  right: 300px;
 }
