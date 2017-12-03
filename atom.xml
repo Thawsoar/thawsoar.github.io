@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2017-12-03T14:06:14.286Z</updated>
+  <updated>2017-12-03T14:08:30.603Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://thawsoar.github.io/2017/12/03/less_notes/"/>
     <id>https://thawsoar.github.io/2017/12/03/less_notes/</id>
     <published>2017-12-03T14:05:58.000Z</published>
-    <updated>2017-12-03T14:06:14.286Z</updated>
+    <updated>2017-12-03T14:08:30.603Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Less-即学即用简要学习笔记"><a href="#Less-即学即用简要学习笔记" class="headerlink" title="Less 即学即用简要学习笔记"></a>Less 即学即用简要学习笔记</h3><h4 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h4><ul>
 <li><a href="http://less.bootcss.com/" target="_blank" rel="external">less 中文网</a></li>
@@ -34,7 +34,8 @@
 </li>
 <li>sublime<ul>
 <li><code>package install Less</code></li>
-<li><code>package install Less2Css</code></li>
+<li><code>package install Less2Css</code><a id="more"></a>
+</li>
 </ul>
 </li>
 </ul>
@@ -46,8 +47,7 @@
 <li>@声明变量<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@test_width:</span> <span class="number">300px</span>;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h4><a id="more"></a>
-<ul>
+<h4 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h4><ul>
 <li><p>混合Mixin</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.div</span> &#123;</div><div class="line">	<span class="selector-class">.box</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="variable">@test_width</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 </li>
@@ -92,19 +92,7 @@
 &lt;/li&gt;
 &lt;li&gt;sublime&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;package install Less&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;package install Less2Css&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/*被编译*/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;// 不被编译&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;声明变量&quot;&gt;&lt;a href=&quot;#声明变量&quot; class=&quot;headerlink&quot; title=&quot;声明变量&quot;&gt;&lt;/a&gt;声明变量&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;@声明变量&lt;figure class=&quot;highlight less&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;@test_width:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;混合&quot;&gt;&lt;a href=&quot;#混合&quot; class=&quot;headerlink&quot; title=&quot;混合&quot;&gt;&lt;/a&gt;混合&lt;/h4&gt;
+&lt;li&gt;&lt;code&gt;package install Less2Css&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;
     
     </summary>
     
