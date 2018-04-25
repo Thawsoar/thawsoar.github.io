@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2017-12-03T14:08:30.603Z</updated>
+  <updated>2018-04-25T08:39:36.362Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>life</title>
+    <link href="https://thawsoar.github.io/2018/04/25/life_note/"/>
+    <id>https://thawsoar.github.io/2018/04/25/life_note/</id>
+    <published>2018-04-25T07:43:25.000Z</published>
+    <updated>2018-04-25T08:39:36.362Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="日记-2018年4月25号-无锡-多云"><a href="#日记-2018年4月25号-无锡-多云" class="headerlink" title="日记 2018年4月25号  无锡 多云"></a>日记 2018年4月25号  无锡 多云</h3><blockquote>
+<p>今天，2018年4月25号，我存在于这个世界已经21.53年了，大约7862天。。<br>回想过去的20年，除了吃喝拉撒睡，似乎没有坚持做过任何一件有意义的事。。<br>这真是太悲哀了。。<br>这样荒废的度过20年导致的结果就是。。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      文章访问密码：password
+    
+    </summary>
+    
+      <category term="life" scheme="https://thawsoar.github.io/categories/life/"/>
+    
+    
+      <category term="日记" scheme="https://thawsoar.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Less 即学即用简要学习笔记</title>
