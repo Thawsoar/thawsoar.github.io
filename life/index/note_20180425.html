@@ -88,7 +88,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo,加密" />
 
 
 
@@ -106,16 +106,17 @@
 
 
 
-<meta name="description" content="日记 2018年4月25号  无锡 多云 今天，2018年4月25号，我存在于这个世界已经21.53年了，大约7862天。。回想过去的20年，除了吃喝拉撒睡，似乎没有坚持做过任何一件有意义的事。。这真是太悲哀了。。这样荒废的度过20年导致的结果就是。。">
+<meta name="description" content="文章访问密码：password">
+<meta name="keywords" content="Hexo,加密">
 <meta property="og:type" content="website">
 <meta property="og:title" content="日记">
 <meta property="og:url" content="https://thawsoar.github.io/life/index/note_20180425.html">
 <meta property="og:site_name" content="文翔·思杰">
-<meta property="og:description" content="日记 2018年4月25号  无锡 多云 今天，2018年4月25号，我存在于这个世界已经21.53年了，大约7862天。。回想过去的20年，除了吃喝拉撒睡，似乎没有坚持做过任何一件有意义的事。。这真是太悲哀了。。这样荒废的度过20年导致的结果就是。。">
-<meta property="og:updated_time" content="2018-04-25T07:47:03.701Z">
+<meta property="og:description" content="文章访问密码：password">
+<meta property="og:updated_time" content="2018-04-25T08:00:29.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日记">
-<meta name="twitter:description" content="日记 2018年4月25号  无锡 多云 今天，2018年4月25号，我存在于这个世界已经21.53年了，大约7862天。。回想过去的20年，除了吃喝拉撒睡，似乎没有坚持做过任何一件有意义的事。。这真是太悲哀了。。这样荒废的度过20年导致的结果就是。。">
+<meta name="twitter:description" content="文章访问密码：password">
 
 
 
@@ -148,6 +149,16 @@
 
 
 
+<script>
+    (function(){
+        if('password'){
+            if (prompt('请输入文章密码') !== 'password'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
   <title>日记 | 文翔·思杰</title>
   <script type="text/javascript" src="/js/src/titlechange.js"></script>
@@ -273,7 +284,7 @@
         <li class="menu-item menu-item-life">
           <a href="/life" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-sticky-note"></i> <br />
             
             menu.life
           </a>
@@ -337,6 +348,10 @@
 
 	<h2 class="post-title" itemprop="name headline">日记</h2>
 
+
+	<div class="post-meta">
+		<div class="post-description">文章访问密码：password</div>
+	</div>
 
 
 </header>
