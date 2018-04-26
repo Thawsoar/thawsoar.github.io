@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title></title>
-  <subtitle>A Person&#39;s Blog</subtitle>
+  <title>A Person&#39;s Blog</title>
+  <subtitle>前端菜鸟の航线</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
