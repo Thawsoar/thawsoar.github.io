@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python 闭包简要笔记]]></title>
+    <url>%2F2018%2F07%2F25%2Fpython_closure%2F</url>
+    <content type="text"><![CDATA[python闭包简要笔记 廖雪峰的官方网站 案例 一个函数可以返回一个计算结果，也可以返回一个函数。返回一个函数时，牢记该函数并未执行，返回函数中不要引用任何可能会变化的变量。 如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到函数参数的值不变. 12345678910111213def count(): def f(j): def g(): return j*j return g fs = [] for i in range(1, 4): fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f() return fsf1, f2, f3 = count()f1() #&gt;&gt;&gt; 1f2() #&gt;&gt;&gt; 4f3() #&gt;&gt;&gt; 9 练习利用闭包返回一个计数器函数，每次调用它返回递增整数 方法一 123456def createCounter(): a = [0] def counter(): a[0] += 1 return a[0] return counter 在python2中，没有nonlocal这个关键字，我们可以把闭包变量改成可变类型数据进行修改，比如列表。 方法二 1234567def createCounter(): s = 0 def counter(): nonlocal s s = s + 1 return s return counter 在python3中，可以用nonlocal 关键字声明 一个变量， 表示这个变量不是局部变量空间的变量，需要向上一层变量空间找这个变量。]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Less 即学即用简要学习笔记]]></title>
     <url>%2F2017%2F12%2F03%2Fless_notes%2F</url>
     <content type="text"><![CDATA[Less 即学即用简要学习笔记Less less 中文网 less github 编译 node npm install less -g lessc style.less &gt; style.css sublime package install Less package install Less2Css 注释 /*被编译*/ // 不被编译 声明变量 @声明变量1@test_width: 300px; 混合 混合Mixin 1234.div &#123; .box; width: @test_width; &#125; 可带参数 123456.border(@border_width) &#123; border: solid yellow @border_width;&#125; .test_hunhe &#123; .border(30px);&#125; 混合默认带值 123border(border_width:10px) &#123; border: solid green @border_width; &#125; 匹配模式12345678910111213.triangle(bottom,@w:5px,@c:#ccc) &#123; border-width: @w; border-color: @c; border-style: solid dashed dashed dashed;&#125;.triangle(@_,@w:5px,@c:#ccc) &#123; width: 0; height: 0; overflow: hidden;&#125;.sanjiao &#123; .triangle(bottom)&#125; 运算1234@test_width: 300px;.box &#123; width: @test_width +20;&#125; 嵌套规则123456789101112131415.list &#123; ... li &#123; ... &#125; a &#123; ... &amp;:hover &#123; color: red; &#125; &#125; span &#123; ... &#125;&#125; &amp; 代表它的上一层选择器 @arguments 变量123456.border_arg(@w:30px,@c:red,@xx:solid) &#123; border: @arguments;&#125;.test_arguments &#123; .border_arg(40px);&#125; 编译后： .test_arguments { border: 40px solid red; } 避免编译 使用 ~123.test &#123; width: ~calc(300px - 30px);&#125; 编译后：.test { width: calc(300px -30px)} !important关键字123.test_important &#123; .border_radius() !important&#125; 导入123@import "a"@import (less) "a.css"@import "b.less"]]></content>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2017-12-03T14:08:30.603Z</updated>
+  <updated>2018-07-25T15:10:52.404Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python 闭包简要笔记</title>
+    <link href="https://thawsoar.github.io/2018/07/25/python_closure/"/>
+    <id>https://thawsoar.github.io/2018/07/25/python_closure/</id>
+    <published>2018-07-25T14:48:58.000Z</published>
+    <updated>2018-07-25T15:10:52.404Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="闭包简要笔记"><a href="#闭包简要笔记" class="headerlink" title="闭包简要笔记"></a>闭包简要笔记</h4><ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431835236741e42daf5af6514f1a8917b8aaadff31bf000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
+</ul>
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><blockquote>
+<ul>
+<li>一个函数可以返回一个计算结果，也可以返回一个函数。<br>返回一个函数时，牢记该函数并未执行，返回函数中不要引用任何可能会变化的变量。<ul>
+<li>如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到函数参数的值不变.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(j)</span>:</span></div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">            <span class="keyword">return</span> j*j</div><div class="line">        <span class="keyword">return</span> g</div><div class="line">    fs = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">4</span>):</div><div class="line">        fs.append(f(i)) <span class="comment"># f(i)立刻被执行，因此i的当前值被传入f()</span></div><div class="line">    <span class="keyword">return</span> fs</div><div class="line">f1, f2, f3 = count()</div><div class="line">f1() <span class="comment">#&gt;&gt;&gt; 1</span></div><div class="line">f2() <span class="comment">#&gt;&gt;&gt; 4</span></div><div class="line">f3() <span class="comment">#&gt;&gt;&gt; 9</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>利用闭包返回一个计数器函数，每次调用它返回递增整数</p>
+<ul>
+<li>方法一</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">createCounter</span><span class="params">()</span>:</span></div><div class="line">	a = [<span class="number">0</span>]</div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">counter</span><span class="params">()</span>:</span></div><div class="line">	    a[<span class="number">0</span>] += <span class="number">1</span></div><div class="line">	    <span class="keyword">return</span> a[<span class="number">0</span>]</div><div class="line">	<span class="keyword">return</span> counter</div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>在python2中，没有nonlocal这个关键字，我们可以把闭包变量改成可变类型数据进行修改，比如列表。</li>
+</ul>
+</blockquote>
+<ul>
+<li>方法二</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">createCounter</span><span class="params">()</span>:</span></div><div class="line">   s = <span class="number">0</span></div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">counter</span><span class="params">()</span>:</span></div><div class="line">       <span class="keyword">nonlocal</span> s</div><div class="line">       s = s + <span class="number">1</span></div><div class="line">       <span class="keyword">return</span> s</div><div class="line">   <span class="keyword">return</span> counter</div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>在python3中，可以用nonlocal 关键字声明 一个变量， 表示这个变量不是局部变量空间的变量，需要向上一层变量空间找这个变量。</li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;python&quot;&gt;&lt;a href=&quot;#python&quot; class=&quot;headerlink&quot; title=&quot;python&quot;&gt;&lt;/a&gt;python&lt;/h3&gt;&lt;h4 id=&quot;闭包简要笔记&quot;&gt;&lt;a href=&quot;#闭包简要笔记&quot; class=&quot;headerlink&quot; title=&quot;闭包简要笔记&quot;&gt;&lt;/a&gt;闭包简要笔记&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431835236741e42daf5af6514f1a8917b8aaadff31bf000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;案例&quot;&gt;&lt;a href=&quot;#案例&quot; class=&quot;headerlink&quot; title=&quot;案例&quot;&gt;&lt;/a&gt;案例&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;一个函数可以返回一个计算结果，也可以返回一个函数。&lt;br&gt;返回一个函数时，牢记该函数并未执行，返回函数中不要引用任何可能会变化的变量。&lt;ul&gt;
+&lt;li&gt;如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到函数参数的值不变.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(j)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; j*j&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    fs = []&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        fs.append(f(i)) &lt;span class=&quot;comment&quot;&gt;# f(i)立刻被执行，因此i的当前值被传入f()&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; fs&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;f1, f2, f3 = count()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;f1() &lt;span class=&quot;comment&quot;&gt;#&amp;gt;&amp;gt;&amp;gt; 1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;f2() &lt;span class=&quot;comment&quot;&gt;#&amp;gt;&amp;gt;&amp;gt; 4&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;f3() &lt;span class=&quot;comment&quot;&gt;#&amp;gt;&amp;gt;&amp;gt; 9&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="https://thawsoar.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://thawsoar.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Less 即学即用简要学习笔记</title>
