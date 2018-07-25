@@ -490,10 +490,8 @@
 </ul>
 <h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><blockquote>
 <ul>
-<li>一个函数可以返回一个计算结果，也可以返回一个函数。<br>返回一个函数时，牢记该函数并未执行，返回函数中不要引用任何可能会变化的变量。<ul>
+<li>一个函数可以返回一个计算结果，也可以返回一个函数。<br>返回一个函数时，牢记该函数并未执行，返回函数中不要引用任何可能会变化的变量。</li>
 <li>如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到函数参数的值不变.</li>
-</ul>
-</li>
 </ul>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(j)</span>:</span></div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">()</span>:</span></div><div class="line">            <span class="keyword">return</span> j*j</div><div class="line">        <span class="keyword">return</span> g</div><div class="line">    fs = []</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">4</span>):</div><div class="line">        fs.append(f(i)) <span class="comment"># f(i)立刻被执行，因此i的当前值被传入f()</span></div><div class="line">    <span class="keyword">return</span> fs</div><div class="line">f1, f2, f3 = count()</div><div class="line">f1() <span class="comment">#&gt;&gt;&gt; 1</span></div><div class="line">f2() <span class="comment">#&gt;&gt;&gt; 4</span></div><div class="line">f3() <span class="comment">#&gt;&gt;&gt; 9</span></div></pre></td></tr></table></figure>
