@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thawsoar.github.io/photo/index.html</loc>
+    
+    <lastmod>2018-07-27T08:32:18.163Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://thawsoar.github.io/2018/07/27/life_facebook_quote/</loc>
     
     <lastmod>2018-07-27T08:15:48.679Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://thawsoar.github.io/2017/06/07/angular_1/</loc>
     
     <lastmod>2017-06-21T04:44:15.543Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://thawsoar.github.io/photo/index.html</loc>
-    
-    <lastmod>2017-06-19T09:39:45.195Z</lastmod>
     
   </url>
   
