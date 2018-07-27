@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Less 即学即用简要学习笔记]]></title>
+    <url>%2F2018%2F07%2F27%2Flife_facebook_quote%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python 装饰器简要笔记]]></title>
     <url>%2F2018%2F07%2F27%2Fpython_decorator%2F</url>
     <content type="text"><![CDATA[python函数式编程装饰器简要笔记 廖雪峰的官方网站 案例设计一个decorator，可作用于任何函数上，在函数调用前后自动打印日志：123456789101112131415161718import functoolsdef log(func): @functools.wraps(func) def wrapper(*args, **kw): print('call %s():' % func.__name__) return func(*args, **kw) return wrapper@log #把@log放到now()函数的定义处，相当于执行了语句： now = log(now)def now(): print('2018-7-27')now()# resultcall now():2018-7-27 log是一个decorator，接受一个函数作为参数，并返回一个函数 函数对象有一个name属性，可以拿到函数的名字 函数也是对象，它有name等属性，但你去看经过decorator装饰之后的函数，它们的name已经从原来的’now’变成了’wrapper’,因此有些依赖函数签名的代码执行就会出错，可以使用Python内置的functools.wraps解决 wrapper()函数的参数定义是(args, *kw),因此，wrapper()函数可以接受任意参数的调用。 Python的@语法，把decorator置于函数的定义处 练习请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间： 123456789101112131415161718192021222324252627import time, functoolsdef metric(fn): @functools.wraps(fn) def wrapper(*args,**kw): startTime = time.time() fn(*args,**kw) endTime = time.time() execTime = (endTime - startTime) *1000 print('%s executed in %s ms' % (fn.__name__, execTime)) return fn(*args,**kw) return wrapper# 测试@metricdef fast(x, y): time.sleep(1) return x + y;@metricdef slow(x, y, z): time.sleep(1.5) return x * y * z;f = fast(11, 22)s = slow(11, 22, 33)if f == 33 and s == 7986: print('test success!') 小结 在面向对象（OOP）的设计模式中，decorator被称为装饰模式。OOP的装饰模式需要通过继承和组合来实现，而Python除了能支持OOP的decorator外，直接从语法层次支持decorator。Python的decorator可以用函数实现，也可以用类实现。 decorator可以增强函数的功能，定义起来虽然有点复杂，但使用起来非常灵活和方便]]></content>

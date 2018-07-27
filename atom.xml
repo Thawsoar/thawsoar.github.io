@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2018-07-27T07:34:10.500Z</updated>
+  <updated>2018-07-27T08:10:24.408Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Less 即学即用简要学习笔记</title>
+    <link href="https://thawsoar.github.io/2018/07/27/life_facebook_quote/"/>
+    <id>https://thawsoar.github.io/2018/07/27/life_facebook_quote/</id>
+    <published>2018-07-27T08:10:58.000Z</published>
+    <updated>2018-07-27T08:10:24.408Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://orrscanlu.bkt.clouddn.com/facebook_1.jpg" alt="code wins arguments"><br><img src="http://orrscanlu.bkt.clouddn.com/facebook_2.jpg" alt="Done is better than perfect"><br><img src="http://orrscanlu.bkt.clouddn.com/facebook_3.jpg" alt="say focused &amp; keep shipping"><br><img src="http://orrscanlu.bkt.clouddn.com/facebook_4.jpg" alt="move fast &amp; break things"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://orrscanlu.bkt.clouddn.com/facebook_1.jpg&quot; alt=&quot;code wins arguments&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://orrscanlu.bkt.clouddn.com/faceb
+    
+    </summary>
+    
+      <category term="生活" scheme="https://thawsoar.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="生活" scheme="https://thawsoar.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>python 装饰器简要笔记</title>
