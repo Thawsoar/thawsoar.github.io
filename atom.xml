@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2018-07-27T06:33:35.706Z</updated>
+  <updated>2018-07-27T07:34:10.500Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://thawsoar.github.io/2018/07/27/python_decorator/"/>
     <id>https://thawsoar.github.io/2018/07/27/python_decorator/</id>
     <published>2018-07-27T03:58:58.000Z</published>
-    <updated>2018-07-27T06:33:35.706Z</updated>
+    <updated>2018-07-27T07:34:10.500Z</updated>
     
     <content type="html"><![CDATA[<h3 id="python函数式编程"><a href="#python函数式编程" class="headerlink" title="python函数式编程"></a>python函数式编程</h3><h4 id="装饰器简要笔记"><a href="#装饰器简要笔记" class="headerlink" title="装饰器简要笔记"></a>装饰器简要笔记</h4><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318435599930270c0381a3b44db991cd6d858064ac0000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
@@ -38,7 +38,7 @@
 </blockquote>
 <h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time, functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">metric</span><span class="params">(fn)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(fn)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args,**kw)</span>:</span></div><div class="line">        startTime = time.time()</div><div class="line">        fn(*args,**kw)</div><div class="line">        endTime = time.time()</div><div class="line">        execTime = (endTime - startTime) *<span class="number">1000</span></div><div class="line">        print(<span class="string">'%s executed in %s ms'</span> % (fn.__name__, execTime))</div><div class="line">        <span class="keyword">return</span> fn(*args,**kw)</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"><span class="comment"># 测试</span></div><div class="line"><span class="meta">@metric</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fast</span><span class="params">(x, y)</span>:</span></div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">    <span class="keyword">return</span> x + y;</div><div class="line"></div><div class="line"><span class="meta">@metric</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">slow</span><span class="params">(x, y, z)</span>:</span></div><div class="line">    time.sleep(<span class="number">1.5</span>)</div><div class="line">    <span class="keyword">return</span> x * y * z;</div><div class="line"></div><div class="line">f = fast(<span class="number">11</span>, <span class="number">22</span>)</div><div class="line">s = slow(<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>)</div><div class="line"><span class="keyword">if</span> f == <span class="number">33</span> <span class="keyword">and</span> s == <span class="number">7986</span>:</div><div class="line">    print(<span class="string">'test success!'</span>)</div></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="/2018/07/27/python_decorator/./images/test_py.png" alt="test.py"></h2><h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://orrscanlu.bkt.clouddn.com/test_py.png" alt="test.py"></h2><h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ul>
 <li>在面向对象（OOP）的设计模式中，decorator被称为装饰模式。OOP的装饰模式需要通过继承和组合来实现，而Python除了能支持OOP的decorator外，直接从语法层次支持decorator。Python的decorator可以用函数实现，也可以用类实现。</li>
 <li>decorator可以增强函数的功能，定义起来虽然有点复杂，但使用起来非常灵活和方便</li>
 </ul>

@@ -2,9 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+    
   <url>
     <loc>https://thawsoar.github.io/2018/07/27/python_decorator/</loc>
-    <lastmod>2018-07-27T06:33:35.706Z</lastmod>
+    <lastmod>2018-07-27T07:34:10.500Z</lastmod>
     <data>
         <display>
         <title>python 装饰器简要笔记</title>
@@ -41,7 +42,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://thawsoar.github.io/2017/12/03/less_notes/</loc>
