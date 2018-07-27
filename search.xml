@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python 装饰器简要笔记]]></title>
+    <url>%2F2018%2F07%2F27%2Fpython_decorator%2F</url>
+    <content type="text"><![CDATA[python函数式编程装饰器简要笔记 廖雪峰的官方网站 案例设计一个decorator，可作用于任何函数上，在函数调用前后自动打印日志：123456789101112131415161718import functoolsdef log(func): @functools.wraps(func) def wrapper(*args, **kw): print('call %s():' % func.__name__) return func(*args, **kw) return wrapper@log #把@log放到now()函数的定义处，相当于执行了语句： now = log(now)def now(): print('2018-7-27')now()# resultcall now():2018-7-27 log是一个decorator，接受一个函数作为参数，并返回一个函数 函数对象有一个name属性，可以拿到函数的名字 函数也是对象，它有name等属性，但你去看经过decorator装饰之后的函数，它们的name已经从原来的’now’变成了’wrapper’,因此有些依赖函数签名的代码执行就会出错，可以使用Python内置的functools.wraps解决 wrapper()函数的参数定义是(args, *kw),因此，wrapper()函数可以接受任意参数的调用。 Python的@语法，把decorator置于函数的定义处 练习请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间： 123456789101112131415161718192021222324252627import time, functoolsdef metric(fn): @functools.wraps(fn) def wrapper(*args,**kw): startTime = time.time() fn(*args,**kw) endTime = time.time() execTime = (endTime - startTime) *1000 print('%s executed in %s ms' % (fn.__name__, execTime)) return fn(*args,**kw) return wrapper# 测试@metricdef fast(x, y): time.sleep(1) return x + y;@metricdef slow(x, y, z): time.sleep(1.5) return x * y * z;f = fast(11, 22)s = slow(11, 22, 33)if f == 33 and s == 7986: print('test success!') 小结 在面向对象（OOP）的设计模式中，decorator被称为装饰模式。OOP的装饰模式需要通过继承和组合来实现，而Python除了能支持OOP的decorator外，直接从语法层次支持decorator。Python的decorator可以用函数实现，也可以用类实现。 decorator可以增强函数的功能，定义起来虽然有点复杂，但使用起来非常灵活和方便]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python 闭包简要笔记]]></title>
     <url>%2F2018%2F07%2F25%2Fpython_closure%2F</url>
     <content type="text"><![CDATA[python闭包简要笔记 廖雪峰的官方网站 案例 一个函数可以返回一个计算结果，也可以返回一个函数。返回一个函数时，牢记该函数并未执行，返回函数中不要引用任何可能会变化的变量。 如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到函数参数的值不变. 12345678910111213def count(): def f(j): def g(): return j*j return g fs = [] for i in range(1, 4): fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f() return fsf1, f2, f3 = count()f1() #&gt;&gt;&gt; 1f2() #&gt;&gt;&gt; 4f3() #&gt;&gt;&gt; 9 练习利用闭包返回一个计数器函数，每次调用它返回递增整数 方法一 123456def createCounter(): a = [0] def counter(): a[0] += 1 return a[0] return counter 在python2中，没有nonlocal这个关键字，我们可以把闭包变量改成可变类型数据进行修改，比如列表。 方法二 1234567def createCounter(): s = 0 def counter(): nonlocal s s = s + 1 return s return counter 在python3中，可以用nonlocal 关键字声明 一个变量， 表示这个变量不是局部变量空间的变量，需要向上一层变量空间找这个变量。]]></content>
@@ -82,19 +93,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[构建前端自动化工作流环境]]></title>
-    <url>%2F2017%2F06%2F07%2Fnodejs_1%2F</url>
-    <content type="text"><![CDATA[学习目标 了解什么是Node，什么是NPM；（Node.js） 掌握Bower的使用； 熟练使用Less/Sass； 搭建一个自己的自动化工作流环境； 自动编译 自动合并 自动刷新 自动部署 GIT 与 GITHUB master 托管源文件 gh-pages 托管部署文件 在github搭建自己的blog 为什么要有自动化的流程 在我们的开发过程中有大量的重复操作 DRY Don’t repeat yourself 开发人员的精力应放在哪？创造，新的一切 前端开发的编译操作 1.Node环境1.1.什么是Node Node.js 可能类似jquery.js 不是JS文件，也不是一个JS框架（） 而是Server side Javascript runtime, 服务端的一个JS运行时 我们可以在NODE运行JS代码 alert();ECMAScript JS- ES BOM DOM node中只能运行ECMAScript，无法使用 BOM 和 DOM 目前我们的JS是运行在浏览器内核中 PHP是什么？是一门脚本语言也是一个运行环境 为什么Node选中了JS， 说到底就是一个JS运行环境 目前有两个分支 Node.js 0.12.7 官方版本 要求尽善尽美 IO.js 是社区的产物，不是官方的东西，io.js有很多新特性，迭代非常快，社区推进非常快 15年两者合并，发布node第一个正式版 4.0， 迭代速度又慢了 node 5.x == io.js node 4.0 == node 1.2.Node环境搭建1.2.1.Mac 安装包的方式 pkg NVM（Node Version Manager） 1234$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash$ echo '. ~/.nvm/nvm.sh' &gt;&gt; .bash_profile$ nvm install stable$ nvm alias default stable 1.2.2.Windows 安装包的方式 msi_x64 msi_x86 NVM（Node Version Manager） nvm(node version manager) 因为NODE版本比较多，开发人员可能依赖很多版本 通过NVM，可以轻松切换于不同的版本之间 1 NVM_HOME=C:\Develop\nvm NVM_SYMLINK=C:\Develop\nodejs NPM_HOME=C:\Develop\nvm\npm PATH=%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME% 1.2.3.环境变量 环境变量就是操作系统提供的系统级别用于存储变量的地方 系统变量和用户变量 系统变量指的是所用当前系统用户共享的变量 自己的电脑一般只有一个用户 建议将自己配置的环境变量放在用户变量中，用户变量比较干净 环境变量的变量名是不区分大小写的 变量间运行相互引用 特殊值： PATH变量（不区分大小写） PATH 相当于一个路径的引用 只要添加到PATH变量中的路径，都可以在任何目录下搜索 命令行 可以用来执行当前目录下的文件 命令 cd :change directory Node.js是一个轻内核（本身没有什么功能）的东东，所有的功能都要功能包提供 node官方提供了一些最基础的包 1.3.Node用途REPL环境（控制台环境）1.3.1.开发Web应用程序 做动态网站 开发提供数据的服务端API 1.3.2.前端开发工具基础 Node.js给前端乃至整个开发行业带来一场工业革命 刀跟火种 1.4.Node开发Web应用Demo1.4.1.复习请求与响应客户端发送到服务端的东西称之为请求报文服务端返回给客户端的东西称之为响应报文 1.5.NPM1.5.1.什么是NPMhttps://www.npmjs.com/ Node Package Manager Node应用程序依赖包的管理工具 安装卸载更新之类的操作 1.5.2.为什么使用NPM 包很多 场景：我需要用一个A，A依赖B，B依赖C 常见的包管理工具都有循环依赖的功能 你只需记住你要什么东西 1.5.3.常见的NPM操作// 安装一个包，默认安装最新稳定版本npm install package_name// –save// 初始化操作，给项目添加一个配置文件npm init// –yes参数走默认配置 如果官方数据源太慢使用 https://npm.taobao.org/ 2.Bower2.1.什么是Bower 官网 web应用程序依赖项管理工具 2.2.为什么使用Bower 方便便捷的方式管理包，zhuangbi 2.3.Bower实践 npm install -g bower // -g:global 修改npm全局路径，就是在用户目录下添加.npmrc文件 3.Sass/LESS 4.Gulp4.1.Gulp简介 链接： 官网 中文网 就是用来机械化的完成重复性质的工作 gulp的机制就是将重复工作抽象成一个个的任务， 4.2.Gulp准备工作 安装Node.js 安装 gulp 命令行工具 npm install -g gulp 初始化 gulp 项目 创建任务 - gulpfile.js 4.3.基本使用4.4.常用插件 编译 Less：gulp-less 创建本地服务器：gulp-connect 合并文件：gulp-concat 最小化 js 文件：gulp-uglify 重命名文件：gulp-rename 最小化 css 文件：gulp-minify-css 压缩html文件 gulp-minify-html 最小化图像：gulp-imagemin]]></content>
-      <categories>
-        <category>Nodejs</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>github</tag>
-        <tag>Nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Angular入门]]></title>
     <url>%2F2017%2F06%2F07%2Fangular_1%2F</url>
     <content type="text"><![CDATA[推荐工具 在线编辑器 http://codepen.io/ https://jsfiddle.net/ Angular 简介什么是 AngularJS 一款非常优秀的前端高级 JS 框架 最早由 Misko Hevery 等人创建 2009 年被 Google 公式收购，用于其多款产品 目前有一个全职的开发团队继续开发和维护这个库 有了这一类框架就可以轻松构建 SPA 应用程序 轻松构建 SPA（单一页面应用程序） 单一页面应用程序： 只有一个页面（整个应用的一个载体） 内容全部是由AJAX方式呈现出啦的 其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。 为什么使用 AngularJS 更少的代码，实现更强劲的功能 将一些以前在后台开发中使用的思想带入前端开发 带领当前市面上的框架走向模式化或者架构化 AngularJS 的核心特性 MVC 模块化 自动化双向数据绑定 指令系统 相关链接 http://www.apjs.net/ http://www.angularjs.cn/ http://docs.angularjs.cn/api https://material.angularjs.org http://angular-ui.github.io/ Angular 上手安装 Angular 下载 Angular.js 的包 https://github.com/angular/angular.js/releases 使用 CDN 上的 Angular.js http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js 使用 Bower 安装 1bower install angular 使用 NPM 安装 1npm install angular 每种方式安装包，本质都是将angular的库下载到当前文件夹中 简单示例12 angular中最重要的概念是指令（directive） ng-model 是双向数据绑定的指令，效果就是将当前元素的value属性和模型中的user.name建立绑定关系 JS: BOM DOM ES 分析 Angular 示例使用总结运行官方文档CDN的优势Content Dev 快 节省自己服务器的带宽压力和流量 Angular 基础概念MVC 思想什么是 MVC 思想 将应用程序的组成划分为三个部分：Model View Controller 控制器的作用就是初始化模型用的； 模型就是用于存储数据的 视图用于展现数据 登陆案例 模型 我们数据库中所有用户的信息 接受控制器传来的用户名和密码进行校验的业务逻辑并返回true/false 控制器 接受用户在界面上填写的用户名和密码 将用户名和密码交给模型 视图 给用户呈现一个表单 接受用户输入内容，并将其提交给控制器 根据控制器返回的数据，响应用户页面 模块（Module） 划分应用程序结构 我们可以通过angular.module创建一个模块 angular.module方法传递两个参数才是创建模块，一个参数是获取模块 控制器（Controller） 通过$scope和视图关联 视图模型（$scope）表达式（Expression）单向数据绑定双向数据绑定Angular 指令系统]]></content>
@@ -105,6 +103,19 @@
         <tag>npm</tag>
         <tag>Angular</tag>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[构建前端自动化工作流环境]]></title>
+    <url>%2F2017%2F06%2F07%2Fnodejs_1%2F</url>
+    <content type="text"><![CDATA[学习目标 了解什么是Node，什么是NPM；（Node.js） 掌握Bower的使用； 熟练使用Less/Sass； 搭建一个自己的自动化工作流环境； 自动编译 自动合并 自动刷新 自动部署 GIT 与 GITHUB master 托管源文件 gh-pages 托管部署文件 在github搭建自己的blog 为什么要有自动化的流程 在我们的开发过程中有大量的重复操作 DRY Don’t repeat yourself 开发人员的精力应放在哪？创造，新的一切 前端开发的编译操作 1.Node环境1.1.什么是Node Node.js 可能类似jquery.js 不是JS文件，也不是一个JS框架（） 而是Server side Javascript runtime, 服务端的一个JS运行时 我们可以在NODE运行JS代码 alert();ECMAScript JS- ES BOM DOM node中只能运行ECMAScript，无法使用 BOM 和 DOM 目前我们的JS是运行在浏览器内核中 PHP是什么？是一门脚本语言也是一个运行环境 为什么Node选中了JS， 说到底就是一个JS运行环境 目前有两个分支 Node.js 0.12.7 官方版本 要求尽善尽美 IO.js 是社区的产物，不是官方的东西，io.js有很多新特性，迭代非常快，社区推进非常快 15年两者合并，发布node第一个正式版 4.0， 迭代速度又慢了 node 5.x == io.js node 4.0 == node 1.2.Node环境搭建1.2.1.Mac 安装包的方式 pkg NVM（Node Version Manager） 1234$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash$ echo '. ~/.nvm/nvm.sh' &gt;&gt; .bash_profile$ nvm install stable$ nvm alias default stable 1.2.2.Windows 安装包的方式 msi_x64 msi_x86 NVM（Node Version Manager） nvm(node version manager) 因为NODE版本比较多，开发人员可能依赖很多版本 通过NVM，可以轻松切换于不同的版本之间 1 NVM_HOME=C:\Develop\nvm NVM_SYMLINK=C:\Develop\nodejs NPM_HOME=C:\Develop\nvm\npm PATH=%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME% 1.2.3.环境变量 环境变量就是操作系统提供的系统级别用于存储变量的地方 系统变量和用户变量 系统变量指的是所用当前系统用户共享的变量 自己的电脑一般只有一个用户 建议将自己配置的环境变量放在用户变量中，用户变量比较干净 环境变量的变量名是不区分大小写的 变量间运行相互引用 特殊值： PATH变量（不区分大小写） PATH 相当于一个路径的引用 只要添加到PATH变量中的路径，都可以在任何目录下搜索 命令行 可以用来执行当前目录下的文件 命令 cd :change directory Node.js是一个轻内核（本身没有什么功能）的东东，所有的功能都要功能包提供 node官方提供了一些最基础的包 1.3.Node用途REPL环境（控制台环境）1.3.1.开发Web应用程序 做动态网站 开发提供数据的服务端API 1.3.2.前端开发工具基础 Node.js给前端乃至整个开发行业带来一场工业革命 刀跟火种 1.4.Node开发Web应用Demo1.4.1.复习请求与响应客户端发送到服务端的东西称之为请求报文服务端返回给客户端的东西称之为响应报文 1.5.NPM1.5.1.什么是NPMhttps://www.npmjs.com/ Node Package Manager Node应用程序依赖包的管理工具 安装卸载更新之类的操作 1.5.2.为什么使用NPM 包很多 场景：我需要用一个A，A依赖B，B依赖C 常见的包管理工具都有循环依赖的功能 你只需记住你要什么东西 1.5.3.常见的NPM操作// 安装一个包，默认安装最新稳定版本npm install package_name// –save// 初始化操作，给项目添加一个配置文件npm init// –yes参数走默认配置 如果官方数据源太慢使用 https://npm.taobao.org/ 2.Bower2.1.什么是Bower 官网 web应用程序依赖项管理工具 2.2.为什么使用Bower 方便便捷的方式管理包，zhuangbi 2.3.Bower实践 npm install -g bower // -g:global 修改npm全局路径，就是在用户目录下添加.npmrc文件 3.Sass/LESS 4.Gulp4.1.Gulp简介 链接： 官网 中文网 就是用来机械化的完成重复性质的工作 gulp的机制就是将重复工作抽象成一个个的任务， 4.2.Gulp准备工作 安装Node.js 安装 gulp 命令行工具 npm install -g gulp 初始化 gulp 项目 创建任务 - gulpfile.js 4.3.基本使用4.4.常用插件 编译 Less：gulp-less 创建本地服务器：gulp-connect 合并文件：gulp-concat 最小化 js 文件：gulp-uglify 重命名文件：gulp-rename 最小化 css 文件：gulp-minify-css 压缩html文件 gulp-minify-html 最小化图像：gulp-imagemin]]></content>
+      <categories>
+        <category>Nodejs</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>github</tag>
+        <tag>Nodejs</tag>
       </tags>
   </entry>
   <entry>

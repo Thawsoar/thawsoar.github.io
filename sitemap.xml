@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thawsoar.github.io/2018/07/27/python_decorator/</loc>
+    
+    <lastmod>2018-07-27T06:33:35.706Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://thawsoar.github.io/2018/07/25/python_closure/</loc>
     
     <lastmod>2018-07-25T15:14:44.506Z</lastmod>

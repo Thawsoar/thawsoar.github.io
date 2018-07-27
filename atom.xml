@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2018-07-25T15:14:44.506Z</updated>
+  <updated>2018-07-27T06:33:35.706Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python 装饰器简要笔记</title>
+    <link href="https://thawsoar.github.io/2018/07/27/python_decorator/"/>
+    <id>https://thawsoar.github.io/2018/07/27/python_decorator/</id>
+    <published>2018-07-27T03:58:58.000Z</published>
+    <updated>2018-07-27T06:33:35.706Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="python函数式编程"><a href="#python函数式编程" class="headerlink" title="python函数式编程"></a>python函数式编程</h3><h4 id="装饰器简要笔记"><a href="#装饰器简要笔记" class="headerlink" title="装饰器简要笔记"></a>装饰器简要笔记</h4><ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318435599930270c0381a3b44db991cd6d858064ac0000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
+</ul>
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>设计一个decorator，可作用于任何函数上，在函数调用前后自动打印日志：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span>   </div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></div><div class="line">        print(<span class="string">'call %s():'</span> % func.__name__) </div><div class="line">        <span class="keyword">return</span> func(*args, **kw)</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"></div><div class="line"><span class="meta">@log  #把@log放到now()函数的定义处，相当于执行了语句： now = log(now)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'2018-7-27'</span>)</div><div class="line"></div><div class="line">now()</div><div class="line"><span class="comment"># result</span></div><div class="line">call now():</div><div class="line"><span class="number">2018</span><span class="number">-7</span><span class="number">-27</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>log是一个decorator，接受一个函数作为参数，并返回一个函数</li>
+<li>函数对象有一个<strong>name</strong>属性，可以拿到函数的名字</li>
+<li>函数也是对象，它有<strong>name</strong>等属性，但你去看经过decorator装饰之后的函数，它们的<strong>name</strong>已经从原来的’now’变成了’wrapper’,因此有些依赖函数签名的代码执行就会出错，可以使用Python内置的functools.wraps解决</li>
+<li>wrapper()函数的参数定义是(<em>args, *</em>kw),因此，wrapper()函数可以接受任意参数的调用。</li>
+<li>Python的<b>@</b>语法，把decorator置于函数的定义处<a id="more"></a>
+</li>
+</ul>
+</blockquote>
+<h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time, functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">metric</span><span class="params">(fn)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(fn)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args,**kw)</span>:</span></div><div class="line">        startTime = time.time()</div><div class="line">        fn(*args,**kw)</div><div class="line">        endTime = time.time()</div><div class="line">        execTime = (endTime - startTime) *<span class="number">1000</span></div><div class="line">        print(<span class="string">'%s executed in %s ms'</span> % (fn.__name__, execTime))</div><div class="line">        <span class="keyword">return</span> fn(*args,**kw)</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"><span class="comment"># 测试</span></div><div class="line"><span class="meta">@metric</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fast</span><span class="params">(x, y)</span>:</span></div><div class="line">    time.sleep(<span class="number">1</span>)</div><div class="line">    <span class="keyword">return</span> x + y;</div><div class="line"></div><div class="line"><span class="meta">@metric</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">slow</span><span class="params">(x, y, z)</span>:</span></div><div class="line">    time.sleep(<span class="number">1.5</span>)</div><div class="line">    <span class="keyword">return</span> x * y * z;</div><div class="line"></div><div class="line">f = fast(<span class="number">11</span>, <span class="number">22</span>)</div><div class="line">s = slow(<span class="number">11</span>, <span class="number">22</span>, <span class="number">33</span>)</div><div class="line"><span class="keyword">if</span> f == <span class="number">33</span> <span class="keyword">and</span> s == <span class="number">7986</span>:</div><div class="line">    print(<span class="string">'test success!'</span>)</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="/2018/07/27/python_decorator/./images/test_py.png" alt="test.py"></h2><h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ul>
+<li>在面向对象（OOP）的设计模式中，decorator被称为装饰模式。OOP的装饰模式需要通过继承和组合来实现，而Python除了能支持OOP的decorator外，直接从语法层次支持decorator。Python的decorator可以用函数实现，也可以用类实现。</li>
+<li>decorator可以增强函数的功能，定义起来虽然有点复杂，但使用起来非常灵活和方便</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;python函数式编程&quot;&gt;&lt;a href=&quot;#python函数式编程&quot; class=&quot;headerlink&quot; title=&quot;python函数式编程&quot;&gt;&lt;/a&gt;python函数式编程&lt;/h3&gt;&lt;h4 id=&quot;装饰器简要笔记&quot;&gt;&lt;a href=&quot;#装饰器简要笔记&quot; class=&quot;headerlink&quot; title=&quot;装饰器简要笔记&quot;&gt;&lt;/a&gt;装饰器简要笔记&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318435599930270c0381a3b44db991cd6d858064ac0000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;案例&quot;&gt;&lt;a href=&quot;#案例&quot; class=&quot;headerlink&quot; title=&quot;案例&quot;&gt;&lt;/a&gt;案例&lt;/h4&gt;&lt;p&gt;设计一个decorator，可作用于任何函数上，在函数调用前后自动打印日志：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; functools&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(func)&lt;/span&gt;:&lt;/span&gt;   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;    @functools.wraps(func)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;wrapper&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(*args, **kw)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;call %s():&#39;&lt;/span&gt; % func.__name__) &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; func(*args, **kw)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; wrapper&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@log  #把@log放到now()函数的定义处，相当于执行了语句： now = log(now)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print(&lt;span class=&quot;string&quot;&gt;&#39;2018-7-27&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;now()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# result&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;call now():&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2018&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-7&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-27&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;log是一个decorator，接受一个函数作为参数，并返回一个函数&lt;/li&gt;
+&lt;li&gt;函数对象有一个&lt;strong&gt;name&lt;/strong&gt;属性，可以拿到函数的名字&lt;/li&gt;
+&lt;li&gt;函数也是对象，它有&lt;strong&gt;name&lt;/strong&gt;等属性，但你去看经过decorator装饰之后的函数，它们的&lt;strong&gt;name&lt;/strong&gt;已经从原来的’now’变成了’wrapper’,因此有些依赖函数签名的代码执行就会出错，可以使用Python内置的functools.wraps解决&lt;/li&gt;
+&lt;li&gt;wrapper()函数的参数定义是(&lt;em&gt;args, *&lt;/em&gt;kw),因此，wrapper()函数可以接受任意参数的调用。&lt;/li&gt;
+&lt;li&gt;Python的&lt;b&gt;@&lt;/b&gt;语法，把decorator置于函数的定义处&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="https://thawsoar.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://thawsoar.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python 闭包简要笔记</title>
@@ -724,6 +776,158 @@
   </entry>
   
   <entry>
+    <title>Angular入门</title>
+    <link href="https://thawsoar.github.io/2017/06/07/angular_1/"/>
+    <id>https://thawsoar.github.io/2017/06/07/angular_1/</id>
+    <published>2017-06-06T16:00:00.000Z</published>
+    <updated>2017-06-21T04:44:15.543Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="推荐工具"><a href="#推荐工具" class="headerlink" title="推荐工具"></a>推荐工具</h2><ul>
+<li>在线编辑器<ul>
+<li><a href="http://codepen.io/" target="_blank" rel="external">http://codepen.io/</a></li>
+<li><a href="https://jsfiddle.net/" target="_blank" rel="external">https://jsfiddle.net/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Angular-简介"><a href="#Angular-简介" class="headerlink" title="Angular 简介"></a>Angular 简介</h2><h3 id="什么是-AngularJS"><a href="#什么是-AngularJS" class="headerlink" title="什么是 AngularJS"></a>什么是 AngularJS</h3><ul>
+<li>一款非常优秀的前端高级 JS 框架</li>
+<li>最早由 Misko Hevery 等人创建</li>
+<li>2009 年被 Google 公式收购，用于其多款产品</li>
+<li>目前有一个全职的开发团队继续开发和维护这个库</li>
+<li>有了这一类框架就可以轻松构建 SPA 应用程序</li>
+<li>轻松构建 SPA（单一页面应用程序）</li>
+<li>单一页面应用程序：<ul>
+<li>只有一个页面（整个应用的一个载体）</li>
+<li>内容全部是由AJAX方式呈现出啦的</li>
+</ul>
+</li>
+<li>其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。</li>
+</ul>
+<a id="more"></a>
+<h3 id="为什么使用-AngularJS"><a href="#为什么使用-AngularJS" class="headerlink" title="为什么使用 AngularJS"></a>为什么使用 AngularJS</h3><ul>
+<li>更少的代码，实现更强劲的功能</li>
+<li>将一些以前在后台开发中使用的思想带入前端开发</li>
+<li>带领当前市面上的框架走向模式化或者架构化</li>
+</ul>
+<h3 id="AngularJS-的核心特性"><a href="#AngularJS-的核心特性" class="headerlink" title="AngularJS 的核心特性"></a>AngularJS 的核心特性</h3><ul>
+<li>MVC</li>
+<li>模块化</li>
+<li>自动化双向数据绑定</li>
+<li>指令系统</li>
+</ul>
+<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
+<li><a href="http://www.apjs.net/" target="_blank" rel="external">http://www.apjs.net/</a></li>
+<li><a href="http://www.angularjs.cn/" target="_blank" rel="external">http://www.angularjs.cn/</a></li>
+<li><a href="http://docs.angularjs.cn/api" target="_blank" rel="external">http://docs.angularjs.cn/api</a></li>
+<li><a href="https://material.angularjs.org" target="_blank" rel="external">https://material.angularjs.org</a></li>
+<li><a href="http://angular-ui.github.io/" target="_blank" rel="external">http://angular-ui.github.io/</a></li>
+</ul>
+<h2 id="Angular-上手"><a href="#Angular-上手" class="headerlink" title="Angular 上手"></a>Angular 上手</h2><h3 id="安装-Angular"><a href="#安装-Angular" class="headerlink" title="安装 Angular"></a>安装 Angular</h3><ul>
+<li>下载 Angular.js 的包<ul>
+<li><a href="https://github.com/angular/angular.js/releases" target="_blank" rel="external">https://github.com/angular/angular.js/releases</a></li>
+</ul>
+</li>
+<li>使用 CDN 上的 Angular.js<ul>
+<li><a href="http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js" target="_blank" rel="external">http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js</a></li>
+</ul>
+</li>
+<li><p>使用 Bower 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bower install angular</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 NPM 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install angular</div></pre></td></tr></table></figure>
+</li>
+<li><p>每种方式安装包，本质都是将angular的库下载到当前文件夹中</p>
+</li>
+</ul>
+<h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<ul>
+<li><p>angular中最重要的概念是指令（directive）</p>
+</li>
+<li><p>ng-model 是双向数据绑定的指令，效果就是将当前元素的value属性和模型中的user.name建立绑定关系</p>
+</li>
+<li><p>JS: BOM DOM ES</p>
+</li>
+</ul>
+<h3 id="分析-Angular-示例"><a href="#分析-Angular-示例" class="headerlink" title="分析 Angular 示例"></a>分析 Angular 示例</h3><h3 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h3><h3 id="运行官方文档"><a href="#运行官方文档" class="headerlink" title="运行官方文档"></a>运行官方文档</h3><h2 id="CDN的优势"><a href="#CDN的优势" class="headerlink" title="CDN的优势"></a>CDN的优势</h2><p>Content Dev</p>
+<ul>
+<li>快</li>
+<li>节省自己服务器的带宽压力和流量</li>
+</ul>
+<h2 id="Angular-基础概念"><a href="#Angular-基础概念" class="headerlink" title="Angular 基础概念"></a>Angular 基础概念</h2><h3 id="MVC-思想"><a href="#MVC-思想" class="headerlink" title="MVC 思想"></a>MVC 思想</h3><h4 id="什么是-MVC-思想"><a href="#什么是-MVC-思想" class="headerlink" title="什么是 MVC 思想"></a>什么是 MVC 思想</h4><ul>
+<li>将应用程序的组成划分为三个部分：Model View Controller</li>
+<li>控制器的作用就是初始化模型用的；</li>
+<li>模型就是用于存储数据的</li>
+<li>视图用于展现数据</li>
+</ul>
+<ul>
+<li>登陆案例</li>
+<li>模型<ul>
+<li>我们数据库中所有用户的信息</li>
+<li>接受控制器传来的用户名和密码进行校验的业务逻辑并返回true/false</li>
+</ul>
+</li>
+<li>控制器<ul>
+<li>接受用户在界面上填写的用户名和密码</li>
+<li>将用户名和密码交给模型</li>
+</ul>
+</li>
+<li>视图<ul>
+<li>给用户呈现一个表单</li>
+<li>接受用户输入内容，并将其提交给控制器</li>
+<li>根据控制器返回的数据，响应用户页面</li>
+</ul>
+</li>
+</ul>
+<h3 id="模块（Module）"><a href="#模块（Module）" class="headerlink" title="模块（Module）"></a>模块（Module）</h3><ul>
+<li>划分应用程序结构</li>
+<li>我们可以通过angular.module创建一个模块</li>
+<li>angular.module方法传递两个参数才是创建模块，一个参数是获取模块</li>
+</ul>
+<h3 id="控制器（Controller）"><a href="#控制器（Controller）" class="headerlink" title="控制器（Controller）"></a>控制器（Controller）</h3><ul>
+<li>通过$scope和视图关联</li>
+<li></li>
+</ul>
+<h3 id="视图模型（-scope）"><a href="#视图模型（-scope）" class="headerlink" title="视图模型（$scope）"></a>视图模型（$scope）</h3><h3 id="表达式（Expression）"><a href="#表达式（Expression）" class="headerlink" title="表达式（Expression）"></a>表达式（Expression）</h3><h3 id="单向数据绑定"><a href="#单向数据绑定" class="headerlink" title="单向数据绑定"></a>单向数据绑定</h3><h3 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h3><h2 id="Angular-指令系统"><a href="#Angular-指令系统" class="headerlink" title="Angular 指令系统"></a>Angular 指令系统</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;推荐工具&quot;&gt;&lt;a href=&quot;#推荐工具&quot; class=&quot;headerlink&quot; title=&quot;推荐工具&quot;&gt;&lt;/a&gt;推荐工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;在线编辑器&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://codepen.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://codepen.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jsfiddle.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://jsfiddle.net/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Angular-简介&quot;&gt;&lt;a href=&quot;#Angular-简介&quot; class=&quot;headerlink&quot; title=&quot;Angular 简介&quot;&gt;&lt;/a&gt;Angular 简介&lt;/h2&gt;&lt;h3 id=&quot;什么是-AngularJS&quot;&gt;&lt;a href=&quot;#什么是-AngularJS&quot; class=&quot;headerlink&quot; title=&quot;什么是 AngularJS&quot;&gt;&lt;/a&gt;什么是 AngularJS&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;一款非常优秀的前端高级 JS 框架&lt;/li&gt;
+&lt;li&gt;最早由 Misko Hevery 等人创建&lt;/li&gt;
+&lt;li&gt;2009 年被 Google 公式收购，用于其多款产品&lt;/li&gt;
+&lt;li&gt;目前有一个全职的开发团队继续开发和维护这个库&lt;/li&gt;
+&lt;li&gt;有了这一类框架就可以轻松构建 SPA 应用程序&lt;/li&gt;
+&lt;li&gt;轻松构建 SPA（单一页面应用程序）&lt;/li&gt;
+&lt;li&gt;单一页面应用程序：&lt;ul&gt;
+&lt;li&gt;只有一个页面（整个应用的一个载体）&lt;/li&gt;
+&lt;li&gt;内容全部是由AJAX方式呈现出啦的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Angular" scheme="https://thawsoar.github.io/categories/Angular/"/>
+    
+    
+      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
+    
+      <category term="Angular" scheme="https://thawsoar.github.io/tags/Angular/"/>
+    
+      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
     <title>构建前端自动化工作流环境</title>
     <link href="https://thawsoar.github.io/2017/06/07/nodejs_1/"/>
     <id>https://thawsoar.github.io/2017/06/07/nodejs_1/</id>
@@ -938,158 +1142,6 @@
       <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
     
       <category term="Nodejs" scheme="https://thawsoar.github.io/tags/Nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Angular入门</title>
-    <link href="https://thawsoar.github.io/2017/06/07/angular_1/"/>
-    <id>https://thawsoar.github.io/2017/06/07/angular_1/</id>
-    <published>2017-06-06T16:00:00.000Z</published>
-    <updated>2017-06-21T04:44:15.543Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="推荐工具"><a href="#推荐工具" class="headerlink" title="推荐工具"></a>推荐工具</h2><ul>
-<li>在线编辑器<ul>
-<li><a href="http://codepen.io/" target="_blank" rel="external">http://codepen.io/</a></li>
-<li><a href="https://jsfiddle.net/" target="_blank" rel="external">https://jsfiddle.net/</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Angular-简介"><a href="#Angular-简介" class="headerlink" title="Angular 简介"></a>Angular 简介</h2><h3 id="什么是-AngularJS"><a href="#什么是-AngularJS" class="headerlink" title="什么是 AngularJS"></a>什么是 AngularJS</h3><ul>
-<li>一款非常优秀的前端高级 JS 框架</li>
-<li>最早由 Misko Hevery 等人创建</li>
-<li>2009 年被 Google 公式收购，用于其多款产品</li>
-<li>目前有一个全职的开发团队继续开发和维护这个库</li>
-<li>有了这一类框架就可以轻松构建 SPA 应用程序</li>
-<li>轻松构建 SPA（单一页面应用程序）</li>
-<li>单一页面应用程序：<ul>
-<li>只有一个页面（整个应用的一个载体）</li>
-<li>内容全部是由AJAX方式呈现出啦的</li>
-</ul>
-</li>
-<li>其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。</li>
-</ul>
-<a id="more"></a>
-<h3 id="为什么使用-AngularJS"><a href="#为什么使用-AngularJS" class="headerlink" title="为什么使用 AngularJS"></a>为什么使用 AngularJS</h3><ul>
-<li>更少的代码，实现更强劲的功能</li>
-<li>将一些以前在后台开发中使用的思想带入前端开发</li>
-<li>带领当前市面上的框架走向模式化或者架构化</li>
-</ul>
-<h3 id="AngularJS-的核心特性"><a href="#AngularJS-的核心特性" class="headerlink" title="AngularJS 的核心特性"></a>AngularJS 的核心特性</h3><ul>
-<li>MVC</li>
-<li>模块化</li>
-<li>自动化双向数据绑定</li>
-<li>指令系统</li>
-</ul>
-<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
-<li><a href="http://www.apjs.net/" target="_blank" rel="external">http://www.apjs.net/</a></li>
-<li><a href="http://www.angularjs.cn/" target="_blank" rel="external">http://www.angularjs.cn/</a></li>
-<li><a href="http://docs.angularjs.cn/api" target="_blank" rel="external">http://docs.angularjs.cn/api</a></li>
-<li><a href="https://material.angularjs.org" target="_blank" rel="external">https://material.angularjs.org</a></li>
-<li><a href="http://angular-ui.github.io/" target="_blank" rel="external">http://angular-ui.github.io/</a></li>
-</ul>
-<h2 id="Angular-上手"><a href="#Angular-上手" class="headerlink" title="Angular 上手"></a>Angular 上手</h2><h3 id="安装-Angular"><a href="#安装-Angular" class="headerlink" title="安装 Angular"></a>安装 Angular</h3><ul>
-<li>下载 Angular.js 的包<ul>
-<li><a href="https://github.com/angular/angular.js/releases" target="_blank" rel="external">https://github.com/angular/angular.js/releases</a></li>
-</ul>
-</li>
-<li>使用 CDN 上的 Angular.js<ul>
-<li><a href="http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js" target="_blank" rel="external">http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js</a></li>
-</ul>
-</li>
-<li><p>使用 Bower 安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bower install angular</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用 NPM 安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install angular</div></pre></td></tr></table></figure>
-</li>
-<li><p>每种方式安装包，本质都是将angular的库下载到当前文件夹中</p>
-</li>
-</ul>
-<h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<ul>
-<li><p>angular中最重要的概念是指令（directive）</p>
-</li>
-<li><p>ng-model 是双向数据绑定的指令，效果就是将当前元素的value属性和模型中的user.name建立绑定关系</p>
-</li>
-<li><p>JS: BOM DOM ES</p>
-</li>
-</ul>
-<h3 id="分析-Angular-示例"><a href="#分析-Angular-示例" class="headerlink" title="分析 Angular 示例"></a>分析 Angular 示例</h3><h3 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h3><h3 id="运行官方文档"><a href="#运行官方文档" class="headerlink" title="运行官方文档"></a>运行官方文档</h3><h2 id="CDN的优势"><a href="#CDN的优势" class="headerlink" title="CDN的优势"></a>CDN的优势</h2><p>Content Dev</p>
-<ul>
-<li>快</li>
-<li>节省自己服务器的带宽压力和流量</li>
-</ul>
-<h2 id="Angular-基础概念"><a href="#Angular-基础概念" class="headerlink" title="Angular 基础概念"></a>Angular 基础概念</h2><h3 id="MVC-思想"><a href="#MVC-思想" class="headerlink" title="MVC 思想"></a>MVC 思想</h3><h4 id="什么是-MVC-思想"><a href="#什么是-MVC-思想" class="headerlink" title="什么是 MVC 思想"></a>什么是 MVC 思想</h4><ul>
-<li>将应用程序的组成划分为三个部分：Model View Controller</li>
-<li>控制器的作用就是初始化模型用的；</li>
-<li>模型就是用于存储数据的</li>
-<li>视图用于展现数据</li>
-</ul>
-<ul>
-<li>登陆案例</li>
-<li>模型<ul>
-<li>我们数据库中所有用户的信息</li>
-<li>接受控制器传来的用户名和密码进行校验的业务逻辑并返回true/false</li>
-</ul>
-</li>
-<li>控制器<ul>
-<li>接受用户在界面上填写的用户名和密码</li>
-<li>将用户名和密码交给模型</li>
-</ul>
-</li>
-<li>视图<ul>
-<li>给用户呈现一个表单</li>
-<li>接受用户输入内容，并将其提交给控制器</li>
-<li>根据控制器返回的数据，响应用户页面</li>
-</ul>
-</li>
-</ul>
-<h3 id="模块（Module）"><a href="#模块（Module）" class="headerlink" title="模块（Module）"></a>模块（Module）</h3><ul>
-<li>划分应用程序结构</li>
-<li>我们可以通过angular.module创建一个模块</li>
-<li>angular.module方法传递两个参数才是创建模块，一个参数是获取模块</li>
-</ul>
-<h3 id="控制器（Controller）"><a href="#控制器（Controller）" class="headerlink" title="控制器（Controller）"></a>控制器（Controller）</h3><ul>
-<li>通过$scope和视图关联</li>
-<li></li>
-</ul>
-<h3 id="视图模型（-scope）"><a href="#视图模型（-scope）" class="headerlink" title="视图模型（$scope）"></a>视图模型（$scope）</h3><h3 id="表达式（Expression）"><a href="#表达式（Expression）" class="headerlink" title="表达式（Expression）"></a>表达式（Expression）</h3><h3 id="单向数据绑定"><a href="#单向数据绑定" class="headerlink" title="单向数据绑定"></a>单向数据绑定</h3><h3 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h3><h2 id="Angular-指令系统"><a href="#Angular-指令系统" class="headerlink" title="Angular 指令系统"></a>Angular 指令系统</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;推荐工具&quot;&gt;&lt;a href=&quot;#推荐工具&quot; class=&quot;headerlink&quot; title=&quot;推荐工具&quot;&gt;&lt;/a&gt;推荐工具&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在线编辑器&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://codepen.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://codepen.io/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://jsfiddle.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://jsfiddle.net/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Angular-简介&quot;&gt;&lt;a href=&quot;#Angular-简介&quot; class=&quot;headerlink&quot; title=&quot;Angular 简介&quot;&gt;&lt;/a&gt;Angular 简介&lt;/h2&gt;&lt;h3 id=&quot;什么是-AngularJS&quot;&gt;&lt;a href=&quot;#什么是-AngularJS&quot; class=&quot;headerlink&quot; title=&quot;什么是 AngularJS&quot;&gt;&lt;/a&gt;什么是 AngularJS&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;一款非常优秀的前端高级 JS 框架&lt;/li&gt;
-&lt;li&gt;最早由 Misko Hevery 等人创建&lt;/li&gt;
-&lt;li&gt;2009 年被 Google 公式收购，用于其多款产品&lt;/li&gt;
-&lt;li&gt;目前有一个全职的开发团队继续开发和维护这个库&lt;/li&gt;
-&lt;li&gt;有了这一类框架就可以轻松构建 SPA 应用程序&lt;/li&gt;
-&lt;li&gt;轻松构建 SPA（单一页面应用程序）&lt;/li&gt;
-&lt;li&gt;单一页面应用程序：&lt;ul&gt;
-&lt;li&gt;只有一个页面（整个应用的一个载体）&lt;/li&gt;
-&lt;li&gt;内容全部是由AJAX方式呈现出啦的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Angular" scheme="https://thawsoar.github.io/categories/Angular/"/>
-    
-    
-      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
-    
-      <category term="Angular" scheme="https://thawsoar.github.io/tags/Angular/"/>
-    
-      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
     
   </entry>
   
