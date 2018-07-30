@@ -1901,7 +1901,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d4621b;
+  background: #9e470f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2699,6 +2699,10 @@ hr {
 }
 .header {
   background: #f5f5f5;
+  background: url("http://orrscanlu.bkt.clouddn.com/flow.gif") no-repeat;
+  width: 100%;
+  background-position: center bottom;
+  background-size: 100% 130px;
 }
 .header-inner {
   padding: 25px 0 20px;
@@ -2981,6 +2985,7 @@ hr {
   padding: 10px 0;
   background: #f5f5f5;
   color: #666;
+  background: #f4f6f7;
 }
 .footer-inner {
   margin: 0 auto;
@@ -3040,7 +3045,4 @@ hr {
 }
 .post-button a:hover {
   color: #7784ba;
-}
-#live2dcanvas {
-  right: 300px !important;
 }
