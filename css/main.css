@@ -1901,7 +1901,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff6732;
+  background: #8c2b24;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3037,13 +3037,16 @@ hr {
 .post-button .btn {
   color: #fff;
   font-size: 15px;
-  background: #cfd9e3;
+  background: #00bcd4;
+  border-bottom: 1px solid #00bcd4;
   border-radius: 8px;
   line-height: 2;
   margin: 0 4px 8px 4px;
   padding: 0 20px;
   transition: all 0.6s;
 }
-.post-button a {
-  border-bottom: 1px solid #cfd9e3;
+.post-button .btn:hover {
+  background: #00acc1;
+  border-color: #00acc1;
+  color: #fff;
 }
