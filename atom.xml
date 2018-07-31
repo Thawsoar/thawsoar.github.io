@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2018-07-27T08:57:26.408Z</updated>
+  <updated>2018-07-31T09:29:33.586Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -16,56 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Facebook 經典語錄</title>
-    <link href="https://thawsoar.github.io/2018/07/27/life_facebook_quote/"/>
-    <id>https://thawsoar.github.io/2018/07/27/life_facebook_quote/</id>
-    <published>2018-07-27T08:10:58.000Z</published>
-    <updated>2018-07-27T08:57:26.408Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li><h4 id="Done-is-better-than-perfect"><a href="#Done-is-better-than-perfect" class="headerlink" title="Done is better than perfect"></a>Done is better than perfect</h4></li>
-</ul>
-<p><img style="margin: 0 auto" src="http://orrscanlu.bkt.clouddn.com/facebook_2.jpg" alt="code wins arguments"></p>
-<ul>
-<li><h4 id="Code-wins-arguments"><a href="#Code-wins-arguments" class="headerlink" title="Code wins arguments"></a>Code wins arguments</h4></li>
-</ul>
-<a id="more"></a>
-<p><img style="margin: 0 auto" src="http://orrscanlu.bkt.clouddn.com/facebook_1.jpg" alt="code wins arguments"></p>
-<ul>
-<li><h4 id="Say-focused-amp-Keep-shipping"><a href="#Say-focused-amp-Keep-shipping" class="headerlink" title="Say focused &amp; Keep shipping"></a>Say focused &amp; Keep shipping</h4></li>
-</ul>
-<p><img style="margin: 0 auto" src="http://orrscanlu.bkt.clouddn.com/facebook_3.jpg" alt="code wins arguments"></p>
-<ul>
-<li><h4 id="Move-fast-amp-Break-things"><a href="#Move-fast-amp-Break-things" class="headerlink" title="Move fast &amp; Break things"></a>Move fast &amp; Break things</h4></li>
-</ul>
-<p><img style="margin: 0 auto" src="http://orrscanlu.bkt.clouddn.com/facebook_4.jpg" alt="code wins arguments"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;Done-is-better-than-perfect&quot;&gt;&lt;a href=&quot;#Done-is-better-than-perfect&quot; class=&quot;headerlink&quot; title=&quot;Done is better than perfect&quot;&gt;&lt;/a&gt;Done is better than perfect&lt;/h4&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img style=&quot;margin: 0 auto&quot; src=&quot;http://orrscanlu.bkt.clouddn.com/facebook_2.jpg&quot; alt=&quot;code wins arguments&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;Code-wins-arguments&quot;&gt;&lt;a href=&quot;#Code-wins-arguments&quot; class=&quot;headerlink&quot; title=&quot;Code wins arguments&quot;&gt;&lt;/a&gt;Code wins arguments&lt;/h4&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="life" scheme="https://thawsoar.github.io/categories/life/"/>
-    
-    
-      <category term="life" scheme="https://thawsoar.github.io/tags/life/"/>
-    
-  </entry>
-  
-  <entry>
     <title>python 模块简要笔记</title>
-    <link href="https://thawsoar.github.io/2018/07/27/python_module/"/>
-    <id>https://thawsoar.github.io/2018/07/27/python_module/</id>
-    <published>2018-07-27T03:58:58.000Z</published>
-    <updated>2018-07-31T09:28:14.955Z</updated>
+    <link href="https://thawsoar.github.io/2018/07/31/python_module/"/>
+    <id>https://thawsoar.github.io/2018/07/31/python_module/</id>
+    <published>2018-07-31T07:29:58.000Z</published>
+    <updated>2018-07-31T09:29:33.586Z</updated>
     
     <content type="html"><![CDATA[<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="模块简要笔记"><a href="#模块简要笔记" class="headerlink" title="模块简要笔记"></a>模块简要笔记</h4><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431845183474e20ee7e7828b47f7b7607f2dc1e90dbb000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
@@ -113,6 +68,51 @@
     
     
       <category term="python" scheme="https://thawsoar.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Facebook 經典語錄</title>
+    <link href="https://thawsoar.github.io/2018/07/27/life_facebook_quote/"/>
+    <id>https://thawsoar.github.io/2018/07/27/life_facebook_quote/</id>
+    <published>2018-07-27T08:10:58.000Z</published>
+    <updated>2018-07-27T08:57:26.408Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><h4 id="Done-is-better-than-perfect"><a href="#Done-is-better-than-perfect" class="headerlink" title="Done is better than perfect"></a>Done is better than perfect</h4></li>
+</ul>
+<p><img style="margin: 0 auto" src="http://orrscanlu.bkt.clouddn.com/facebook_2.jpg" alt="code wins arguments"></p>
+<ul>
+<li><h4 id="Code-wins-arguments"><a href="#Code-wins-arguments" class="headerlink" title="Code wins arguments"></a>Code wins arguments</h4></li>
+</ul>
+<a id="more"></a>
+<p><img style="margin: 0 auto" src="http://orrscanlu.bkt.clouddn.com/facebook_1.jpg" alt="code wins arguments"></p>
+<ul>
+<li><h4 id="Say-focused-amp-Keep-shipping"><a href="#Say-focused-amp-Keep-shipping" class="headerlink" title="Say focused &amp; Keep shipping"></a>Say focused &amp; Keep shipping</h4></li>
+</ul>
+<p><img style="margin: 0 auto" src="http://orrscanlu.bkt.clouddn.com/facebook_3.jpg" alt="code wins arguments"></p>
+<ul>
+<li><h4 id="Move-fast-amp-Break-things"><a href="#Move-fast-amp-Break-things" class="headerlink" title="Move fast &amp; Break things"></a>Move fast &amp; Break things</h4></li>
+</ul>
+<p><img style="margin: 0 auto" src="http://orrscanlu.bkt.clouddn.com/facebook_4.jpg" alt="code wins arguments"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;Done-is-better-than-perfect&quot;&gt;&lt;a href=&quot;#Done-is-better-than-perfect&quot; class=&quot;headerlink&quot; title=&quot;Done is better than perfect&quot;&gt;&lt;/a&gt;Done is better than perfect&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img style=&quot;margin: 0 auto&quot; src=&quot;http://orrscanlu.bkt.clouddn.com/facebook_2.jpg&quot; alt=&quot;code wins arguments&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;Code-wins-arguments&quot;&gt;&lt;a href=&quot;#Code-wins-arguments&quot; class=&quot;headerlink&quot; title=&quot;Code wins arguments&quot;&gt;&lt;/a&gt;Code wins arguments&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="https://thawsoar.github.io/categories/life/"/>
+    
+    
+      <category term="life" scheme="https://thawsoar.github.io/tags/life/"/>
     
   </entry>
   

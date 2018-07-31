@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python 模块简要笔记]]></title>
+    <url>%2F2018%2F07%2F31%2Fpython_module%2F</url>
+    <content type="text"><![CDATA[python模块简要笔记 廖雪峰的官方网站 #####案例编写一个hello模块 新建hello.py文件 1234567891011121314151617181920#!/usr/bin/env python3 # -*- coding: utf-8 -*-'a test module !!!'__author__ = 'Tao Xiang'import sys #导入sys模块 使用sys这个变量，访问sys模块的所有功能。def test(): args = sys.argv # argv变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该.py文件的名称 if len(args)==1: print('Hello,world!') elif len(args)==2: print('Hello, $s!' %args[1]) elif: print('Too many arguments!')if __name=='__main__': test() 第1行和第2行是标准注释，第1行注释可以让这个hello.py文件直接在Unix/Linux/Mac上运行，第2行注释表示.py文件本身使用标准UTF-8编码； 第4行是一个字符串，表示模块的文档注释，任何模块代码的第一个字符串都被视为模块的文档注释 第6行使用author变量写入作者名字 12if __name__=='__main__': test() 当我们在命令行运行hello模块文件时，Python解释器把一个特殊变量name置为main，而如果在其他地方导入该hello模块时，if判断将失败，因此，这种if测试可以让一个模块通过命令行运行时执行一些额外的代码，最常见的就是运行测试。 运行文件 12345$ python3 hello.pyHello, world!$ python hello.py MichaelHello, Michael! 作用域1234567891011def _private_1(name): return 'Hello, %s' % namedef _private_2(name): return 'Hi, %s' % namedef greeting(name): if len(name) &gt; 3: return _private_1(name) else: return _private_2(name) 类似_xxx和__xxx这样的函数或变量就是非公开的（private），不应该被直接引用，比如_abc，__abc等 外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public private函数和变量“不应该”被直接引用，而不是“不能”被直接引用，是因为Python并没有一种方法可以完全限制访问private函数或变量，但是，从编程习惯上不应该引用private函数或变量]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Facebook 經典語錄]]></title>
     <url>%2F2018%2F07%2F27%2Flife_facebook_quote%2F</url>
     <content type="text"><![CDATA[Done is better than perfect Code wins arguments Say focused &amp; Keep shipping Move fast &amp; Break things]]></content>
@@ -15,17 +26,6 @@
     <title><![CDATA[python 装饰器简要笔记]]></title>
     <url>%2F2018%2F07%2F27%2Fpython_decorator%2F</url>
     <content type="text"><![CDATA[python函数式编程装饰器简要笔记 廖雪峰的官方网站 案例设计一个decorator，可作用于任何函数上，在函数调用前后自动打印日志：123456789101112131415161718import functoolsdef log(func): @functools.wraps(func) def wrapper(*args, **kw): print('call %s():' % func.__name__) return func(*args, **kw) return wrapper@log #把@log放到now()函数的定义处，相当于执行了语句： now = log(now)def now(): print('2018-7-27')now()# resultcall now():2018-7-27 log是一个decorator，接受一个函数作为参数，并返回一个函数 函数对象有一个name属性，可以拿到函数的名字 函数也是对象，它有name等属性，但你去看经过decorator装饰之后的函数，它们的name已经从原来的’now’变成了’wrapper’,因此有些依赖函数签名的代码执行就会出错，可以使用Python内置的functools.wraps解决 wrapper()函数的参数定义是(args, *kw),因此，wrapper()函数可以接受任意参数的调用。 Python的@语法，把decorator置于函数的定义处 练习请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间： 123456789101112131415161718192021222324252627import time, functoolsdef metric(fn): @functools.wraps(fn) def wrapper(*args,**kw): startTime = time.time() fn(*args,**kw) endTime = time.time() execTime = (endTime - startTime) *1000 print('%s executed in %s ms' % (fn.__name__, execTime)) return fn(*args,**kw) return wrapper# 测试@metricdef fast(x, y): time.sleep(1) return x + y;@metricdef slow(x, y, z): time.sleep(1.5) return x * y * z;f = fast(11, 22)s = slow(11, 22, 33)if f == 33 and s == 7986: print('test success!') 小结 在面向对象（OOP）的设计模式中，decorator被称为装饰模式。OOP的装饰模式需要通过继承和组合来实现，而Python除了能支持OOP的decorator外，直接从语法层次支持decorator。Python的decorator可以用函数实现，也可以用类实现。 decorator可以增强函数的功能，定义起来虽然有点复杂，但使用起来非常灵活和方便]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[python 模块简要笔记]]></title>
-    <url>%2F2018%2F07%2F27%2Fpython_module%2F</url>
-    <content type="text"><![CDATA[python模块简要笔记 廖雪峰的官方网站 #####案例编写一个hello模块 新建hello.py文件 1234567891011121314151617181920#!/usr/bin/env python3 # -*- coding: utf-8 -*-'a test module !!!'__author__ = 'Tao Xiang'import sys #导入sys模块 使用sys这个变量，访问sys模块的所有功能。def test(): args = sys.argv # argv变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该.py文件的名称 if len(args)==1: print('Hello,world!') elif len(args)==2: print('Hello, $s!' %args[1]) elif: print('Too many arguments!')if __name=='__main__': test() 第1行和第2行是标准注释，第1行注释可以让这个hello.py文件直接在Unix/Linux/Mac上运行，第2行注释表示.py文件本身使用标准UTF-8编码； 第4行是一个字符串，表示模块的文档注释，任何模块代码的第一个字符串都被视为模块的文档注释 第6行使用author变量写入作者名字 12if __name__=='__main__': test() 当我们在命令行运行hello模块文件时，Python解释器把一个特殊变量name置为main，而如果在其他地方导入该hello模块时，if判断将失败，因此，这种if测试可以让一个模块通过命令行运行时执行一些额外的代码，最常见的就是运行测试。 运行文件 12345$ python3 hello.pyHello, world!$ python hello.py MichaelHello, Michael! 作用域1234567891011def _private_1(name): return 'Hello, %s' % namedef _private_2(name): return 'Hi, %s' % namedef greeting(name): if len(name) &gt; 3: return _private_1(name) else: return _private_2(name) 类似_xxx和__xxx这样的函数或变量就是非公开的（private），不应该被直接引用，比如_abc，__abc等 外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public private函数和变量“不应该”被直接引用，而不是“不能”被直接引用，是因为Python并没有一种方法可以完全限制访问private函数或变量，但是，从编程习惯上不应该引用private函数或变量]]></content>
       <categories>
         <category>python</category>
       </categories>
