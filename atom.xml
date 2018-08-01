@@ -115,12 +115,12 @@
     <link href="https://thawsoar.github.io/2018/07/31/python_module/"/>
     <id>https://thawsoar.github.io/2018/07/31/python_module/</id>
     <published>2018-07-31T07:29:58.000Z</published>
-    <updated>2018-08-01T07:47:59.528Z</updated>
+    <updated>2018-08-01T15:32:12.257Z</updated>
     
     <content type="html"><![CDATA[<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="模块简要笔记"><a href="#模块简要笔记" class="headerlink" title="模块简要笔记"></a>模块简要笔记</h4><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431845183474e20ee7e7828b47f7b7607f2dc1e90dbb000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
 </ul>
-<p>#####案例<br>编写一个hello模块</p>
+<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5><p>编写一个hello模块</p>
 <ul>
 <li>新建hello.py文件</li>
 </ul>
@@ -142,7 +142,7 @@
 <ul>
 <li>运行文件</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">$<span class="bash"> python3 hello.py</span></div><div class="line">Hello, world!</div><div class="line"><span class="meta">$</span><span class="bash"> python hello.py Michael</span></div><div class="line">Hello, Michael!</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">$ python3 hello.py</div><div class="line">Hello, world!</div><div class="line"><span class="meta">$</span> python hello.py Michael</div><div class="line">Hello, Michael!</div></pre></td></tr></table></figure>
 <hr>
 <h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_private_1</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Hello, %s'</span> % name</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_private_2</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Hi, %s'</span> % name</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">greeting</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">if</span> len(name) &gt; <span class="number">3</span>:</div><div class="line">        <span class="keyword">return</span> _private_1(name)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> _private_2(name)</div></pre></td></tr></table></figure>
 <blockquote>
@@ -159,7 +159,7 @@
       &lt;h3 id=&quot;python&quot;&gt;&lt;a href=&quot;#python&quot; class=&quot;headerlink&quot; title=&quot;python&quot;&gt;&lt;/a&gt;python&lt;/h3&gt;&lt;h4 id=&quot;模块简要笔记&quot;&gt;&lt;a href=&quot;#模块简要笔记&quot; class=&quot;headerlink&quot; title=&quot;模块简要笔记&quot;&gt;&lt;/a&gt;模块简要笔记&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431845183474e20ee7e7828b47f7b7607f2dc1e90dbb000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;#####案例&lt;br&gt;编写一个hello模块&lt;/p&gt;
+&lt;h5 id=&quot;案例&quot;&gt;&lt;a href=&quot;#案例&quot; class=&quot;headerlink&quot; title=&quot;案例&quot;&gt;&lt;/a&gt;案例&lt;/h5&gt;&lt;p&gt;编写一个hello模块&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;新建hello.py文件&lt;/li&gt;
 &lt;/ul&gt;
@@ -988,10 +988,10 @@
   
   <entry>
     <title>Git</title>
-    <link href="https://thawsoar.github.io/2017/06/07/git-1/"/>
-    <id>https://thawsoar.github.io/2017/06/07/git-1/</id>
+    <link href="https://thawsoar.github.io/2017/06/07/git_1/"/>
+    <id>https://thawsoar.github.io/2017/06/07/git_1/</id>
     <published>2017-06-06T16:00:00.000Z</published>
-    <updated>2017-06-21T04:50:57.637Z</updated>
+    <updated>2017-06-21T04:44:26.566Z</updated>
     
     <content type="html"><![CDATA[<h2 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h2><h3 id="什么是GIT"><a href="#什么是GIT" class="headerlink" title="什么是GIT"></a>什么是GIT</h3><ul>
 <li>是一个源代码管理工具</li>
@@ -1373,244 +1373,6 @@
       <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
     
       <category term="Angular" scheme="https://thawsoar.github.io/tags/Angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git</title>
-    <link href="https://thawsoar.github.io/2017/06/07/git_1/"/>
-    <id>https://thawsoar.github.io/2017/06/07/git_1/</id>
-    <published>2017-06-06T16:00:00.000Z</published>
-    <updated>2017-06-21T04:44:26.566Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h2><h3 id="什么是GIT"><a href="#什么是GIT" class="headerlink" title="什么是GIT"></a>什么是GIT</h3><ul>
-<li>是一个源代码管理工具</li>
-<li>在一个项目中，凡是由开发人员编写的都算是源代码</li>
-<li>源代码有必要管理起来？</li>
-<li>让源代码可以被追溯，主要记录每次变更了什么，谁主导这次变化</li>
-<li>人为的维护比较麻烦，</li>
-<li>GIT是Linux之父当年为了维护管理Linux的源代码写的一个工具</li>
-<li>Git 之前 很多使用 svn vss tfs hs ……</li>
-</ul>
-<ul>
-<li><a href="https://guides.github.com/" target="_blank" rel="external">https://guides.github.com/</a></li>
-</ul>
-<a id="more"></a>
-<h3 id="安装GIT"><a href="#安装GIT" class="headerlink" title="安装GIT"></a>安装GIT</h3><ul>
-<li>git命令行工具</li>
-<li>基于git命令行的一个客户端软件（提供一个界面去管理源代码）</li>
-</ul>
-<h3 id="GIT命令操作"><a href="#GIT命令操作" class="headerlink" title="GIT命令操作"></a>GIT命令操作</h3><h4 id="查看、添加、提交、删除、找回，重置修改文件"><a href="#查看、添加、提交、删除、找回，重置修改文件" class="headerlink" title="查看、添加、提交、删除、找回，重置修改文件"></a>查看、添加、提交、删除、找回，重置修改文件</h4><ul>
-<li><p>git help <command> # 显示command的help</p>
-</li>
-<li><p>git show # 显示某次提交的内容 git show $id</p>
-</li>
-<li><p>git co – <file> # 抛弃工作区修改</file></p>
-</li>
-<li><p>git co . # 抛弃工作区修改</p>
-</li>
-<li><p>git add <file> # 将工作文件修改提交到本地暂存区</file></p>
-</li>
-<li><p>git add . # 将所有修改过的工作文件提交暂存区</p>
-</li>
-<li><p>git rm <file> # 从版本库中删除文件</file></p>
-</li>
-<li><p>git rm <file> –cached # 从版本库中删除文件，但不删除文件</file></p>
-</li>
-<li><p>git reset <file> # 从暂存区恢复到工作文件</file></p>
-</li>
-<li><p>git reset – . # 从暂存区恢复到工作文件</p>
-</li>
-<li><p>git reset –hard # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</p>
-</li>
-<li><p>git ci <file> git ci . git ci -a # 将git add, git rm和git ci等操作都合并在一起做
-　　　</file></p>
-</li>
-<li><p>git - ci -am “some comments”</p>
-</li>
-<li><p>git ci –amend # 修改最后一次提交记录</p>
-</li>
-<li><p>git revert &lt;$id&gt; # 恢复某次提交的状态，恢复动作本身也创建次提交对象</p>
-</li>
-<li><p>git revert HEAD # 恢复最后一次提交的状态</p>
-</li>
-</ul>
-<h4 id="查看文件diff"><a href="#查看文件diff" class="headerlink" title="查看文件diff"></a>查看文件diff</h4><ul>
-<li><p>git diff <file> # 比较当前文件和暂存区文件差异 git diff</file></p>
-</li>
-<li><p>git diff <id1><id1><id2> # 比较两次提交之间的差异</id2></id1></id1></p>
-</li>
-<li><p>git diff <branch1>..<branch2> # 在两个分支之间比较</branch2></branch1></p>
-</li>
-<li><p>git diff –staged # 比较暂存区和版本库差异</p>
-</li>
-<li><p>git diff –cached # 比较暂存区和版本库差异</p>
-</li>
-<li><p>git diff –stat # 仅仅比较统计信息</p>
-</li>
-</ul>
-<h4 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h4><ul>
-<li><p>git log git log <file> # 查看该文件每次提交记录</file></p>
-</li>
-<li><p>git log -p <file> # 查看每次详细修改内容的diff</file></p>
-</li>
-<li><p>git log -p -2 # 查看最近两次详细修改内容的diff</p>
-</li>
-<li><p>git log –stat #查看提交统计信息</p>
-</li>
-</ul>
-<h4 id="tig"><a href="#tig" class="headerlink" title="tig"></a>tig</h4><ul>
-<li>Mac上可以使用tig代替diff和log，brew install tig</li>
-</ul>
-<h3 id="Git-本地分支管理"><a href="#Git-本地分支管理" class="headerlink" title="Git 本地分支管理"></a>Git 本地分支管理</h3><h4 id="查看、切换、创建和删除分支"><a href="#查看、切换、创建和删除分支" class="headerlink" title="查看、切换、创建和删除分支"></a>查看、切换、创建和删除分支</h4><ul>
-<li><p>git br -r # 查看远程分支</p>
-</li>
-<li><p>git br <new_branch> # 创建新的分支</new_branch></p>
-</li>
-<li><p>git br -v # 查看各个分支最后提交信息</p>
-</li>
-<li><p>git br –merged # 查看已经被合并到当前分支的分支</p>
-</li>
-<li><p>git br –no-merged # 查看尚未被合并到当前分支的分支</p>
-</li>
-<li><p>git co <branch> # 切换到某个分支</branch></p>
-</li>
-<li><p>git co -b <new_branch> # 创建新的分支，并且切换过去</new_branch></p>
-</li>
-<li><p>git co -b <new_branch> <branch> # 基于branch创建新的new_branch</branch></new_branch></p>
-</li>
-<li><p>git co $id # 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除</p>
-</li>
-<li><p>git co $id -b <new_branch> # 把某次历史提交记录checkout出来，创建成一个分支</new_branch></p>
-</li>
-<li><p>git br -d <branch> # 删除某个分支</branch></p>
-</li>
-<li><p>git br -D <branch> # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)</branch></p>
-</li>
-</ul>
-<h4 id="分支合并和rebase"><a href="#分支合并和rebase" class="headerlink" title="分支合并和rebase"></a>分支合并和rebase</h4><ul>
-<li><p>git merge <branch> # 将branch分支合并到当前分支</branch></p>
-</li>
-<li><p>git merge origin/master –no-ff # 不要Fast-Foward合并，这样可以生成merge提交</p>
-</li>
-<li><p>git rebase master <branch> # 将master rebase到branch，相当于： git co <branch> &amp;&amp; git rebase master &amp;&amp; git co master &amp;&amp; git merge <branch></branch></branch></branch></p>
-</li>
-</ul>
-<h4 id="Git补丁管理-方便在多台机器上开发同步时用"><a href="#Git补丁管理-方便在多台机器上开发同步时用" class="headerlink" title="Git补丁管理(方便在多台机器上开发同步时用)"></a>Git补丁管理(方便在多台机器上开发同步时用)</h4><ul>
-<li><p>git diff &gt; ../sync.patch # 生成补丁</p>
-</li>
-<li><p>git apply ../sync.patch # 打补丁</p>
-</li>
-<li><p>git apply –check ../sync.patch #测试补丁能否成功</p>
-</li>
-</ul>
-<h4 id="Git暂存管理"><a href="#Git暂存管理" class="headerlink" title="Git暂存管理"></a>Git暂存管理</h4><ul>
-<li><p>git stash # 暂存</p>
-</li>
-<li><p>git stash list # 列所有stash</p>
-</li>
-<li><p>git stash apply # 恢复暂存的内容</p>
-</li>
-<li><p>git stash drop # 删除暂存区</p>
-</li>
-</ul>
-<h3 id="Git远程分支管理"><a href="#Git远程分支管理" class="headerlink" title="Git远程分支管理"></a>Git远程分支管理</h3><ul>
-<li><p>git pull # 抓取远程仓库所有分支更新并合并到本地</p>
-</li>
-<li><p>git pull –no-ff # 抓取远程仓库所有分支更新并合并到本地，不要快进合并</p>
-</li>
-<li><p>git fetch origin # 抓取远程仓库更新</p>
-</li>
-<li><p>git merge origin/master # 将远程主分支合并到本地当前分支</p>
-</li>
-<li><p>git co –track origin/branch # 跟踪某个远程分支创建相应的本地分支</p>
-</li>
-<li><p>git co -b <local_branch> origin/<remote_branch> #基于远程分支创建本地分支，功能同上</remote_branch></local_branch></p>
-</li>
-<li><p>git push # push所有分支</p>
-</li>
-<li><p>git push origin master # 将本地主分支推到远程主分支</p>
-</li>
-<li><p>git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)</p>
-</li>
-<li><p>git push origin <local_branch> # 创建远程分支， origin是远程仓库名</local_branch></p>
-</li>
-<li><p>git push origin <local_branch>:<remote_branch> # 创建远程分支</remote_branch></local_branch></p>
-</li>
-<li><p>git push origin :<remote_branch> #先删除本地分支(git br -d <branch>)，然后再push删除远程分支</branch></remote_branch></p>
-</li>
-</ul>
-<h4 id="Git远程仓库管理"><a href="#Git远程仓库管理" class="headerlink" title="Git远程仓库管理"></a>Git远程仓库管理</h4><p>[GitHub][github.com/thawsoar]</p>
-<ul>
-<li><p>git remote -v # 查看远程服务器地址和仓库名称</p>
-</li>
-<li><p>git remote show origin # 查看远程服务器仓库状态</p>
-</li>
-<li><p>git remote add origin git@ github:robbin/robbin_site.git # 添加远程仓库地址</p>
-</li>
-<li><p>git remote set-url origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址(用于修改远程仓库地址) git remote rm <repository> # 删除远程仓库</repository></p>
-</li>
-</ul>
-<h4 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h4><ul>
-<li><p>git clone –bare robbin_site robbin_site.git # 用带版本的项目创建纯版本仓库</p>
-</li>
-<li><p>scp -r my_project.git git@ git.csdn.net:~ # 将纯仓库上传到服务器上</p>
-</li>
-<li><p>mkdir robbin_site.git &amp;&amp; cd robbin_site.git &amp;&amp; git –bare init # 在服务器创建纯仓库</p>
-</li>
-<li><p>git remote add origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址</p>
-</li>
-<li><p>git push -u origin master # 客户端首次提交</p>
-</li>
-<li><p>git push -u origin develop # 首次将本地develop分支提交到远程develop分支，并且track</p>
-</li>
-<li><p>git remote set-head origin master # 设置远程仓库的HEAD指向master分支</p>
-</li>
-</ul>
-<p>也可以命令设置跟踪远程库和本地库</p>
-<ul>
-<li><p>git branch –set-upstream master origin/master</p>
-</li>
-<li><p>git branch –set-upstream develop origin/develop</p>
-</li>
-</ul>
-<h3 id="GITHUB基本使用"><a href="#GITHUB基本使用" class="headerlink" title="GITHUB基本使用"></a>GITHUB基本使用</h3><ul>
-<li><a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></li>
-<li>GITHUB是一个GIT服务的提供商，</li>
-<li></li>
-<li>提出社交化编程</li>
-</ul>
-<p><a href="http://zoomzhao.github.io/code-guide/" target="_blank" rel="external">http://zoomzhao.github.io/code-guide/</a><br><a href="https://github.com/jobbole/awesome-javascript-cn" target="_blank" rel="external">https://github.com/jobbole/awesome-javascript-cn</a><br><a href="https://github.com/jobbole/awesome-css-cn" target="_blank" rel="external">https://github.com/jobbole/awesome-css-cn</a></p>
-<ul>
-<li>GIT分支</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;GIT&quot;&gt;&lt;a href=&quot;#GIT&quot; class=&quot;headerlink&quot; title=&quot;GIT&quot;&gt;&lt;/a&gt;GIT&lt;/h2&gt;&lt;h3 id=&quot;什么是GIT&quot;&gt;&lt;a href=&quot;#什么是GIT&quot; class=&quot;headerlink&quot; title=&quot;什么是GIT&quot;&gt;&lt;/a&gt;什么是GIT&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;是一个源代码管理工具&lt;/li&gt;
-&lt;li&gt;在一个项目中，凡是由开发人员编写的都算是源代码&lt;/li&gt;
-&lt;li&gt;源代码有必要管理起来？&lt;/li&gt;
-&lt;li&gt;让源代码可以被追溯，主要记录每次变更了什么，谁主导这次变化&lt;/li&gt;
-&lt;li&gt;人为的维护比较麻烦，&lt;/li&gt;
-&lt;li&gt;GIT是Linux之父当年为了维护管理Linux的源代码写的一个工具&lt;/li&gt;
-&lt;li&gt;Git 之前 很多使用 svn vss tfs hs ……&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://guides.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://guides.github.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Git" scheme="https://thawsoar.github.io/categories/Git/"/>
-    
-    
-      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
-    
-      <category term="git" scheme="https://thawsoar.github.io/tags/git/"/>
-    
-      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
     
   </entry>
   

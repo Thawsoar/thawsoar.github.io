@@ -106,17 +106,17 @@
 
 
 
-<meta name="description" content="python模块简要笔记 廖雪峰的官方网站  #####案例编写一个hello模块  新建hello.py文件  1234567891011121314151617181920#!/usr/bin/env python3 # -*- coding: utf-8 -*-&apos;a test module !!!&apos;__author__ = &apos;Tao Xiang&apos;import sys  #导入sys模块 使用">
+<meta name="description" content="python模块简要笔记 廖雪峰的官方网站  案例编写一个hello模块  新建hello.py文件  1234567891011121314151617181920#!/usr/bin/env python3 # -*- coding: utf-8 -*-&apos;a test module !!!&apos;__author__ = &apos;Tao Xiang&apos;import sys  #导入sys模块 使用sys这个">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 模块简要笔记">
 <meta property="og:url" content="https://thawsoar.github.io/2018/07/31/python_module/index.html">
 <meta property="og:site_name" content="A Person&#39;s Blog">
-<meta property="og:description" content="python模块简要笔记 廖雪峰的官方网站  #####案例编写一个hello模块  新建hello.py文件  1234567891011121314151617181920#!/usr/bin/env python3 # -*- coding: utf-8 -*-&apos;a test module !!!&apos;__author__ = &apos;Tao Xiang&apos;import sys  #导入sys模块 使用">
-<meta property="og:updated_time" content="2018-08-01T07:47:59.528Z">
+<meta property="og:description" content="python模块简要笔记 廖雪峰的官方网站  案例编写一个hello模块  新建hello.py文件  1234567891011121314151617181920#!/usr/bin/env python3 # -*- coding: utf-8 -*-&apos;a test module !!!&apos;__author__ = &apos;Tao Xiang&apos;import sys  #导入sys模块 使用sys这个">
+<meta property="og:updated_time" content="2018-08-01T15:32:12.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 模块简要笔记">
-<meta name="twitter:description" content="python模块简要笔记 廖雪峰的官方网站  #####案例编写一个hello模块  新建hello.py文件  1234567891011121314151617181920#!/usr/bin/env python3 # -*- coding: utf-8 -*-&apos;a test module !!!&apos;__author__ = &apos;Tao Xiang&apos;import sys  #导入sys模块 使用">
+<meta name="twitter:description" content="python模块简要笔记 廖雪峰的官方网站  案例编写一个hello模块  新建hello.py文件  1234567891011121314151617181920#!/usr/bin/env python3 # -*- coding: utf-8 -*-&apos;a test module !!!&apos;__author__ = &apos;Tao Xiang&apos;import sys  #导入sys模块 使用sys这个">
 
 
 
@@ -485,7 +485,7 @@
         <h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="模块简要笔记"><a href="#模块简要笔记" class="headerlink" title="模块简要笔记"></a>模块简要笔记</h4><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431845183474e20ee7e7828b47f7b7607f2dc1e90dbb000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
 </ul>
-<p>#####案例<br>编写一个hello模块</p>
+<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5><p>编写一个hello模块</p>
 <ul>
 <li>新建hello.py文件</li>
 </ul>
@@ -507,7 +507,7 @@
 <ul>
 <li>运行文件</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">$<span class="bash"> python3 hello.py</span></div><div class="line">Hello, world!</div><div class="line"><span class="meta">$</span><span class="bash"> python hello.py Michael</span></div><div class="line">Hello, Michael!</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">$ python3 hello.py</div><div class="line">Hello, world!</div><div class="line"><span class="meta">$</span> python hello.py Michael</div><div class="line">Hello, Michael!</div></pre></td></tr></table></figure>
 <hr>
 <h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_private_1</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Hello, %s'</span> % name</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">_private_2</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">'Hi, %s'</span> % name</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">greeting</span><span class="params">(name)</span>:</span></div><div class="line">    <span class="keyword">if</span> len(name) &gt; <span class="number">3</span>:</div><div class="line">        <span class="keyword">return</span> _private_1(name)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">return</span> _private_2(name)</div></pre></td></tr></table></figure>
 <blockquote>
@@ -711,7 +711,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -839,7 +839,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#python"><span class="nav-number">1.</span> <span class="nav-text">python</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模块简要笔记"><span class="nav-number">1.1.</span> <span class="nav-text">模块简要笔记</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">1.2.</span> <span class="nav-text">作用域</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#python"><span class="nav-number">1.</span> <span class="nav-text">python</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模块简要笔记"><span class="nav-number">1.1.</span> <span class="nav-text">模块简要笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#案例"><span class="nav-number">1.1.1.</span> <span class="nav-text">案例</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">1.2.</span> <span class="nav-text">作用域</span></a></li></ol></li></ol></div>
             
 
           </div>
