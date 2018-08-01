@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2018-07-31T09:29:33.586Z</updated>
+  <updated>2018-08-01T09:31:21.058Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -16,11 +16,110 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python面向对象程序设计简要笔记</title>
+    <link href="https://thawsoar.github.io/2018/08/01/python_oop/"/>
+    <id>https://thawsoar.github.io/2018/08/01/python_oop/</id>
+    <published>2018-08-01T07:28:58.000Z</published>
+    <updated>2018-08-01T09:31:21.058Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://orrscanlu.bkt.clouddn.com/oop.png" alt="python_oop"></p>
+<ul>
+<li>面向对象编程——Object Oriented Programming，简称OOP，是一种程序设计思想。</li>
+<li>OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</li>
+<li>面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。</li>
+<li><p>面向过程把函数继续切分为子函数，即把大块函数通过切割成小块函数来降低系统的复杂度。</p>
+</li>
+<li><p>而面向对象的程序设计把计算机程序视为一组对象的集合，而每个对象都可以接收其他对象发过来的消息，并处理这些消息，计算机程序的执行就是一系列消息在各个对象之间传递。</p>
+</li>
+<li><p>在Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的类（Class）的概念。</p>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="oop简要笔记"><a href="#oop简要笔记" class="headerlink" title="oop简要笔记"></a>oop简要笔记</h4><ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318645694388f1f10473d7f416e9291616be8367ab5000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
+</ul>
+<p>####类和实例 以及 访问限制</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/env python3</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"><span class="string">'oop'</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span> </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, score)</span>:</span></div><div class="line">        self.__name = name </div><div class="line">        <span class="comment">#在Python中，实例的变量名如果以__开头，就变成了一个私有变量（private</span></div><div class="line">        <span class="comment">#只有内部可以访问，外部不能访问</span></div><div class="line">        self.score = score</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_name</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.__name</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_name</span><span class="params">(self, name)</span>:</span></div><div class="line">        self.__name = name</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_score</span><span class="params">(self, age)</span>:</span></div><div class="line">        print(<span class="string">'name:%s\nscore:%s\nage:%s'</span> % (self.__name, self.score, age))</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_grade</span><span class="params">(self)</span>:</span></div><div class="line">            <span class="keyword">if</span> self.score &gt;= <span class="number">90</span>:</div><div class="line">                <span class="keyword">return</span> <span class="string">'A'</span></div><div class="line">            <span class="keyword">elif</span> self.score &gt;= <span class="number">60</span>:</div><div class="line">                <span class="keyword">return</span> <span class="string">'B'</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">return</span> <span class="string">'C'</span></div><div class="line">lisa = Student(<span class="string">'lisa'</span>, <span class="number">22</span>)</div><div class="line">lisa.print_score(<span class="number">12</span>)</div><div class="line">print(lisa.get_grade())</div><div class="line">lisa.score = <span class="number">99</span></div><div class="line">print(lisa.score)</div><div class="line">print(lisa.__name)  <span class="comment">#&gt;&gt;&gt; error</span></div><div class="line"><span class="comment">#不能直接访问__name是因为Python解释器对外把__name变量改成了_Student__name，</span></div><div class="line"><span class="comment">#所以，仍然可以通过_Student__name来访问__name变量</span></div><div class="line">print(lisa._Student__name)</div><div class="line"></div><div class="line">lias.__name = <span class="string">'lili'</span> </div><div class="line"><span class="comment">#&gt;&gt;&gt; 'lili'  </span></div><div class="line"><span class="comment">#外部代码似乎“成功”地设置了__name变量，但实际上这个__name变量和class内部的__name变量不是一个变量！</span></div><div class="line"><span class="comment">#内部的__name变量已经被Python解释器自动改成了_Student__name，而外部代码给lisa新增了一个__name变量。</span></div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><p>类是创建实例的模板，而实例则是一个一个具体的对象，各个实例拥有的数据都互相独立，互不影响；</p>
+</li>
+<li><p>方法就是与实例绑定的函数，和普通函数不同，方法可以直接访问实例的数据；</p>
+</li>
+<li><p>通过在实例上调用方法，我们就直接操作了对象内部的数据，但无需知道方法内部的实现细节。</p>
+</li>
+<li><p>和静态语言不同，Python允许对实例变量绑定任何数据，也就是说，对于两个实例变量，虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<p>####继承与多态<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span><span class="params">(object)</span>:</span>   <span class="comment">#定义一个class的时候，实际上就定义了一种数据类型</span></div><div class="line">    <span class="comment">#新的class称为子类（Subclass）</span></div><div class="line">    <span class="comment">#而被继承的class称为基类、父类或超类（Base class、Super class）</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Animal is running...'</span>)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span><span class="params">(Animal)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span><span class="params">(Animal)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Cat is running...'</span>)</div><div class="line"></div><div class="line"></div><div class="line">dog = Dog()</div><div class="line">dog.run()  <span class="comment">#&gt;&gt;&gt; Animal is running...</span></div><div class="line"></div><div class="line">cat = Cat()</div><div class="line">cat.run()  <span class="comment">#&gt;&gt;&gt; Cat is running...</span></div><div class="line"></div><div class="line">isinstance(dog, Dog) <span class="comment">#&gt;&gt;&gt; True </span></div><div class="line">isinstance(dog, Animal) <span class="comment">#&gt;&gt;&gt; True</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>继承可以把父类的所有功能都直接拿过来，这样就不必重零做起，</li>
+<li>子类只需要新增自己特有的方法，也可以把父类不适合的方法覆盖重写。这就是多态</li>
+<li>在继承关系中，如果一个实例的数据类型是某个子类，那它的数据类型也可以被看做是父类。但是，反过来就不行</li>
+</ul>
+</blockquote>
+<p>####理解多态的好处</p>
+<p>接上定义一个函数：接收一个自定义数据类型变量,即 Animal || Dog || Cat作为参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_twice</span><span class="params">(animal)</span>:</span></div><div class="line">    animal.run()</div><div class="line">    animal.run()</div><div class="line"></div><div class="line">run_twice(Animal())</div><div class="line"><span class="comment">#&gt;&gt;&gt;Animal is running...</span></div><div class="line"><span class="comment">#&gt;&gt;&gt;Animal is running..</span></div><div class="line">run_twice(Dog())</div><div class="line"><span class="comment">#&gt;&gt;&gt; Dog is running...</span></div><div class="line"><span class="comment">#&gt;&gt;&gt; Dog is running...</span></div></pre></td></tr></table></figure></p>
+<p>新增一个Animal的子类，不必对run_twice()做任何修改，实际上，任何依赖Animal作为参数的函数或者方法都可以不加修改地正常运行，原因就在于多态<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tortoise</span><span class="params">(Animal)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'Tortoise is running slowly...'</span>)</div><div class="line">run_twice(Tortoise())</div><div class="line"><span class="comment">#&gt;&gt;&gt; Tortoise is running slowly...</span></div><div class="line"><span class="comment">#&gt;&gt;&gt; Tortoise is running slowly...</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li><p>多态的好处就是，当我们需要传入Dog、Cat、Tortoise……时，我们只需要接收Animal类型就可以了，因为Dog、Cat、Tortoise……都是Animal类型，然后，按照Animal类型进行操作即可。由于Animal类型有run()方法，因此，传入的任意类型，只要是Animal类或者子类，就会自动调用实际类型的run()方法，这就是多态的意思：</p>
+</li>
+<li><p>调用方只管调用，不管细节，而当我们新增一种Animal的子类时，只要确保run()方法编写正确，不用管原来的代码是如何调用的。这就是著名的“开闭”原则：</p>
+</li>
+<li><p><em>对扩展开放：允许新增Animal子类；</em></p>
+</li>
+<li><p><em>对修改封闭：不需要修改依赖Animal类型的run_twice()等函数。</em></p>
+</li>
+</ul>
+</blockquote>
+<p>####鸭子类型</p>
+<blockquote>
+<p>######即不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
+</blockquote>
+<ul>
+<li><p>对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
+</li>
+<li><p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了</p>
+</li>
+<li><p>动态语言的鸭子类型特点决定了继承不像静态语言那样是必须的。</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://orrscanlu.bkt.clouddn.com/oop.png&quot; alt=&quot;python_oop&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;面向对象编程——Object Oriented Programming，简称OOP，是一种程序设计思想。&lt;/li&gt;
+&lt;li&gt;OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。&lt;/li&gt;
+&lt;li&gt;面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;面向过程把函数继续切分为子函数，即把大块函数通过切割成小块函数来降低系统的复杂度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;而面向对象的程序设计把计算机程序视为一组对象的集合，而每个对象都可以接收其他对象发过来的消息，并处理这些消息，计算机程序的执行就是一系列消息在各个对象之间传递。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的类（Class）的概念。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="https://thawsoar.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://thawsoar.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python 模块简要笔记</title>
     <link href="https://thawsoar.github.io/2018/07/31/python_module/"/>
     <id>https://thawsoar.github.io/2018/07/31/python_module/</id>
     <published>2018-07-31T07:29:58.000Z</published>
-    <updated>2018-07-31T09:29:33.586Z</updated>
+    <updated>2018-08-01T07:47:59.528Z</updated>
     
     <content type="html"><![CDATA[<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="模块简要笔记"><a href="#模块简要笔记" class="headerlink" title="模块简要笔记"></a>模块简要笔记</h4><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431845183474e20ee7e7828b47f7b7607f2dc1e90dbb000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
@@ -37,6 +136,7 @@
 <li>第6行使用<strong>author</strong>变量写入作者名字</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">    test()</div></pre></td></tr></table></figure>
 <blockquote>
 <ul>
@@ -60,7 +160,21 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;python&quot;&gt;&lt;a href=&quot;#python&quot; class=&quot;headerlink&quot; title=&quot;python&quot;&gt;&lt;/a&gt;python&lt;/h3&gt;&lt;h4 id=&quot;模块简要笔记&quot;&gt;&lt;a href=&quot;#模块简要笔记&quot; class=&quot;headerlink&quot; titl
+      &lt;h3 id=&quot;python&quot;&gt;&lt;a href=&quot;#python&quot; class=&quot;headerlink&quot; title=&quot;python&quot;&gt;&lt;/a&gt;python&lt;/h3&gt;&lt;h4 id=&quot;模块简要笔记&quot;&gt;&lt;a href=&quot;#模块简要笔记&quot; class=&quot;headerlink&quot; title=&quot;模块简要笔记&quot;&gt;&lt;/a&gt;模块简要笔记&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431845183474e20ee7e7828b47f7b7607f2dc1e90dbb000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;#####案例&lt;br&gt;编写一个hello模块&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新建hello.py文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#!/usr/bin/env python3 &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# -*- coding: utf-8 -*-&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;a test module !!!&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__author__ = &lt;span class=&quot;string&quot;&gt;&#39;Tao Xiang&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; sys  &lt;span class=&quot;comment&quot;&gt;#导入sys模块 使用sys这个变量，访问sys模块的所有功能。&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    args = sys.argv  &lt;span class=&quot;comment&quot;&gt;# argv变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该.py文件的名称&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; len(args)==&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;Hello,world!&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;elif&lt;/span&gt; len(args)==&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;Hello, $s!&#39;&lt;/span&gt; %args[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;])&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;elif&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;Too many arguments!&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; __name==&lt;span class=&quot;string&quot;&gt;&#39;__main__&#39;&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;第1行和第2行是标准注释，第1行注释可以让这个hello.py文件直接在Unix/Linux/Mac上运行，第2行注释表示.py文件本身使用标准UTF-8编码；&lt;/li&gt;
+&lt;li&gt;第4行是一个字符串，表示模块的文档注释，任何模块代码的第一个字符串都被视为模块的文档注释&lt;/li&gt;
+&lt;li&gt;第6行使用&lt;strong&gt;author&lt;/strong&gt;变量写入作者名字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -878,396 +992,6 @@
   
   <entry>
     <title>Git</title>
-    <link href="https://thawsoar.github.io/2017/06/07/git_1/"/>
-    <id>https://thawsoar.github.io/2017/06/07/git_1/</id>
-    <published>2017-06-06T16:00:00.000Z</published>
-    <updated>2017-06-21T04:44:26.566Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h2><h3 id="什么是GIT"><a href="#什么是GIT" class="headerlink" title="什么是GIT"></a>什么是GIT</h3><ul>
-<li>是一个源代码管理工具</li>
-<li>在一个项目中，凡是由开发人员编写的都算是源代码</li>
-<li>源代码有必要管理起来？</li>
-<li>让源代码可以被追溯，主要记录每次变更了什么，谁主导这次变化</li>
-<li>人为的维护比较麻烦，</li>
-<li>GIT是Linux之父当年为了维护管理Linux的源代码写的一个工具</li>
-<li>Git 之前 很多使用 svn vss tfs hs ……</li>
-</ul>
-<ul>
-<li><a href="https://guides.github.com/" target="_blank" rel="external">https://guides.github.com/</a></li>
-</ul>
-<a id="more"></a>
-<h3 id="安装GIT"><a href="#安装GIT" class="headerlink" title="安装GIT"></a>安装GIT</h3><ul>
-<li>git命令行工具</li>
-<li>基于git命令行的一个客户端软件（提供一个界面去管理源代码）</li>
-</ul>
-<h3 id="GIT命令操作"><a href="#GIT命令操作" class="headerlink" title="GIT命令操作"></a>GIT命令操作</h3><h4 id="查看、添加、提交、删除、找回，重置修改文件"><a href="#查看、添加、提交、删除、找回，重置修改文件" class="headerlink" title="查看、添加、提交、删除、找回，重置修改文件"></a>查看、添加、提交、删除、找回，重置修改文件</h4><ul>
-<li><p>git help <command> # 显示command的help</p>
-</li>
-<li><p>git show # 显示某次提交的内容 git show $id</p>
-</li>
-<li><p>git co – <file> # 抛弃工作区修改</file></p>
-</li>
-<li><p>git co . # 抛弃工作区修改</p>
-</li>
-<li><p>git add <file> # 将工作文件修改提交到本地暂存区</file></p>
-</li>
-<li><p>git add . # 将所有修改过的工作文件提交暂存区</p>
-</li>
-<li><p>git rm <file> # 从版本库中删除文件</file></p>
-</li>
-<li><p>git rm <file> –cached # 从版本库中删除文件，但不删除文件</file></p>
-</li>
-<li><p>git reset <file> # 从暂存区恢复到工作文件</file></p>
-</li>
-<li><p>git reset – . # 从暂存区恢复到工作文件</p>
-</li>
-<li><p>git reset –hard # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</p>
-</li>
-<li><p>git ci <file> git ci . git ci -a # 将git add, git rm和git ci等操作都合并在一起做
-　　　</file></p>
-</li>
-<li><p>git - ci -am “some comments”</p>
-</li>
-<li><p>git ci –amend # 修改最后一次提交记录</p>
-</li>
-<li><p>git revert &lt;$id&gt; # 恢复某次提交的状态，恢复动作本身也创建次提交对象</p>
-</li>
-<li><p>git revert HEAD # 恢复最后一次提交的状态</p>
-</li>
-</ul>
-<h4 id="查看文件diff"><a href="#查看文件diff" class="headerlink" title="查看文件diff"></a>查看文件diff</h4><ul>
-<li><p>git diff <file> # 比较当前文件和暂存区文件差异 git diff</file></p>
-</li>
-<li><p>git diff <id1><id1><id2> # 比较两次提交之间的差异</id2></id1></id1></p>
-</li>
-<li><p>git diff <branch1>..<branch2> # 在两个分支之间比较</branch2></branch1></p>
-</li>
-<li><p>git diff –staged # 比较暂存区和版本库差异</p>
-</li>
-<li><p>git diff –cached # 比较暂存区和版本库差异</p>
-</li>
-<li><p>git diff –stat # 仅仅比较统计信息</p>
-</li>
-</ul>
-<h4 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h4><ul>
-<li><p>git log git log <file> # 查看该文件每次提交记录</file></p>
-</li>
-<li><p>git log -p <file> # 查看每次详细修改内容的diff</file></p>
-</li>
-<li><p>git log -p -2 # 查看最近两次详细修改内容的diff</p>
-</li>
-<li><p>git log –stat #查看提交统计信息</p>
-</li>
-</ul>
-<h4 id="tig"><a href="#tig" class="headerlink" title="tig"></a>tig</h4><ul>
-<li>Mac上可以使用tig代替diff和log，brew install tig</li>
-</ul>
-<h3 id="Git-本地分支管理"><a href="#Git-本地分支管理" class="headerlink" title="Git 本地分支管理"></a>Git 本地分支管理</h3><h4 id="查看、切换、创建和删除分支"><a href="#查看、切换、创建和删除分支" class="headerlink" title="查看、切换、创建和删除分支"></a>查看、切换、创建和删除分支</h4><ul>
-<li><p>git br -r # 查看远程分支</p>
-</li>
-<li><p>git br <new_branch> # 创建新的分支</new_branch></p>
-</li>
-<li><p>git br -v # 查看各个分支最后提交信息</p>
-</li>
-<li><p>git br –merged # 查看已经被合并到当前分支的分支</p>
-</li>
-<li><p>git br –no-merged # 查看尚未被合并到当前分支的分支</p>
-</li>
-<li><p>git co <branch> # 切换到某个分支</branch></p>
-</li>
-<li><p>git co -b <new_branch> # 创建新的分支，并且切换过去</new_branch></p>
-</li>
-<li><p>git co -b <new_branch> <branch> # 基于branch创建新的new_branch</branch></new_branch></p>
-</li>
-<li><p>git co $id # 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除</p>
-</li>
-<li><p>git co $id -b <new_branch> # 把某次历史提交记录checkout出来，创建成一个分支</new_branch></p>
-</li>
-<li><p>git br -d <branch> # 删除某个分支</branch></p>
-</li>
-<li><p>git br -D <branch> # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)</branch></p>
-</li>
-</ul>
-<h4 id="分支合并和rebase"><a href="#分支合并和rebase" class="headerlink" title="分支合并和rebase"></a>分支合并和rebase</h4><ul>
-<li><p>git merge <branch> # 将branch分支合并到当前分支</branch></p>
-</li>
-<li><p>git merge origin/master –no-ff # 不要Fast-Foward合并，这样可以生成merge提交</p>
-</li>
-<li><p>git rebase master <branch> # 将master rebase到branch，相当于： git co <branch> &amp;&amp; git rebase master &amp;&amp; git co master &amp;&amp; git merge <branch></branch></branch></branch></p>
-</li>
-</ul>
-<h4 id="Git补丁管理-方便在多台机器上开发同步时用"><a href="#Git补丁管理-方便在多台机器上开发同步时用" class="headerlink" title="Git补丁管理(方便在多台机器上开发同步时用)"></a>Git补丁管理(方便在多台机器上开发同步时用)</h4><ul>
-<li><p>git diff &gt; ../sync.patch # 生成补丁</p>
-</li>
-<li><p>git apply ../sync.patch # 打补丁</p>
-</li>
-<li><p>git apply –check ../sync.patch #测试补丁能否成功</p>
-</li>
-</ul>
-<h4 id="Git暂存管理"><a href="#Git暂存管理" class="headerlink" title="Git暂存管理"></a>Git暂存管理</h4><ul>
-<li><p>git stash # 暂存</p>
-</li>
-<li><p>git stash list # 列所有stash</p>
-</li>
-<li><p>git stash apply # 恢复暂存的内容</p>
-</li>
-<li><p>git stash drop # 删除暂存区</p>
-</li>
-</ul>
-<h3 id="Git远程分支管理"><a href="#Git远程分支管理" class="headerlink" title="Git远程分支管理"></a>Git远程分支管理</h3><ul>
-<li><p>git pull # 抓取远程仓库所有分支更新并合并到本地</p>
-</li>
-<li><p>git pull –no-ff # 抓取远程仓库所有分支更新并合并到本地，不要快进合并</p>
-</li>
-<li><p>git fetch origin # 抓取远程仓库更新</p>
-</li>
-<li><p>git merge origin/master # 将远程主分支合并到本地当前分支</p>
-</li>
-<li><p>git co –track origin/branch # 跟踪某个远程分支创建相应的本地分支</p>
-</li>
-<li><p>git co -b <local_branch> origin/<remote_branch> #基于远程分支创建本地分支，功能同上</remote_branch></local_branch></p>
-</li>
-<li><p>git push # push所有分支</p>
-</li>
-<li><p>git push origin master # 将本地主分支推到远程主分支</p>
-</li>
-<li><p>git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)</p>
-</li>
-<li><p>git push origin <local_branch> # 创建远程分支， origin是远程仓库名</local_branch></p>
-</li>
-<li><p>git push origin <local_branch>:<remote_branch> # 创建远程分支</remote_branch></local_branch></p>
-</li>
-<li><p>git push origin :<remote_branch> #先删除本地分支(git br -d <branch>)，然后再push删除远程分支</branch></remote_branch></p>
-</li>
-</ul>
-<h4 id="Git远程仓库管理"><a href="#Git远程仓库管理" class="headerlink" title="Git远程仓库管理"></a>Git远程仓库管理</h4><p>[GitHub][github.com/thawsoar]</p>
-<ul>
-<li><p>git remote -v # 查看远程服务器地址和仓库名称</p>
-</li>
-<li><p>git remote show origin # 查看远程服务器仓库状态</p>
-</li>
-<li><p>git remote add origin git@ github:robbin/robbin_site.git # 添加远程仓库地址</p>
-</li>
-<li><p>git remote set-url origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址(用于修改远程仓库地址) git remote rm <repository> # 删除远程仓库</repository></p>
-</li>
-</ul>
-<h4 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h4><ul>
-<li><p>git clone –bare robbin_site robbin_site.git # 用带版本的项目创建纯版本仓库</p>
-</li>
-<li><p>scp -r my_project.git git@ git.csdn.net:~ # 将纯仓库上传到服务器上</p>
-</li>
-<li><p>mkdir robbin_site.git &amp;&amp; cd robbin_site.git &amp;&amp; git –bare init # 在服务器创建纯仓库</p>
-</li>
-<li><p>git remote add origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址</p>
-</li>
-<li><p>git push -u origin master # 客户端首次提交</p>
-</li>
-<li><p>git push -u origin develop # 首次将本地develop分支提交到远程develop分支，并且track</p>
-</li>
-<li><p>git remote set-head origin master # 设置远程仓库的HEAD指向master分支</p>
-</li>
-</ul>
-<p>也可以命令设置跟踪远程库和本地库</p>
-<ul>
-<li><p>git branch –set-upstream master origin/master</p>
-</li>
-<li><p>git branch –set-upstream develop origin/develop</p>
-</li>
-</ul>
-<h3 id="GITHUB基本使用"><a href="#GITHUB基本使用" class="headerlink" title="GITHUB基本使用"></a>GITHUB基本使用</h3><ul>
-<li><a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></li>
-<li>GITHUB是一个GIT服务的提供商，</li>
-<li></li>
-<li>提出社交化编程</li>
-</ul>
-<p><a href="http://zoomzhao.github.io/code-guide/" target="_blank" rel="external">http://zoomzhao.github.io/code-guide/</a><br><a href="https://github.com/jobbole/awesome-javascript-cn" target="_blank" rel="external">https://github.com/jobbole/awesome-javascript-cn</a><br><a href="https://github.com/jobbole/awesome-css-cn" target="_blank" rel="external">https://github.com/jobbole/awesome-css-cn</a></p>
-<ul>
-<li>GIT分支</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;GIT&quot;&gt;&lt;a href=&quot;#GIT&quot; class=&quot;headerlink&quot; title=&quot;GIT&quot;&gt;&lt;/a&gt;GIT&lt;/h2&gt;&lt;h3 id=&quot;什么是GIT&quot;&gt;&lt;a href=&quot;#什么是GIT&quot; class=&quot;headerlink&quot; title=&quot;什么是GIT&quot;&gt;&lt;/a&gt;什么是GIT&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;是一个源代码管理工具&lt;/li&gt;
-&lt;li&gt;在一个项目中，凡是由开发人员编写的都算是源代码&lt;/li&gt;
-&lt;li&gt;源代码有必要管理起来？&lt;/li&gt;
-&lt;li&gt;让源代码可以被追溯，主要记录每次变更了什么，谁主导这次变化&lt;/li&gt;
-&lt;li&gt;人为的维护比较麻烦，&lt;/li&gt;
-&lt;li&gt;GIT是Linux之父当年为了维护管理Linux的源代码写的一个工具&lt;/li&gt;
-&lt;li&gt;Git 之前 很多使用 svn vss tfs hs ……&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://guides.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://guides.github.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Git" scheme="https://thawsoar.github.io/categories/Git/"/>
-    
-    
-      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
-    
-      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
-    
-      <category term="git" scheme="https://thawsoar.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Angular入门</title>
-    <link href="https://thawsoar.github.io/2017/06/07/angular_1/"/>
-    <id>https://thawsoar.github.io/2017/06/07/angular_1/</id>
-    <published>2017-06-06T16:00:00.000Z</published>
-    <updated>2017-06-21T04:44:15.543Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="推荐工具"><a href="#推荐工具" class="headerlink" title="推荐工具"></a>推荐工具</h2><ul>
-<li>在线编辑器<ul>
-<li><a href="http://codepen.io/" target="_blank" rel="external">http://codepen.io/</a></li>
-<li><a href="https://jsfiddle.net/" target="_blank" rel="external">https://jsfiddle.net/</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Angular-简介"><a href="#Angular-简介" class="headerlink" title="Angular 简介"></a>Angular 简介</h2><h3 id="什么是-AngularJS"><a href="#什么是-AngularJS" class="headerlink" title="什么是 AngularJS"></a>什么是 AngularJS</h3><ul>
-<li>一款非常优秀的前端高级 JS 框架</li>
-<li>最早由 Misko Hevery 等人创建</li>
-<li>2009 年被 Google 公式收购，用于其多款产品</li>
-<li>目前有一个全职的开发团队继续开发和维护这个库</li>
-<li>有了这一类框架就可以轻松构建 SPA 应用程序</li>
-<li>轻松构建 SPA（单一页面应用程序）</li>
-<li>单一页面应用程序：<ul>
-<li>只有一个页面（整个应用的一个载体）</li>
-<li>内容全部是由AJAX方式呈现出啦的</li>
-</ul>
-</li>
-<li>其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。</li>
-</ul>
-<a id="more"></a>
-<h3 id="为什么使用-AngularJS"><a href="#为什么使用-AngularJS" class="headerlink" title="为什么使用 AngularJS"></a>为什么使用 AngularJS</h3><ul>
-<li>更少的代码，实现更强劲的功能</li>
-<li>将一些以前在后台开发中使用的思想带入前端开发</li>
-<li>带领当前市面上的框架走向模式化或者架构化</li>
-</ul>
-<h3 id="AngularJS-的核心特性"><a href="#AngularJS-的核心特性" class="headerlink" title="AngularJS 的核心特性"></a>AngularJS 的核心特性</h3><ul>
-<li>MVC</li>
-<li>模块化</li>
-<li>自动化双向数据绑定</li>
-<li>指令系统</li>
-</ul>
-<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
-<li><a href="http://www.apjs.net/" target="_blank" rel="external">http://www.apjs.net/</a></li>
-<li><a href="http://www.angularjs.cn/" target="_blank" rel="external">http://www.angularjs.cn/</a></li>
-<li><a href="http://docs.angularjs.cn/api" target="_blank" rel="external">http://docs.angularjs.cn/api</a></li>
-<li><a href="https://material.angularjs.org" target="_blank" rel="external">https://material.angularjs.org</a></li>
-<li><a href="http://angular-ui.github.io/" target="_blank" rel="external">http://angular-ui.github.io/</a></li>
-</ul>
-<h2 id="Angular-上手"><a href="#Angular-上手" class="headerlink" title="Angular 上手"></a>Angular 上手</h2><h3 id="安装-Angular"><a href="#安装-Angular" class="headerlink" title="安装 Angular"></a>安装 Angular</h3><ul>
-<li>下载 Angular.js 的包<ul>
-<li><a href="https://github.com/angular/angular.js/releases" target="_blank" rel="external">https://github.com/angular/angular.js/releases</a></li>
-</ul>
-</li>
-<li>使用 CDN 上的 Angular.js<ul>
-<li><a href="http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js" target="_blank" rel="external">http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js</a></li>
-</ul>
-</li>
-<li><p>使用 Bower 安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bower install angular</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用 NPM 安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install angular</div></pre></td></tr></table></figure>
-</li>
-<li><p>每种方式安装包，本质都是将angular的库下载到当前文件夹中</p>
-</li>
-</ul>
-<h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<ul>
-<li><p>angular中最重要的概念是指令（directive）</p>
-</li>
-<li><p>ng-model 是双向数据绑定的指令，效果就是将当前元素的value属性和模型中的user.name建立绑定关系</p>
-</li>
-<li><p>JS: BOM DOM ES</p>
-</li>
-</ul>
-<h3 id="分析-Angular-示例"><a href="#分析-Angular-示例" class="headerlink" title="分析 Angular 示例"></a>分析 Angular 示例</h3><h3 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h3><h3 id="运行官方文档"><a href="#运行官方文档" class="headerlink" title="运行官方文档"></a>运行官方文档</h3><h2 id="CDN的优势"><a href="#CDN的优势" class="headerlink" title="CDN的优势"></a>CDN的优势</h2><p>Content Dev</p>
-<ul>
-<li>快</li>
-<li>节省自己服务器的带宽压力和流量</li>
-</ul>
-<h2 id="Angular-基础概念"><a href="#Angular-基础概念" class="headerlink" title="Angular 基础概念"></a>Angular 基础概念</h2><h3 id="MVC-思想"><a href="#MVC-思想" class="headerlink" title="MVC 思想"></a>MVC 思想</h3><h4 id="什么是-MVC-思想"><a href="#什么是-MVC-思想" class="headerlink" title="什么是 MVC 思想"></a>什么是 MVC 思想</h4><ul>
-<li>将应用程序的组成划分为三个部分：Model View Controller</li>
-<li>控制器的作用就是初始化模型用的；</li>
-<li>模型就是用于存储数据的</li>
-<li>视图用于展现数据</li>
-</ul>
-<ul>
-<li>登陆案例</li>
-<li>模型<ul>
-<li>我们数据库中所有用户的信息</li>
-<li>接受控制器传来的用户名和密码进行校验的业务逻辑并返回true/false</li>
-</ul>
-</li>
-<li>控制器<ul>
-<li>接受用户在界面上填写的用户名和密码</li>
-<li>将用户名和密码交给模型</li>
-</ul>
-</li>
-<li>视图<ul>
-<li>给用户呈现一个表单</li>
-<li>接受用户输入内容，并将其提交给控制器</li>
-<li>根据控制器返回的数据，响应用户页面</li>
-</ul>
-</li>
-</ul>
-<h3 id="模块（Module）"><a href="#模块（Module）" class="headerlink" title="模块（Module）"></a>模块（Module）</h3><ul>
-<li>划分应用程序结构</li>
-<li>我们可以通过angular.module创建一个模块</li>
-<li>angular.module方法传递两个参数才是创建模块，一个参数是获取模块</li>
-</ul>
-<h3 id="控制器（Controller）"><a href="#控制器（Controller）" class="headerlink" title="控制器（Controller）"></a>控制器（Controller）</h3><ul>
-<li>通过$scope和视图关联</li>
-<li></li>
-</ul>
-<h3 id="视图模型（-scope）"><a href="#视图模型（-scope）" class="headerlink" title="视图模型（$scope）"></a>视图模型（$scope）</h3><h3 id="表达式（Expression）"><a href="#表达式（Expression）" class="headerlink" title="表达式（Expression）"></a>表达式（Expression）</h3><h3 id="单向数据绑定"><a href="#单向数据绑定" class="headerlink" title="单向数据绑定"></a>单向数据绑定</h3><h3 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h3><h2 id="Angular-指令系统"><a href="#Angular-指令系统" class="headerlink" title="Angular 指令系统"></a>Angular 指令系统</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;推荐工具&quot;&gt;&lt;a href=&quot;#推荐工具&quot; class=&quot;headerlink&quot; title=&quot;推荐工具&quot;&gt;&lt;/a&gt;推荐工具&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在线编辑器&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://codepen.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://codepen.io/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://jsfiddle.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://jsfiddle.net/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Angular-简介&quot;&gt;&lt;a href=&quot;#Angular-简介&quot; class=&quot;headerlink&quot; title=&quot;Angular 简介&quot;&gt;&lt;/a&gt;Angular 简介&lt;/h2&gt;&lt;h3 id=&quot;什么是-AngularJS&quot;&gt;&lt;a href=&quot;#什么是-AngularJS&quot; class=&quot;headerlink&quot; title=&quot;什么是 AngularJS&quot;&gt;&lt;/a&gt;什么是 AngularJS&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;一款非常优秀的前端高级 JS 框架&lt;/li&gt;
-&lt;li&gt;最早由 Misko Hevery 等人创建&lt;/li&gt;
-&lt;li&gt;2009 年被 Google 公式收购，用于其多款产品&lt;/li&gt;
-&lt;li&gt;目前有一个全职的开发团队继续开发和维护这个库&lt;/li&gt;
-&lt;li&gt;有了这一类框架就可以轻松构建 SPA 应用程序&lt;/li&gt;
-&lt;li&gt;轻松构建 SPA（单一页面应用程序）&lt;/li&gt;
-&lt;li&gt;单一页面应用程序：&lt;ul&gt;
-&lt;li&gt;只有一个页面（整个应用的一个载体）&lt;/li&gt;
-&lt;li&gt;内容全部是由AJAX方式呈现出啦的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Angular" scheme="https://thawsoar.github.io/categories/Angular/"/>
-    
-    
-      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
-    
-      <category term="Angular" scheme="https://thawsoar.github.io/tags/Angular/"/>
-    
-      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git</title>
     <link href="https://thawsoar.github.io/2017/06/07/git-1/"/>
     <id>https://thawsoar.github.io/2017/06/07/git-1/</id>
     <published>2017-06-06T16:00:00.000Z</published>
@@ -1498,9 +1222,399 @@
     
       <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
     
+      <category term="git" scheme="https://thawsoar.github.io/tags/git/"/>
+    
       <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
     
+  </entry>
+  
+  <entry>
+    <title>Angular入门</title>
+    <link href="https://thawsoar.github.io/2017/06/07/angular_1/"/>
+    <id>https://thawsoar.github.io/2017/06/07/angular_1/</id>
+    <published>2017-06-06T16:00:00.000Z</published>
+    <updated>2017-06-21T04:44:15.543Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="推荐工具"><a href="#推荐工具" class="headerlink" title="推荐工具"></a>推荐工具</h2><ul>
+<li>在线编辑器<ul>
+<li><a href="http://codepen.io/" target="_blank" rel="external">http://codepen.io/</a></li>
+<li><a href="https://jsfiddle.net/" target="_blank" rel="external">https://jsfiddle.net/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Angular-简介"><a href="#Angular-简介" class="headerlink" title="Angular 简介"></a>Angular 简介</h2><h3 id="什么是-AngularJS"><a href="#什么是-AngularJS" class="headerlink" title="什么是 AngularJS"></a>什么是 AngularJS</h3><ul>
+<li>一款非常优秀的前端高级 JS 框架</li>
+<li>最早由 Misko Hevery 等人创建</li>
+<li>2009 年被 Google 公式收购，用于其多款产品</li>
+<li>目前有一个全职的开发团队继续开发和维护这个库</li>
+<li>有了这一类框架就可以轻松构建 SPA 应用程序</li>
+<li>轻松构建 SPA（单一页面应用程序）</li>
+<li>单一页面应用程序：<ul>
+<li>只有一个页面（整个应用的一个载体）</li>
+<li>内容全部是由AJAX方式呈现出啦的</li>
+</ul>
+</li>
+<li>其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。</li>
+</ul>
+<a id="more"></a>
+<h3 id="为什么使用-AngularJS"><a href="#为什么使用-AngularJS" class="headerlink" title="为什么使用 AngularJS"></a>为什么使用 AngularJS</h3><ul>
+<li>更少的代码，实现更强劲的功能</li>
+<li>将一些以前在后台开发中使用的思想带入前端开发</li>
+<li>带领当前市面上的框架走向模式化或者架构化</li>
+</ul>
+<h3 id="AngularJS-的核心特性"><a href="#AngularJS-的核心特性" class="headerlink" title="AngularJS 的核心特性"></a>AngularJS 的核心特性</h3><ul>
+<li>MVC</li>
+<li>模块化</li>
+<li>自动化双向数据绑定</li>
+<li>指令系统</li>
+</ul>
+<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
+<li><a href="http://www.apjs.net/" target="_blank" rel="external">http://www.apjs.net/</a></li>
+<li><a href="http://www.angularjs.cn/" target="_blank" rel="external">http://www.angularjs.cn/</a></li>
+<li><a href="http://docs.angularjs.cn/api" target="_blank" rel="external">http://docs.angularjs.cn/api</a></li>
+<li><a href="https://material.angularjs.org" target="_blank" rel="external">https://material.angularjs.org</a></li>
+<li><a href="http://angular-ui.github.io/" target="_blank" rel="external">http://angular-ui.github.io/</a></li>
+</ul>
+<h2 id="Angular-上手"><a href="#Angular-上手" class="headerlink" title="Angular 上手"></a>Angular 上手</h2><h3 id="安装-Angular"><a href="#安装-Angular" class="headerlink" title="安装 Angular"></a>安装 Angular</h3><ul>
+<li>下载 Angular.js 的包<ul>
+<li><a href="https://github.com/angular/angular.js/releases" target="_blank" rel="external">https://github.com/angular/angular.js/releases</a></li>
+</ul>
+</li>
+<li>使用 CDN 上的 Angular.js<ul>
+<li><a href="http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js" target="_blank" rel="external">http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js</a></li>
+</ul>
+</li>
+<li><p>使用 Bower 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bower install angular</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 NPM 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install angular</div></pre></td></tr></table></figure>
+</li>
+<li><p>每种方式安装包，本质都是将angular的库下载到当前文件夹中</p>
+</li>
+</ul>
+<h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<ul>
+<li><p>angular中最重要的概念是指令（directive）</p>
+</li>
+<li><p>ng-model 是双向数据绑定的指令，效果就是将当前元素的value属性和模型中的user.name建立绑定关系</p>
+</li>
+<li><p>JS: BOM DOM ES</p>
+</li>
+</ul>
+<h3 id="分析-Angular-示例"><a href="#分析-Angular-示例" class="headerlink" title="分析 Angular 示例"></a>分析 Angular 示例</h3><h3 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h3><h3 id="运行官方文档"><a href="#运行官方文档" class="headerlink" title="运行官方文档"></a>运行官方文档</h3><h2 id="CDN的优势"><a href="#CDN的优势" class="headerlink" title="CDN的优势"></a>CDN的优势</h2><p>Content Dev</p>
+<ul>
+<li>快</li>
+<li>节省自己服务器的带宽压力和流量</li>
+</ul>
+<h2 id="Angular-基础概念"><a href="#Angular-基础概念" class="headerlink" title="Angular 基础概念"></a>Angular 基础概念</h2><h3 id="MVC-思想"><a href="#MVC-思想" class="headerlink" title="MVC 思想"></a>MVC 思想</h3><h4 id="什么是-MVC-思想"><a href="#什么是-MVC-思想" class="headerlink" title="什么是 MVC 思想"></a>什么是 MVC 思想</h4><ul>
+<li>将应用程序的组成划分为三个部分：Model View Controller</li>
+<li>控制器的作用就是初始化模型用的；</li>
+<li>模型就是用于存储数据的</li>
+<li>视图用于展现数据</li>
+</ul>
+<ul>
+<li>登陆案例</li>
+<li>模型<ul>
+<li>我们数据库中所有用户的信息</li>
+<li>接受控制器传来的用户名和密码进行校验的业务逻辑并返回true/false</li>
+</ul>
+</li>
+<li>控制器<ul>
+<li>接受用户在界面上填写的用户名和密码</li>
+<li>将用户名和密码交给模型</li>
+</ul>
+</li>
+<li>视图<ul>
+<li>给用户呈现一个表单</li>
+<li>接受用户输入内容，并将其提交给控制器</li>
+<li>根据控制器返回的数据，响应用户页面</li>
+</ul>
+</li>
+</ul>
+<h3 id="模块（Module）"><a href="#模块（Module）" class="headerlink" title="模块（Module）"></a>模块（Module）</h3><ul>
+<li>划分应用程序结构</li>
+<li>我们可以通过angular.module创建一个模块</li>
+<li>angular.module方法传递两个参数才是创建模块，一个参数是获取模块</li>
+</ul>
+<h3 id="控制器（Controller）"><a href="#控制器（Controller）" class="headerlink" title="控制器（Controller）"></a>控制器（Controller）</h3><ul>
+<li>通过$scope和视图关联</li>
+<li></li>
+</ul>
+<h3 id="视图模型（-scope）"><a href="#视图模型（-scope）" class="headerlink" title="视图模型（$scope）"></a>视图模型（$scope）</h3><h3 id="表达式（Expression）"><a href="#表达式（Expression）" class="headerlink" title="表达式（Expression）"></a>表达式（Expression）</h3><h3 id="单向数据绑定"><a href="#单向数据绑定" class="headerlink" title="单向数据绑定"></a>单向数据绑定</h3><h3 id="双向数据绑定"><a href="#双向数据绑定" class="headerlink" title="双向数据绑定"></a>双向数据绑定</h3><h2 id="Angular-指令系统"><a href="#Angular-指令系统" class="headerlink" title="Angular 指令系统"></a>Angular 指令系统</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;推荐工具&quot;&gt;&lt;a href=&quot;#推荐工具&quot; class=&quot;headerlink&quot; title=&quot;推荐工具&quot;&gt;&lt;/a&gt;推荐工具&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;在线编辑器&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://codepen.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://codepen.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jsfiddle.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://jsfiddle.net/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Angular-简介&quot;&gt;&lt;a href=&quot;#Angular-简介&quot; class=&quot;headerlink&quot; title=&quot;Angular 简介&quot;&gt;&lt;/a&gt;Angular 简介&lt;/h2&gt;&lt;h3 id=&quot;什么是-AngularJS&quot;&gt;&lt;a href=&quot;#什么是-AngularJS&quot; class=&quot;headerlink&quot; title=&quot;什么是 AngularJS&quot;&gt;&lt;/a&gt;什么是 AngularJS&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;一款非常优秀的前端高级 JS 框架&lt;/li&gt;
+&lt;li&gt;最早由 Misko Hevery 等人创建&lt;/li&gt;
+&lt;li&gt;2009 年被 Google 公式收购，用于其多款产品&lt;/li&gt;
+&lt;li&gt;目前有一个全职的开发团队继续开发和维护这个库&lt;/li&gt;
+&lt;li&gt;有了这一类框架就可以轻松构建 SPA 应用程序&lt;/li&gt;
+&lt;li&gt;轻松构建 SPA（单一页面应用程序）&lt;/li&gt;
+&lt;li&gt;单一页面应用程序：&lt;ul&gt;
+&lt;li&gt;只有一个页面（整个应用的一个载体）&lt;/li&gt;
+&lt;li&gt;内容全部是由AJAX方式呈现出啦的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Angular" scheme="https://thawsoar.github.io/categories/Angular/"/>
+    
+    
+      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
+    
+      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
+    
+      <category term="Angular" scheme="https://thawsoar.github.io/tags/Angular/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git</title>
+    <link href="https://thawsoar.github.io/2017/06/07/git_1/"/>
+    <id>https://thawsoar.github.io/2017/06/07/git_1/</id>
+    <published>2017-06-06T16:00:00.000Z</published>
+    <updated>2017-06-21T04:44:26.566Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h2><h3 id="什么是GIT"><a href="#什么是GIT" class="headerlink" title="什么是GIT"></a>什么是GIT</h3><ul>
+<li>是一个源代码管理工具</li>
+<li>在一个项目中，凡是由开发人员编写的都算是源代码</li>
+<li>源代码有必要管理起来？</li>
+<li>让源代码可以被追溯，主要记录每次变更了什么，谁主导这次变化</li>
+<li>人为的维护比较麻烦，</li>
+<li>GIT是Linux之父当年为了维护管理Linux的源代码写的一个工具</li>
+<li>Git 之前 很多使用 svn vss tfs hs ……</li>
+</ul>
+<ul>
+<li><a href="https://guides.github.com/" target="_blank" rel="external">https://guides.github.com/</a></li>
+</ul>
+<a id="more"></a>
+<h3 id="安装GIT"><a href="#安装GIT" class="headerlink" title="安装GIT"></a>安装GIT</h3><ul>
+<li>git命令行工具</li>
+<li>基于git命令行的一个客户端软件（提供一个界面去管理源代码）</li>
+</ul>
+<h3 id="GIT命令操作"><a href="#GIT命令操作" class="headerlink" title="GIT命令操作"></a>GIT命令操作</h3><h4 id="查看、添加、提交、删除、找回，重置修改文件"><a href="#查看、添加、提交、删除、找回，重置修改文件" class="headerlink" title="查看、添加、提交、删除、找回，重置修改文件"></a>查看、添加、提交、删除、找回，重置修改文件</h4><ul>
+<li><p>git help <command> # 显示command的help</p>
+</li>
+<li><p>git show # 显示某次提交的内容 git show $id</p>
+</li>
+<li><p>git co – <file> # 抛弃工作区修改</file></p>
+</li>
+<li><p>git co . # 抛弃工作区修改</p>
+</li>
+<li><p>git add <file> # 将工作文件修改提交到本地暂存区</file></p>
+</li>
+<li><p>git add . # 将所有修改过的工作文件提交暂存区</p>
+</li>
+<li><p>git rm <file> # 从版本库中删除文件</file></p>
+</li>
+<li><p>git rm <file> –cached # 从版本库中删除文件，但不删除文件</file></p>
+</li>
+<li><p>git reset <file> # 从暂存区恢复到工作文件</file></p>
+</li>
+<li><p>git reset – . # 从暂存区恢复到工作文件</p>
+</li>
+<li><p>git reset –hard # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</p>
+</li>
+<li><p>git ci <file> git ci . git ci -a # 将git add, git rm和git ci等操作都合并在一起做
+　　　</file></p>
+</li>
+<li><p>git - ci -am “some comments”</p>
+</li>
+<li><p>git ci –amend # 修改最后一次提交记录</p>
+</li>
+<li><p>git revert &lt;$id&gt; # 恢复某次提交的状态，恢复动作本身也创建次提交对象</p>
+</li>
+<li><p>git revert HEAD # 恢复最后一次提交的状态</p>
+</li>
+</ul>
+<h4 id="查看文件diff"><a href="#查看文件diff" class="headerlink" title="查看文件diff"></a>查看文件diff</h4><ul>
+<li><p>git diff <file> # 比较当前文件和暂存区文件差异 git diff</file></p>
+</li>
+<li><p>git diff <id1><id1><id2> # 比较两次提交之间的差异</id2></id1></id1></p>
+</li>
+<li><p>git diff <branch1>..<branch2> # 在两个分支之间比较</branch2></branch1></p>
+</li>
+<li><p>git diff –staged # 比较暂存区和版本库差异</p>
+</li>
+<li><p>git diff –cached # 比较暂存区和版本库差异</p>
+</li>
+<li><p>git diff –stat # 仅仅比较统计信息</p>
+</li>
+</ul>
+<h4 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h4><ul>
+<li><p>git log git log <file> # 查看该文件每次提交记录</file></p>
+</li>
+<li><p>git log -p <file> # 查看每次详细修改内容的diff</file></p>
+</li>
+<li><p>git log -p -2 # 查看最近两次详细修改内容的diff</p>
+</li>
+<li><p>git log –stat #查看提交统计信息</p>
+</li>
+</ul>
+<h4 id="tig"><a href="#tig" class="headerlink" title="tig"></a>tig</h4><ul>
+<li>Mac上可以使用tig代替diff和log，brew install tig</li>
+</ul>
+<h3 id="Git-本地分支管理"><a href="#Git-本地分支管理" class="headerlink" title="Git 本地分支管理"></a>Git 本地分支管理</h3><h4 id="查看、切换、创建和删除分支"><a href="#查看、切换、创建和删除分支" class="headerlink" title="查看、切换、创建和删除分支"></a>查看、切换、创建和删除分支</h4><ul>
+<li><p>git br -r # 查看远程分支</p>
+</li>
+<li><p>git br <new_branch> # 创建新的分支</new_branch></p>
+</li>
+<li><p>git br -v # 查看各个分支最后提交信息</p>
+</li>
+<li><p>git br –merged # 查看已经被合并到当前分支的分支</p>
+</li>
+<li><p>git br –no-merged # 查看尚未被合并到当前分支的分支</p>
+</li>
+<li><p>git co <branch> # 切换到某个分支</branch></p>
+</li>
+<li><p>git co -b <new_branch> # 创建新的分支，并且切换过去</new_branch></p>
+</li>
+<li><p>git co -b <new_branch> <branch> # 基于branch创建新的new_branch</branch></new_branch></p>
+</li>
+<li><p>git co $id # 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除</p>
+</li>
+<li><p>git co $id -b <new_branch> # 把某次历史提交记录checkout出来，创建成一个分支</new_branch></p>
+</li>
+<li><p>git br -d <branch> # 删除某个分支</branch></p>
+</li>
+<li><p>git br -D <branch> # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)</branch></p>
+</li>
+</ul>
+<h4 id="分支合并和rebase"><a href="#分支合并和rebase" class="headerlink" title="分支合并和rebase"></a>分支合并和rebase</h4><ul>
+<li><p>git merge <branch> # 将branch分支合并到当前分支</branch></p>
+</li>
+<li><p>git merge origin/master –no-ff # 不要Fast-Foward合并，这样可以生成merge提交</p>
+</li>
+<li><p>git rebase master <branch> # 将master rebase到branch，相当于： git co <branch> &amp;&amp; git rebase master &amp;&amp; git co master &amp;&amp; git merge <branch></branch></branch></branch></p>
+</li>
+</ul>
+<h4 id="Git补丁管理-方便在多台机器上开发同步时用"><a href="#Git补丁管理-方便在多台机器上开发同步时用" class="headerlink" title="Git补丁管理(方便在多台机器上开发同步时用)"></a>Git补丁管理(方便在多台机器上开发同步时用)</h4><ul>
+<li><p>git diff &gt; ../sync.patch # 生成补丁</p>
+</li>
+<li><p>git apply ../sync.patch # 打补丁</p>
+</li>
+<li><p>git apply –check ../sync.patch #测试补丁能否成功</p>
+</li>
+</ul>
+<h4 id="Git暂存管理"><a href="#Git暂存管理" class="headerlink" title="Git暂存管理"></a>Git暂存管理</h4><ul>
+<li><p>git stash # 暂存</p>
+</li>
+<li><p>git stash list # 列所有stash</p>
+</li>
+<li><p>git stash apply # 恢复暂存的内容</p>
+</li>
+<li><p>git stash drop # 删除暂存区</p>
+</li>
+</ul>
+<h3 id="Git远程分支管理"><a href="#Git远程分支管理" class="headerlink" title="Git远程分支管理"></a>Git远程分支管理</h3><ul>
+<li><p>git pull # 抓取远程仓库所有分支更新并合并到本地</p>
+</li>
+<li><p>git pull –no-ff # 抓取远程仓库所有分支更新并合并到本地，不要快进合并</p>
+</li>
+<li><p>git fetch origin # 抓取远程仓库更新</p>
+</li>
+<li><p>git merge origin/master # 将远程主分支合并到本地当前分支</p>
+</li>
+<li><p>git co –track origin/branch # 跟踪某个远程分支创建相应的本地分支</p>
+</li>
+<li><p>git co -b <local_branch> origin/<remote_branch> #基于远程分支创建本地分支，功能同上</remote_branch></local_branch></p>
+</li>
+<li><p>git push # push所有分支</p>
+</li>
+<li><p>git push origin master # 将本地主分支推到远程主分支</p>
+</li>
+<li><p>git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)</p>
+</li>
+<li><p>git push origin <local_branch> # 创建远程分支， origin是远程仓库名</local_branch></p>
+</li>
+<li><p>git push origin <local_branch>:<remote_branch> # 创建远程分支</remote_branch></local_branch></p>
+</li>
+<li><p>git push origin :<remote_branch> #先删除本地分支(git br -d <branch>)，然后再push删除远程分支</branch></remote_branch></p>
+</li>
+</ul>
+<h4 id="Git远程仓库管理"><a href="#Git远程仓库管理" class="headerlink" title="Git远程仓库管理"></a>Git远程仓库管理</h4><p>[GitHub][github.com/thawsoar]</p>
+<ul>
+<li><p>git remote -v # 查看远程服务器地址和仓库名称</p>
+</li>
+<li><p>git remote show origin # 查看远程服务器仓库状态</p>
+</li>
+<li><p>git remote add origin git@ github:robbin/robbin_site.git # 添加远程仓库地址</p>
+</li>
+<li><p>git remote set-url origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址(用于修改远程仓库地址) git remote rm <repository> # 删除远程仓库</repository></p>
+</li>
+</ul>
+<h4 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h4><ul>
+<li><p>git clone –bare robbin_site robbin_site.git # 用带版本的项目创建纯版本仓库</p>
+</li>
+<li><p>scp -r my_project.git git@ git.csdn.net:~ # 将纯仓库上传到服务器上</p>
+</li>
+<li><p>mkdir robbin_site.git &amp;&amp; cd robbin_site.git &amp;&amp; git –bare init # 在服务器创建纯仓库</p>
+</li>
+<li><p>git remote add origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址</p>
+</li>
+<li><p>git push -u origin master # 客户端首次提交</p>
+</li>
+<li><p>git push -u origin develop # 首次将本地develop分支提交到远程develop分支，并且track</p>
+</li>
+<li><p>git remote set-head origin master # 设置远程仓库的HEAD指向master分支</p>
+</li>
+</ul>
+<p>也可以命令设置跟踪远程库和本地库</p>
+<ul>
+<li><p>git branch –set-upstream master origin/master</p>
+</li>
+<li><p>git branch –set-upstream develop origin/develop</p>
+</li>
+</ul>
+<h3 id="GITHUB基本使用"><a href="#GITHUB基本使用" class="headerlink" title="GITHUB基本使用"></a>GITHUB基本使用</h3><ul>
+<li><a href="https://github.com/" target="_blank" rel="external">https://github.com/</a></li>
+<li>GITHUB是一个GIT服务的提供商，</li>
+<li></li>
+<li>提出社交化编程</li>
+</ul>
+<p><a href="http://zoomzhao.github.io/code-guide/" target="_blank" rel="external">http://zoomzhao.github.io/code-guide/</a><br><a href="https://github.com/jobbole/awesome-javascript-cn" target="_blank" rel="external">https://github.com/jobbole/awesome-javascript-cn</a><br><a href="https://github.com/jobbole/awesome-css-cn" target="_blank" rel="external">https://github.com/jobbole/awesome-css-cn</a></p>
+<ul>
+<li>GIT分支</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;GIT&quot;&gt;&lt;a href=&quot;#GIT&quot; class=&quot;headerlink&quot; title=&quot;GIT&quot;&gt;&lt;/a&gt;GIT&lt;/h2&gt;&lt;h3 id=&quot;什么是GIT&quot;&gt;&lt;a href=&quot;#什么是GIT&quot; class=&quot;headerlink&quot; title=&quot;什么是GIT&quot;&gt;&lt;/a&gt;什么是GIT&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;是一个源代码管理工具&lt;/li&gt;
+&lt;li&gt;在一个项目中，凡是由开发人员编写的都算是源代码&lt;/li&gt;
+&lt;li&gt;源代码有必要管理起来？&lt;/li&gt;
+&lt;li&gt;让源代码可以被追溯，主要记录每次变更了什么，谁主导这次变化&lt;/li&gt;
+&lt;li&gt;人为的维护比较麻烦，&lt;/li&gt;
+&lt;li&gt;GIT是Linux之父当年为了维护管理Linux的源代码写的一个工具&lt;/li&gt;
+&lt;li&gt;Git 之前 很多使用 svn vss tfs hs ……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://guides.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://guides.github.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="https://thawsoar.github.io/categories/Git/"/>
+    
+    
+      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
+    
       <category term="git" scheme="https://thawsoar.github.io/tags/git/"/>
+    
+      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
     
   </entry>
   
