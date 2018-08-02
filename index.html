@@ -413,12 +413,24 @@
                 
               
 
-              <time title="创建时间：2018-08-01 15:28:58 / 修改时间：23:32:32" itemprop="dateCreated datePublished" datetime="2018-08-01T15:28:58+08:00">2018-08-01</time>
+              <time title="创建时间：2018-08-01 15:28:58" itemprop="dateCreated datePublished" datetime="2018-08-01T15:28:58+08:00">2018-08-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-02 14:38:46" itemprop="dateModified" datetime="2018-08-02T14:38:46+08:00">2018-08-02</time>
               
             
           </span>
@@ -481,17 +493,6 @@
       
         
           <p><img src="http://orrscanlu.bkt.clouddn.com/oop.png" alt="python_oop"></p>
-<ul>
-<li>面向对象编程——Object Oriented Programming，简称OOP，是一种程序设计思想。</li>
-<li>OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</li>
-<li>面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。</li>
-<li><p>面向过程把函数继续切分为子函数，即把大块函数通过切割成小块函数来降低系统的复杂度。</p>
-</li>
-<li><p>而面向对象的程序设计把计算机程序视为一组对象的集合，而每个对象都可以接收其他对象发过来的消息，并处理这些消息，计算机程序的执行就是一系列消息在各个对象之间传递。</p>
-</li>
-<li><p>在Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的类（Class）的概念。</p>
-</li>
-</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/01/python_oop/#more" rel="contents">
@@ -613,7 +614,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-01 23:32:12" itemprop="dateModified" datetime="2018-08-01T23:32:12+08:00">2018-08-01</time>
+                <time title="修改时间：2018-08-02 14:38:21" itemprop="dateModified" datetime="2018-08-02T14:38:21+08:00">2018-08-02</time>
               
             
           </span>
@@ -683,13 +684,6 @@
 <li>新建hello.py文件</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python3 </span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="string">'a test module !!!'</span></div><div class="line"></div><div class="line">__author__ = <span class="string">'Tao Xiang'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys  <span class="comment">#导入sys模块 使用sys这个变量，访问sys模块的所有功能。</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></div><div class="line">    args = sys.argv  <span class="comment"># argv变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该.py文件的名称</span></div><div class="line">    <span class="keyword">if</span> len(args)==<span class="number">1</span>:</div><div class="line">        print(<span class="string">'Hello,world!'</span>)</div><div class="line">    <span class="keyword">elif</span> len(args)==<span class="number">2</span>:</div><div class="line">        print(<span class="string">'Hello, $s!'</span> %args[<span class="number">1</span>])</div><div class="line">    <span class="keyword">elif</span>:</div><div class="line">        print(<span class="string">'Too many arguments!'</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name==<span class="string">'__main__'</span>:</div><div class="line">    test()</div></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>第1行和第2行是标准注释，第1行注释可以让这个hello.py文件直接在Unix/Linux/Mac上运行，第2行注释表示.py文件本身使用标准UTF-8编码；</li>
-<li>第4行是一个字符串，表示模块的文档注释，任何模块代码的第一个字符串都被视为模块的文档注释</li>
-<li>第6行使用<strong>author</strong>变量写入作者名字</li>
-</ul>
-</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/31/python_module/#more" rel="contents">
@@ -972,12 +966,24 @@
                 
               
 
-              <time title="创建时间：2018-07-27 11:58:58 / 修改时间：15:34:10" itemprop="dateCreated datePublished" datetime="2018-07-27T11:58:58+08:00">2018-07-27</time>
+              <time title="创建时间：2018-07-27 11:58:58" itemprop="dateCreated datePublished" datetime="2018-07-27T11:58:58+08:00">2018-07-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-02 14:38:03" itemprop="dateModified" datetime="2018-08-02T14:38:03+08:00">2018-08-02</time>
               
             
           </span>
@@ -1043,13 +1049,6 @@
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318435599930270c0381a3b44db991cd6d858064ac0000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
 </ul>
 <h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>设计一个decorator，可作用于任何函数上，在函数调用前后自动打印日志：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span>   </div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></div><div class="line">        print(<span class="string">'call %s():'</span> % func.__name__) </div><div class="line">        <span class="keyword">return</span> func(*args, **kw)</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"></div><div class="line"><span class="meta">@log  #把@log放到now()函数的定义处，相当于执行了语句： now = log(now)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'2018-7-27'</span>)</div><div class="line"></div><div class="line">now()</div><div class="line"><span class="comment"># result</span></div><div class="line">call now():</div><div class="line"><span class="number">2018</span><span class="number">-7</span><span class="number">-27</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<ul>
-<li>log是一个decorator，接受一个函数作为参数，并返回一个函数</li>
-<li>函数对象有一个<strong>name</strong>属性，可以拿到函数的名字</li>
-<li>函数也是对象，它有<strong>name</strong>等属性，但你去看经过decorator装饰之后的函数，它们的<strong>name</strong>已经从原来的’now’变成了’wrapper’,因此有些依赖函数签名的代码执行就会出错，可以使用Python内置的functools.wraps解决</li>
-<li>wrapper()函数的参数定义是(<em>args, *</em>kw),因此，wrapper()函数可以接受任意参数的调用。</li>
-<li>Python的<b>@</b>语法，把decorator置于函数的定义处</li></ul></blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/07/27/python_decorator/#more" rel="contents">
@@ -1490,6 +1489,9 @@
 
       
 
+    </div>
+    <div id="music163player">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=210 src="//music.163.com/outchain/player?type=0&id=759336017&auto=0&height=430"></iframe>
     </div>
   </aside>
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2018-08-01T15:32:32.625Z</updated>
+  <updated>2018-08-02T06:38:46.195Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://thawsoar.github.io/2018/08/01/python_oop/"/>
     <id>https://thawsoar.github.io/2018/08/01/python_oop/</id>
     <published>2018-08-01T07:28:58.000Z</published>
-    <updated>2018-08-01T15:32:32.625Z</updated>
+    <updated>2018-08-02T06:38:46.195Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://orrscanlu.bkt.clouddn.com/oop.png" alt="python_oop"></p>
+<a id="more"></a>
 <ul>
 <li>面向对象编程——Object Oriented Programming，简称OOP，是一种程序设计思想。</li>
 <li>OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</li>
@@ -34,7 +35,6 @@
 <li><p>在Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的类（Class）的概念。</p>
 </li>
 </ul>
-<a id="more"></a>
 <h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="oop简要笔记"><a href="#oop简要笔记" class="headerlink" title="oop简要笔记"></a>oop简要笔记</h4><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318645694388f1f10473d7f416e9291616be8367ab5000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
 </ul>
@@ -89,17 +89,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;http://orrscanlu.bkt.clouddn.com/oop.png&quot; alt=&quot;python_oop&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;面向对象编程——Object Oriented Programming，简称OOP，是一种程序设计思想。&lt;/li&gt;
-&lt;li&gt;OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。&lt;/li&gt;
-&lt;li&gt;面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行。&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;面向过程把函数继续切分为子函数，即把大块函数通过切割成小块函数来降低系统的复杂度。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;而面向对象的程序设计把计算机程序视为一组对象的集合，而每个对象都可以接收其他对象发过来的消息，并处理这些消息，计算机程序的执行就是一系列消息在各个对象之间传递。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在Python中，所有数据类型都可以视为对象，当然也可以自定义对象。自定义的对象数据类型就是面向对象中的类（Class）的概念。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
@@ -115,7 +104,7 @@
     <link href="https://thawsoar.github.io/2018/07/31/python_module/"/>
     <id>https://thawsoar.github.io/2018/07/31/python_module/</id>
     <published>2018-07-31T07:29:58.000Z</published>
-    <updated>2018-08-01T15:32:12.257Z</updated>
+    <updated>2018-08-02T06:38:21.531Z</updated>
     
     <content type="html"><![CDATA[<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><h4 id="模块简要笔记"><a href="#模块简要笔记" class="headerlink" title="模块简要笔记"></a>模块简要笔记</h4><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431845183474e20ee7e7828b47f7b7607f2dc1e90dbb000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
@@ -125,6 +114,7 @@
 <li>新建hello.py文件</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python3 </span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="string">'a test module !!!'</span></div><div class="line"></div><div class="line">__author__ = <span class="string">'Tao Xiang'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> sys  <span class="comment">#导入sys模块 使用sys这个变量，访问sys模块的所有功能。</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></div><div class="line">    args = sys.argv  <span class="comment"># argv变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该.py文件的名称</span></div><div class="line">    <span class="keyword">if</span> len(args)==<span class="number">1</span>:</div><div class="line">        print(<span class="string">'Hello,world!'</span>)</div><div class="line">    <span class="keyword">elif</span> len(args)==<span class="number">2</span>:</div><div class="line">        print(<span class="string">'Hello, $s!'</span> %args[<span class="number">1</span>])</div><div class="line">    <span class="keyword">elif</span>:</div><div class="line">        print(<span class="string">'Too many arguments!'</span>)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name==<span class="string">'__main__'</span>:</div><div class="line">    test()</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <blockquote>
 <ul>
 <li>第1行和第2行是标准注释，第1行注释可以让这个hello.py文件直接在Unix/Linux/Mac上运行，第2行注释表示.py文件本身使用标准UTF-8编码；</li>
@@ -132,7 +122,6 @@
 <li>第6行使用<strong>author</strong>变量写入作者名字</li>
 </ul>
 </blockquote>
-<a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">    test()</div></pre></td></tr></table></figure>
 <blockquote>
 <ul>
@@ -164,13 +153,6 @@
 &lt;li&gt;新建hello.py文件&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#!/usr/bin/env python3 &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# -*- coding: utf-8 -*-&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;a test module !!!&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__author__ = &lt;span class=&quot;string&quot;&gt;&#39;Tao Xiang&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; sys  &lt;span class=&quot;comment&quot;&gt;#导入sys模块 使用sys这个变量，访问sys模块的所有功能。&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    args = sys.argv  &lt;span class=&quot;comment&quot;&gt;# argv变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该.py文件的名称&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; len(args)==&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;Hello,world!&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;elif&lt;/span&gt; len(args)==&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;Hello, $s!&#39;&lt;/span&gt; %args[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;])&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;elif&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;Too many arguments!&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; __name==&lt;span class=&quot;string&quot;&gt;&#39;__main__&#39;&lt;/span&gt;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    test()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;第1行和第2行是标准注释，第1行注释可以让这个hello.py文件直接在Unix/Linux/Mac上运行，第2行注释表示.py文件本身使用标准UTF-8编码；&lt;/li&gt;
-&lt;li&gt;第4行是一个字符串，表示模块的文档注释，任何模块代码的第一个字符串都被视为模块的文档注释&lt;/li&gt;
-&lt;li&gt;第6行使用&lt;strong&gt;author&lt;/strong&gt;变量写入作者名字&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
     
     </summary>
     
@@ -231,20 +213,20 @@
     <link href="https://thawsoar.github.io/2018/07/27/python_decorator/"/>
     <id>https://thawsoar.github.io/2018/07/27/python_decorator/</id>
     <published>2018-07-27T03:58:58.000Z</published>
-    <updated>2018-07-27T07:34:10.500Z</updated>
+    <updated>2018-08-02T06:38:03.307Z</updated>
     
     <content type="html"><![CDATA[<h3 id="python函数式编程"><a href="#python函数式编程" class="headerlink" title="python函数式编程"></a>python函数式编程</h3><h4 id="装饰器简要笔记"><a href="#装饰器简要笔记" class="headerlink" title="装饰器简要笔记"></a>装饰器简要笔记</h4><ul>
 <li><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318435599930270c0381a3b44db991cd6d858064ac0000" target="_blank" rel="external">廖雪峰的官方网站</a></li>
 </ul>
 <h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>设计一个decorator，可作用于任何函数上，在函数调用前后自动打印日志：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span>   </div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></div><div class="line">        print(<span class="string">'call %s():'</span> % func.__name__) </div><div class="line">        <span class="keyword">return</span> func(*args, **kw)</div><div class="line">    <span class="keyword">return</span> wrapper</div><div class="line"></div><div class="line"><span class="meta">@log  #把@log放到now()函数的定义处，相当于执行了语句： now = log(now)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'2018-7-27'</span>)</div><div class="line"></div><div class="line">now()</div><div class="line"><span class="comment"># result</span></div><div class="line">call now():</div><div class="line"><span class="number">2018</span><span class="number">-7</span><span class="number">-27</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <blockquote>
 <ul>
 <li>log是一个decorator，接受一个函数作为参数，并返回一个函数</li>
 <li>函数对象有一个<strong>name</strong>属性，可以拿到函数的名字</li>
 <li>函数也是对象，它有<strong>name</strong>等属性，但你去看经过decorator装饰之后的函数，它们的<strong>name</strong>已经从原来的’now’变成了’wrapper’,因此有些依赖函数签名的代码执行就会出错，可以使用Python内置的functools.wraps解决</li>
 <li>wrapper()函数的参数定义是(<em>args, *</em>kw),因此，wrapper()函数可以接受任意参数的调用。</li>
-<li>Python的<b>@</b>语法，把decorator置于函数的定义处<a id="more"></a>
-</li>
+<li>Python的<b>@</b>语法，把decorator置于函数的定义处</li>
 </ul>
 </blockquote>
 <h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间：</p>
@@ -261,13 +243,6 @@
 &lt;li&gt;&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318435599930270c0381a3b44db991cd6d858064ac0000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的官方网站&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&quot;案例&quot;&gt;&lt;a href=&quot;#案例&quot; class=&quot;headerlink&quot; title=&quot;案例&quot;&gt;&lt;/a&gt;案例&lt;/h4&gt;&lt;p&gt;设计一个decorator，可作用于任何函数上，在函数调用前后自动打印日志：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; functools&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(func)&lt;/span&gt;:&lt;/span&gt;   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;    @functools.wraps(func)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;wrapper&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(*args, **kw)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;call %s():&#39;&lt;/span&gt; % func.__name__) &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; func(*args, **kw)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; wrapper&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@log  #把@log放到now()函数的定义处，相当于执行了语句： now = log(now)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print(&lt;span class=&quot;string&quot;&gt;&#39;2018-7-27&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;now()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# result&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;call now():&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;2018&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-7&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;-27&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;log是一个decorator，接受一个函数作为参数，并返回一个函数&lt;/li&gt;
-&lt;li&gt;函数对象有一个&lt;strong&gt;name&lt;/strong&gt;属性，可以拿到函数的名字&lt;/li&gt;
-&lt;li&gt;函数也是对象，它有&lt;strong&gt;name&lt;/strong&gt;等属性，但你去看经过decorator装饰之后的函数，它们的&lt;strong&gt;name&lt;/strong&gt;已经从原来的’now’变成了’wrapper’,因此有些依赖函数签名的代码执行就会出错，可以使用Python内置的functools.wraps解决&lt;/li&gt;
-&lt;li&gt;wrapper()函数的参数定义是(&lt;em&gt;args, *&lt;/em&gt;kw),因此，wrapper()函数可以接受任意参数的调用。&lt;/li&gt;
-&lt;li&gt;Python的&lt;b&gt;@&lt;/b&gt;语法，把decorator置于函数的定义处&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;
     
     </summary>
     
@@ -987,224 +962,6 @@
   </entry>
   
   <entry>
-    <title>构建前端自动化工作流环境</title>
-    <link href="https://thawsoar.github.io/2017/06/07/nodejs_1/"/>
-    <id>https://thawsoar.github.io/2017/06/07/nodejs_1/</id>
-    <published>2017-06-06T16:00:00.000Z</published>
-    <updated>2017-06-21T04:46:01.107Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><ul>
-<li>了解什么是Node，什么是NPM；（Node.js）</li>
-<li>掌握Bower的使用；</li>
-<li>熟练使用Less/Sass；</li>
-<li>搭建一个自己的自动化工作流环境；<ul>
-<li>自动编译</li>
-<li>自动合并</li>
-<li>自动刷新</li>
-<li>自动部署</li>
-</ul>
-</li>
-<li>GIT 与 GITHUB<ul>
-<li>master 托管源文件</li>
-<li>gh-pages 托管部署文件</li>
-<li>在github搭建自己的blog</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-<h2 id="为什么要有自动化的流程"><a href="#为什么要有自动化的流程" class="headerlink" title="为什么要有自动化的流程"></a>为什么要有自动化的流程</h2><ul>
-<li>在我们的开发过程中有大量的重复操作</li>
-<li>DRY  Don’t repeat yourself</li>
-<li><p>开发人员的精力应放在哪？创造，新的一切</p>
-</li>
-<li><p>前端开发的编译操作</p>
-</li>
-</ul>
-<h2 id="1-Node环境"><a href="#1-Node环境" class="headerlink" title="1.Node环境"></a>1.Node环境</h2><h3 id="1-1-什么是Node"><a href="#1-1-什么是Node" class="headerlink" title="1.1.什么是Node"></a>1.1.什么是Node</h3><ul>
-<li>Node.js 可能类似jquery.js</li>
-<li>不是JS文件，也不是一个JS框架（）</li>
-<li>而是Server side Javascript runtime, 服务端的一个JS运行时</li>
-<li>我们可以在NODE运行JS代码</li>
-<li>alert();ECMAScript  JS- ES  BOM  DOM</li>
-<li>node中只能运行ECMAScript，无法使用 BOM 和 DOM</li>
-<li>目前我们的JS是运行在浏览器内核中</li>
-<li>PHP是什么？是一门脚本语言也是一个运行环境</li>
-<li>为什么Node选中了JS，</li>
-<li><p>说到底就是一个JS运行环境</p>
-</li>
-<li><p>目前有两个分支</p>
-<ul>
-<li>Node.js 0.12.7 官方版本 要求尽善尽美</li>
-<li>IO.js 是社区的产物，不是官方的东西，io.js有很多新特性，迭代非常快，社区推进非常快</li>
-<li>15年两者合并，发布node第一个正式版 4.0， 迭代速度又慢了</li>
-<li>node 5.x == io.js</li>
-<li>node 4.0 == node</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2-Node环境搭建"><a href="#1-2-Node环境搭建" class="headerlink" title="1.2.Node环境搭建"></a>1.2.Node环境搭建</h3><h4 id="1-2-1-Mac"><a href="#1-2-1-Mac" class="headerlink" title="1.2.1.Mac"></a>1.2.1.Mac</h4><ul>
-<li>安装包的方式<ul>
-<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0.pkg" target="_blank" rel="external">pkg</a></li>
-</ul>
-</li>
-<li><p>NVM（Node Version Manager）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash</div><div class="line">$ <span class="built_in">echo</span> <span class="string">'. ~/.nvm/nvm.sh'</span> &gt;&gt; .bash_profile</div><div class="line">$ nvm install stable</div><div class="line">$ nvm <span class="built_in">alias</span> default stable</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="1-2-2-Windows"><a href="#1-2-2-Windows" class="headerlink" title="1.2.2.Windows"></a>1.2.2.Windows</h4><ul>
-<li>安装包的方式<ul>
-<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0-x64.msi" target="_blank" rel="external">msi_x64</a></li>
-<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0-x86.msi" target="_blank" rel="external">msi_x86</a></li>
-</ul>
-</li>
-<li>NVM（Node Version Manager）</li>
-<li>nvm(node version manager)</li>
-<li>因为NODE版本比较多，开发人员可能依赖很多版本</li>
-<li><p>通过NVM，可以轻松切换于不同的版本之间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>NVM_HOME=C:\Develop\nvm</p>
-<p>NVM_SYMLINK=C:\Develop\nodejs</p>
-<p>NPM_HOME=C:\Develop\nvm\npm</p>
-<p>PATH=%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME%</p>
-<h4 id="1-2-3-环境变量"><a href="#1-2-3-环境变量" class="headerlink" title="1.2.3.环境变量"></a>1.2.3.环境变量</h4><ul>
-<li><p>环境变量就是操作系统提供的系统级别用于存储变量的地方</p>
-</li>
-<li><p>系统变量和用户变量</p>
-</li>
-<li>系统变量指的是所用当前系统用户共享的变量</li>
-<li>自己的电脑一般只有一个用户</li>
-<li><p>建议将自己配置的环境变量放在用户变量中，用户变量比较干净</p>
-</li>
-<li><p>环境变量的变量名是不区分大小写的</p>
-</li>
-<li><p>变量间运行相互引用</p>
-</li>
-<li><p>特殊值：</p>
-</li>
-<li>PATH变量（不区分大小写）</li>
-<li>PATH 相当于一个路径的引用</li>
-<li><p>只要添加到PATH变量中的路径，都可以在任何目录下搜索</p>
-</li>
-<li><p>命令行</p>
-</li>
-<li>可以用来执行当前目录下的文件</li>
-<li>命令</li>
-</ul>
-<p>cd :change directory</p>
-<ul>
-<li>Node.js是一个轻内核（本身没有什么功能）的东东，所有的功能都要功能包提供</li>
-<li>node官方提供了一些最基础的包</li>
-</ul>
-<h3 id="1-3-Node用途"><a href="#1-3-Node用途" class="headerlink" title="1.3.Node用途"></a>1.3.Node用途</h3><h4 id="REPL环境（控制台环境）"><a href="#REPL环境（控制台环境）" class="headerlink" title="REPL环境（控制台环境）"></a>REPL环境（控制台环境）</h4><h4 id="1-3-1-开发Web应用程序"><a href="#1-3-1-开发Web应用程序" class="headerlink" title="1.3.1.开发Web应用程序"></a>1.3.1.开发Web应用程序</h4><ul>
-<li>做动态网站</li>
-<li>开发提供数据的服务端API</li>
-</ul>
-<h4 id="1-3-2-前端开发工具基础"><a href="#1-3-2-前端开发工具基础" class="headerlink" title="1.3.2.前端开发工具基础"></a>1.3.2.前端开发工具基础</h4><ul>
-<li>Node.js给前端乃至整个开发行业带来一场工业革命</li>
-<li>刀跟火种</li>
-</ul>
-<h3 id="1-4-Node开发Web应用Demo"><a href="#1-4-Node开发Web应用Demo" class="headerlink" title="1.4.Node开发Web应用Demo"></a>1.4.Node开发Web应用Demo</h3><h4 id="1-4-1-复习请求与响应"><a href="#1-4-1-复习请求与响应" class="headerlink" title="1.4.1.复习请求与响应"></a>1.4.1.复习请求与响应</h4><p>客户端发送到服务端的东西称之为请求报文<br>服务端返回给客户端的东西称之为响应报文</p>
-<h3 id="1-5-NPM"><a href="#1-5-NPM" class="headerlink" title="1.5.NPM"></a>1.5.NPM</h3><h4 id="1-5-1-什么是NPM"><a href="#1-5-1-什么是NPM" class="headerlink" title="1.5.1.什么是NPM"></a>1.5.1.什么是NPM</h4><p><a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></p>
-<ul>
-<li>Node Package Manager</li>
-<li>Node应用程序依赖包的管理工具</li>
-<li>安装卸载更新之类的操作</li>
-</ul>
-<h4 id="1-5-2-为什么使用NPM"><a href="#1-5-2-为什么使用NPM" class="headerlink" title="1.5.2.为什么使用NPM"></a>1.5.2.为什么使用NPM</h4><ul>
-<li>包很多</li>
-<li>场景：我需要用一个A，A依赖B，B依赖C</li>
-<li>常见的包管理工具都有循环依赖的功能</li>
-<li>你只需记住你要什么东西</li>
-</ul>
-<h4 id="1-5-3-常见的NPM操作"><a href="#1-5-3-常见的NPM操作" class="headerlink" title="1.5.3.常见的NPM操作"></a>1.5.3.常见的NPM操作</h4><p>// 安装一个包，默认安装最新稳定版本<br>npm install package_name<br>// –save<br>// 初始化操作，给项目添加一个配置文件<br>npm init<br>// –yes参数走默认配置</p>
-<ul>
-<li>如果官方数据源太慢使用</li>
-<li><a href="https://npm.taobao.org/" target="_blank" rel="external">https://npm.taobao.org/</a></li>
-</ul>
-<hr>
-<h2 id="2-Bower"><a href="#2-Bower" class="headerlink" title="2.Bower"></a>2.Bower</h2><h3 id="2-1-什么是Bower"><a href="#2-1-什么是Bower" class="headerlink" title="2.1.什么是Bower"></a>2.1.什么是Bower</h3><ul>
-<li><a href="http://bower.io/" target="_blank" rel="external">官网</a></li>
-<li>web应用程序依赖项管理工具</li>
-</ul>
-<h3 id="2-2-为什么使用Bower"><a href="#2-2-为什么使用Bower" class="headerlink" title="2.2.为什么使用Bower"></a>2.2.为什么使用Bower</h3><ul>
-<li>方便便捷的方式管理包，zhuangbi</li>
-</ul>
-<h3 id="2-3-Bower实践"><a href="#2-3-Bower实践" class="headerlink" title="2.3.Bower实践"></a>2.3.Bower实践</h3><ul>
-<li><p>npm install -g bower // -g:global</p>
-</li>
-<li><p>修改npm全局路径，就是在用户目录下添加.npmrc文件</p>
-</li>
-</ul>
-<hr>
-<h2 id="3-Sass-LESS"><a href="#3-Sass-LESS" class="headerlink" title="3.Sass/LESS"></a>3.Sass/LESS</h2><hr>
-<h2 id="4-Gulp"><a href="#4-Gulp" class="headerlink" title="4.Gulp"></a>4.Gulp</h2><h3 id="4-1-Gulp简介"><a href="#4-1-Gulp简介" class="headerlink" title="4.1.Gulp简介"></a>4.1.Gulp简介</h3><ul>
-<li>链接：<ul>
-<li><a href="http://gulpjs.com/" target="_blank" rel="external">官网</a></li>
-<li><a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">中文网</a></li>
-</ul>
-</li>
-<li>就是用来机械化的完成重复性质的工作</li>
-<li>gulp的机制就是将重复工作抽象成一个个的任务，</li>
-</ul>
-<h3 id="4-2-Gulp准备工作"><a href="#4-2-Gulp准备工作" class="headerlink" title="4.2.Gulp准备工作"></a>4.2.Gulp准备工作</h3><ul>
-<li>安装Node.js</li>
-<li>安装 gulp 命令行工具<ul>
-<li><code>npm install -g gulp</code></li>
-</ul>
-</li>
-<li>初始化 gulp 项目</li>
-<li>创建任务 - gulpfile.js</li>
-</ul>
-<h3 id="4-3-基本使用"><a href="#4-3-基本使用" class="headerlink" title="4.3.基本使用"></a>4.3.基本使用</h3><h3 id="4-4-常用插件"><a href="#4-4-常用插件" class="headerlink" title="4.4.常用插件"></a>4.4.常用插件</h3><ul>
-<li><a href="https://www.npmjs.com/package/gulp-less" target="_blank" rel="external">编译 Less：gulp-less</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-connect" target="_blank" rel="external">创建本地服务器：gulp-connect</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="external">合并文件：gulp-concat</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-uglify" target="_blank" rel="external">最小化 js 文件：gulp-uglify</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-rename" target="_blank" rel="external">重命名文件：gulp-rename</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-minify-css" target="_blank" rel="external">最小化 css 文件：gulp-minify-css</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-minify-html" target="_blank" rel="external">压缩html文件 gulp-minify-html</a></li>
-<li><a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="external">最小化图像：gulp-imagemin</a></li>
-</ul>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;学习目标&quot;&gt;&lt;a href=&quot;#学习目标&quot; class=&quot;headerlink&quot; title=&quot;学习目标&quot;&gt;&lt;/a&gt;学习目标&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;了解什么是Node，什么是NPM；（Node.js）&lt;/li&gt;
-&lt;li&gt;掌握Bower的使用；&lt;/li&gt;
-&lt;li&gt;熟练使用Less/Sass；&lt;/li&gt;
-&lt;li&gt;搭建一个自己的自动化工作流环境；&lt;ul&gt;
-&lt;li&gt;自动编译&lt;/li&gt;
-&lt;li&gt;自动合并&lt;/li&gt;
-&lt;li&gt;自动刷新&lt;/li&gt;
-&lt;li&gt;自动部署&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;GIT 与 GITHUB&lt;ul&gt;
-&lt;li&gt;master 托管源文件&lt;/li&gt;
-&lt;li&gt;gh-pages 托管部署文件&lt;/li&gt;
-&lt;li&gt;在github搭建自己的blog&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Nodejs" scheme="https://thawsoar.github.io/categories/Nodejs/"/>
-    
-    
-      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
-    
-      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
-    
-      <category term="Nodejs" scheme="https://thawsoar.github.io/tags/Nodejs/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Git</title>
     <link href="https://thawsoar.github.io/2017/06/07/git_1/"/>
     <id>https://thawsoar.github.io/2017/06/07/git_1/</id>
@@ -1591,6 +1348,224 @@
       <category term="Angular" scheme="https://thawsoar.github.io/tags/Angular/"/>
     
       <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>构建前端自动化工作流环境</title>
+    <link href="https://thawsoar.github.io/2017/06/07/nodejs_1/"/>
+    <id>https://thawsoar.github.io/2017/06/07/nodejs_1/</id>
+    <published>2017-06-06T16:00:00.000Z</published>
+    <updated>2017-06-21T04:46:01.107Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><ul>
+<li>了解什么是Node，什么是NPM；（Node.js）</li>
+<li>掌握Bower的使用；</li>
+<li>熟练使用Less/Sass；</li>
+<li>搭建一个自己的自动化工作流环境；<ul>
+<li>自动编译</li>
+<li>自动合并</li>
+<li>自动刷新</li>
+<li>自动部署</li>
+</ul>
+</li>
+<li>GIT 与 GITHUB<ul>
+<li>master 托管源文件</li>
+<li>gh-pages 托管部署文件</li>
+<li>在github搭建自己的blog</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="为什么要有自动化的流程"><a href="#为什么要有自动化的流程" class="headerlink" title="为什么要有自动化的流程"></a>为什么要有自动化的流程</h2><ul>
+<li>在我们的开发过程中有大量的重复操作</li>
+<li>DRY  Don’t repeat yourself</li>
+<li><p>开发人员的精力应放在哪？创造，新的一切</p>
+</li>
+<li><p>前端开发的编译操作</p>
+</li>
+</ul>
+<h2 id="1-Node环境"><a href="#1-Node环境" class="headerlink" title="1.Node环境"></a>1.Node环境</h2><h3 id="1-1-什么是Node"><a href="#1-1-什么是Node" class="headerlink" title="1.1.什么是Node"></a>1.1.什么是Node</h3><ul>
+<li>Node.js 可能类似jquery.js</li>
+<li>不是JS文件，也不是一个JS框架（）</li>
+<li>而是Server side Javascript runtime, 服务端的一个JS运行时</li>
+<li>我们可以在NODE运行JS代码</li>
+<li>alert();ECMAScript  JS- ES  BOM  DOM</li>
+<li>node中只能运行ECMAScript，无法使用 BOM 和 DOM</li>
+<li>目前我们的JS是运行在浏览器内核中</li>
+<li>PHP是什么？是一门脚本语言也是一个运行环境</li>
+<li>为什么Node选中了JS，</li>
+<li><p>说到底就是一个JS运行环境</p>
+</li>
+<li><p>目前有两个分支</p>
+<ul>
+<li>Node.js 0.12.7 官方版本 要求尽善尽美</li>
+<li>IO.js 是社区的产物，不是官方的东西，io.js有很多新特性，迭代非常快，社区推进非常快</li>
+<li>15年两者合并，发布node第一个正式版 4.0， 迭代速度又慢了</li>
+<li>node 5.x == io.js</li>
+<li>node 4.0 == node</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-Node环境搭建"><a href="#1-2-Node环境搭建" class="headerlink" title="1.2.Node环境搭建"></a>1.2.Node环境搭建</h3><h4 id="1-2-1-Mac"><a href="#1-2-1-Mac" class="headerlink" title="1.2.1.Mac"></a>1.2.1.Mac</h4><ul>
+<li>安装包的方式<ul>
+<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0.pkg" target="_blank" rel="external">pkg</a></li>
+</ul>
+</li>
+<li><p>NVM（Node Version Manager）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash</div><div class="line">$ <span class="built_in">echo</span> <span class="string">'. ~/.nvm/nvm.sh'</span> &gt;&gt; .bash_profile</div><div class="line">$ nvm install stable</div><div class="line">$ nvm <span class="built_in">alias</span> default stable</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="1-2-2-Windows"><a href="#1-2-2-Windows" class="headerlink" title="1.2.2.Windows"></a>1.2.2.Windows</h4><ul>
+<li>安装包的方式<ul>
+<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0-x64.msi" target="_blank" rel="external">msi_x64</a></li>
+<li><a href="https://nodejs.org/dist/v5.5.0/node-v5.5.0-x86.msi" target="_blank" rel="external">msi_x86</a></li>
+</ul>
+</li>
+<li>NVM（Node Version Manager）</li>
+<li>nvm(node version manager)</li>
+<li>因为NODE版本比较多，开发人员可能依赖很多版本</li>
+<li><p>通过NVM，可以轻松切换于不同的版本之间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"> </div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>NVM_HOME=C:\Develop\nvm</p>
+<p>NVM_SYMLINK=C:\Develop\nodejs</p>
+<p>NPM_HOME=C:\Develop\nvm\npm</p>
+<p>PATH=%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME%</p>
+<h4 id="1-2-3-环境变量"><a href="#1-2-3-环境变量" class="headerlink" title="1.2.3.环境变量"></a>1.2.3.环境变量</h4><ul>
+<li><p>环境变量就是操作系统提供的系统级别用于存储变量的地方</p>
+</li>
+<li><p>系统变量和用户变量</p>
+</li>
+<li>系统变量指的是所用当前系统用户共享的变量</li>
+<li>自己的电脑一般只有一个用户</li>
+<li><p>建议将自己配置的环境变量放在用户变量中，用户变量比较干净</p>
+</li>
+<li><p>环境变量的变量名是不区分大小写的</p>
+</li>
+<li><p>变量间运行相互引用</p>
+</li>
+<li><p>特殊值：</p>
+</li>
+<li>PATH变量（不区分大小写）</li>
+<li>PATH 相当于一个路径的引用</li>
+<li><p>只要添加到PATH变量中的路径，都可以在任何目录下搜索</p>
+</li>
+<li><p>命令行</p>
+</li>
+<li>可以用来执行当前目录下的文件</li>
+<li>命令</li>
+</ul>
+<p>cd :change directory</p>
+<ul>
+<li>Node.js是一个轻内核（本身没有什么功能）的东东，所有的功能都要功能包提供</li>
+<li>node官方提供了一些最基础的包</li>
+</ul>
+<h3 id="1-3-Node用途"><a href="#1-3-Node用途" class="headerlink" title="1.3.Node用途"></a>1.3.Node用途</h3><h4 id="REPL环境（控制台环境）"><a href="#REPL环境（控制台环境）" class="headerlink" title="REPL环境（控制台环境）"></a>REPL环境（控制台环境）</h4><h4 id="1-3-1-开发Web应用程序"><a href="#1-3-1-开发Web应用程序" class="headerlink" title="1.3.1.开发Web应用程序"></a>1.3.1.开发Web应用程序</h4><ul>
+<li>做动态网站</li>
+<li>开发提供数据的服务端API</li>
+</ul>
+<h4 id="1-3-2-前端开发工具基础"><a href="#1-3-2-前端开发工具基础" class="headerlink" title="1.3.2.前端开发工具基础"></a>1.3.2.前端开发工具基础</h4><ul>
+<li>Node.js给前端乃至整个开发行业带来一场工业革命</li>
+<li>刀跟火种</li>
+</ul>
+<h3 id="1-4-Node开发Web应用Demo"><a href="#1-4-Node开发Web应用Demo" class="headerlink" title="1.4.Node开发Web应用Demo"></a>1.4.Node开发Web应用Demo</h3><h4 id="1-4-1-复习请求与响应"><a href="#1-4-1-复习请求与响应" class="headerlink" title="1.4.1.复习请求与响应"></a>1.4.1.复习请求与响应</h4><p>客户端发送到服务端的东西称之为请求报文<br>服务端返回给客户端的东西称之为响应报文</p>
+<h3 id="1-5-NPM"><a href="#1-5-NPM" class="headerlink" title="1.5.NPM"></a>1.5.NPM</h3><h4 id="1-5-1-什么是NPM"><a href="#1-5-1-什么是NPM" class="headerlink" title="1.5.1.什么是NPM"></a>1.5.1.什么是NPM</h4><p><a href="https://www.npmjs.com/" target="_blank" rel="external">https://www.npmjs.com/</a></p>
+<ul>
+<li>Node Package Manager</li>
+<li>Node应用程序依赖包的管理工具</li>
+<li>安装卸载更新之类的操作</li>
+</ul>
+<h4 id="1-5-2-为什么使用NPM"><a href="#1-5-2-为什么使用NPM" class="headerlink" title="1.5.2.为什么使用NPM"></a>1.5.2.为什么使用NPM</h4><ul>
+<li>包很多</li>
+<li>场景：我需要用一个A，A依赖B，B依赖C</li>
+<li>常见的包管理工具都有循环依赖的功能</li>
+<li>你只需记住你要什么东西</li>
+</ul>
+<h4 id="1-5-3-常见的NPM操作"><a href="#1-5-3-常见的NPM操作" class="headerlink" title="1.5.3.常见的NPM操作"></a>1.5.3.常见的NPM操作</h4><p>// 安装一个包，默认安装最新稳定版本<br>npm install package_name<br>// –save<br>// 初始化操作，给项目添加一个配置文件<br>npm init<br>// –yes参数走默认配置</p>
+<ul>
+<li>如果官方数据源太慢使用</li>
+<li><a href="https://npm.taobao.org/" target="_blank" rel="external">https://npm.taobao.org/</a></li>
+</ul>
+<hr>
+<h2 id="2-Bower"><a href="#2-Bower" class="headerlink" title="2.Bower"></a>2.Bower</h2><h3 id="2-1-什么是Bower"><a href="#2-1-什么是Bower" class="headerlink" title="2.1.什么是Bower"></a>2.1.什么是Bower</h3><ul>
+<li><a href="http://bower.io/" target="_blank" rel="external">官网</a></li>
+<li>web应用程序依赖项管理工具</li>
+</ul>
+<h3 id="2-2-为什么使用Bower"><a href="#2-2-为什么使用Bower" class="headerlink" title="2.2.为什么使用Bower"></a>2.2.为什么使用Bower</h3><ul>
+<li>方便便捷的方式管理包，zhuangbi</li>
+</ul>
+<h3 id="2-3-Bower实践"><a href="#2-3-Bower实践" class="headerlink" title="2.3.Bower实践"></a>2.3.Bower实践</h3><ul>
+<li><p>npm install -g bower // -g:global</p>
+</li>
+<li><p>修改npm全局路径，就是在用户目录下添加.npmrc文件</p>
+</li>
+</ul>
+<hr>
+<h2 id="3-Sass-LESS"><a href="#3-Sass-LESS" class="headerlink" title="3.Sass/LESS"></a>3.Sass/LESS</h2><hr>
+<h2 id="4-Gulp"><a href="#4-Gulp" class="headerlink" title="4.Gulp"></a>4.Gulp</h2><h3 id="4-1-Gulp简介"><a href="#4-1-Gulp简介" class="headerlink" title="4.1.Gulp简介"></a>4.1.Gulp简介</h3><ul>
+<li>链接：<ul>
+<li><a href="http://gulpjs.com/" target="_blank" rel="external">官网</a></li>
+<li><a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">中文网</a></li>
+</ul>
+</li>
+<li>就是用来机械化的完成重复性质的工作</li>
+<li>gulp的机制就是将重复工作抽象成一个个的任务，</li>
+</ul>
+<h3 id="4-2-Gulp准备工作"><a href="#4-2-Gulp准备工作" class="headerlink" title="4.2.Gulp准备工作"></a>4.2.Gulp准备工作</h3><ul>
+<li>安装Node.js</li>
+<li>安装 gulp 命令行工具<ul>
+<li><code>npm install -g gulp</code></li>
+</ul>
+</li>
+<li>初始化 gulp 项目</li>
+<li>创建任务 - gulpfile.js</li>
+</ul>
+<h3 id="4-3-基本使用"><a href="#4-3-基本使用" class="headerlink" title="4.3.基本使用"></a>4.3.基本使用</h3><h3 id="4-4-常用插件"><a href="#4-4-常用插件" class="headerlink" title="4.4.常用插件"></a>4.4.常用插件</h3><ul>
+<li><a href="https://www.npmjs.com/package/gulp-less" target="_blank" rel="external">编译 Less：gulp-less</a></li>
+<li><a href="https://www.npmjs.com/package/gulp-connect" target="_blank" rel="external">创建本地服务器：gulp-connect</a></li>
+<li><a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="external">合并文件：gulp-concat</a></li>
+<li><a href="https://www.npmjs.com/package/gulp-uglify" target="_blank" rel="external">最小化 js 文件：gulp-uglify</a></li>
+<li><a href="https://www.npmjs.com/package/gulp-rename" target="_blank" rel="external">重命名文件：gulp-rename</a></li>
+<li><a href="https://www.npmjs.com/package/gulp-minify-css" target="_blank" rel="external">最小化 css 文件：gulp-minify-css</a></li>
+<li><a href="https://www.npmjs.com/package/gulp-minify-html" target="_blank" rel="external">压缩html文件 gulp-minify-html</a></li>
+<li><a href="https://www.npmjs.com/package/gulp-imagemin" target="_blank" rel="external">最小化图像：gulp-imagemin</a></li>
+</ul>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;学习目标&quot;&gt;&lt;a href=&quot;#学习目标&quot; class=&quot;headerlink&quot; title=&quot;学习目标&quot;&gt;&lt;/a&gt;学习目标&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;了解什么是Node，什么是NPM；（Node.js）&lt;/li&gt;
+&lt;li&gt;掌握Bower的使用；&lt;/li&gt;
+&lt;li&gt;熟练使用Less/Sass；&lt;/li&gt;
+&lt;li&gt;搭建一个自己的自动化工作流环境；&lt;ul&gt;
+&lt;li&gt;自动编译&lt;/li&gt;
+&lt;li&gt;自动合并&lt;/li&gt;
+&lt;li&gt;自动刷新&lt;/li&gt;
+&lt;li&gt;自动部署&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;GIT 与 GITHUB&lt;ul&gt;
+&lt;li&gt;master 托管源文件&lt;/li&gt;
+&lt;li&gt;gh-pages 托管部署文件&lt;/li&gt;
+&lt;li&gt;在github搭建自己的blog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Nodejs" scheme="https://thawsoar.github.io/categories/Nodejs/"/>
+    
+    
+      <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
+    
+      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
+    
+      <category term="Nodejs" scheme="https://thawsoar.github.io/tags/Nodejs/"/>
     
   </entry>
   
