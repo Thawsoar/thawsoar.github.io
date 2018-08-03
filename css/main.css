@@ -2082,7 +2082,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff42ab;
+  background: #3b86b3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3352,4 +3352,14 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+#QR>#wechat:hover p {
+  animation: roll 0.1s 3 linear;
+  -webkit-animation: roll 0.1s 3 linear;
+  -moz-animation: roll 0.1s 3 linear;
+}
+#QR>#alipay:hover p {
+  animation: roll 0.1s 3 linear;
+  -webkit-animation: roll 0.1s 3 linear;
+  -moz-animation: roll 0.1s 3 linear;
 }
