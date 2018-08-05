@@ -421,7 +421,7 @@
                 
               
 
-              <time title="创建时间：2018-08-05 23:27:02 / 修改时间：23:35:32" itemprop="dateCreated datePublished" datetime="2018-08-05T23:27:02+08:00">2018-08-05</time>
+              <time title="创建时间：2018-08-05 23:27:02 / 修改时间：23:38:31" itemprop="dateCreated datePublished" datetime="2018-08-05T23:27:02+08:00">2018-08-05</time>
             
 
             
@@ -488,19 +488,18 @@
 
       
         
-          
-            <h4 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h4><blockquote>
+          <h4 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h4><blockquote>
 <p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
 </blockquote>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h4><div class="note default"><p>给定数组 nums = [1,1,2],<br>函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。<br>你不需要考虑数组中超出新长度后面的元素。</p></div>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> removeDuplicates = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = nums.length - <span class="number">1</span>; j &gt; i; j--) &#123;</div><div class="line">            <span class="keyword">if</span> (nums[i] == nums[j]) &#123;</div><div class="line">                nums.splice(j, <span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> nums.length</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<hr>
-<h4 id="习题2"><a href="#习题2" class="headerlink" title="习题2"></a>习题2</h4><blockquote>
-<p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。<br>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）<br>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
-</blockquote>
-<h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例:"></a>示例:</h4><div class="note default"><p>输入: [7,1,5,3,6,4]<br>输出: 7<br>解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。<br>     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</p></div>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * @param &#123;number[]&#125; prices</div><div class="line"> * @return &#123;number&#125;</div><div class="line"> */</div><div class="line"><span class="keyword">var</span> maxProfit = <span class="function"><span class="keyword">function</span>(<span class="params">prices</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> number = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;prices.length;i++) &#123;</div><div class="line">        <span class="keyword">if</span>(prices[i] &lt; prices[i+<span class="number">1</span>]) &#123;</div><div class="line">            number += prices[i+<span class="number">1</span>] - prices[i]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> number</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/05/arithmetic-array-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
