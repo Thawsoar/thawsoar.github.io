@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数组]]></title>
+    <url>%2F2018%2F08%2F05%2Farithmetic-array-1%2F</url>
+    <content type="text"><![CDATA[习题1 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 示例:给定数组 nums = [1,1,2],函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。你不需要考虑数组中超出新长度后面的元素。 1234567891011var removeDuplicates = function(nums) &#123; for (var i = 0; i &lt; nums.length; i++) &#123; for (var j = nums.length - 1; j &gt; i; j--) &#123; if (nums[i] == nums[j]) &#123; nums.splice(j, 1); &#125; &#125; &#125; return nums.length&#125;; 习题2 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。 示例:输入: [7,1,5,3,6,4]输出: 7解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。 随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。 12345678910111213/** * @param &#123;number[]&#125; prices * @return &#123;number&#125; */var maxProfit = function(prices) &#123; let number = 0; for(let i=0; i&lt;prices.length;i++) &#123; if(prices[i] &lt; prices[i+1]) &#123; number += prices[i+1] - prices[i] &#125; &#125; return number&#125;;]]></content>
+      <categories>
+        <category>arithmetic</category>
+      </categories>
+      <tags>
+        <tag>arithmetic</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python_oop高级编程]]></title>
     <url>%2F2018%2F08%2F03%2Fpython_oop%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[__slots__ 限制类实例的属性12345678910class Student(object): __slots__ = ('name', 'age') # 用tuple定义允许绑定的属性名称&gt;&gt;&gt; s = Student() # 创建新的实例&gt;&gt;&gt; s.name = 'Michael' # 绑定属性'name'&gt;&gt;&gt; s.age = 25 # 绑定属性'age'&gt;&gt;&gt; s.score = 99 # 绑定属性'score'Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AttributeError: 'Student' object has no attribute 'score' 由于&#39;score&#39;没有被放到__slots__中，所以不能绑定score属性，试图绑定score将得到AttributeError的错误。使用__slots__要注意，__slots__定义的属性仅对当前类实例起作用，对继承的子类是不起作用的除非在子类中也定义__slots__，这样，子类实例允许定义的属性就是自身的__slots__加上父类的__slots__ @property装饰器: 负责把一个方法变成属性调用12345678910111213141516171819202122class Student(object): @property def score(self): return self._score @score.setter def score(self, value): if not isinstance(value, int): raise ValueError('score must be an integer!') if value &lt; 0 or value &gt; 100: raise ValueError('score must between 0 ~ 100!') self._score = value&gt;&gt;&gt; s = Student()&gt;&gt;&gt; s.score = 60 # OK，实际转化为s.set_score(60)&gt;&gt;&gt; s.score # OK，实际转化为s.get_score()60&gt;&gt;&gt; s.score = 9999Traceback (most recent call last): ...ValueError: score must between 0 ~ 100! self._score 注意方法返回的属性要带 _ @property广泛应用在类的定义中，可以让调用者写出简短的代码，同时保证对参数进行必要的检查，这样，程序运行时就减少了出错的可能性 多重继承 12class Dog(Mammal, RunnableMixIn, CarnivorousMixIn): pass 不需要复杂而庞大的继承链，只要选择组合不同的类的功能，就可以快速构造出所需的子类。由于Python允许使用多重继承，因此，MixIn就是一种常见的设计。只允许单一继承的语言（如Java）不能使用MixIn的设计。 定制类 __str__]]></content>
@@ -145,16 +156,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[构建前端自动化工作流环境]]></title>
-    <url>%2F2017%2F06%2F07%2Fnodejs_1%2F</url>
-    <content type="text"><![CDATA[学习目标 了解什么是Node，什么是NPM；（Node.js） 掌握Bower的使用； 熟练使用Less/Sass； 搭建一个自己的自动化工作流环境； 自动编译 自动合并 自动刷新 自动部署 GIT 与 GITHUB master 托管源文件 gh-pages 托管部署文件 在github搭建自己的blog 为什么要有自动化的流程 在我们的开发过程中有大量的重复操作 DRY Don’t repeat yourself 开发人员的精力应放在哪？创造，新的一切 前端开发的编译操作 1.Node环境1.1.什么是Node Node.js 可能类似jquery.js 不是JS文件，也不是一个JS框架（） 而是Server side Javascript runtime, 服务端的一个JS运行时 我们可以在NODE运行JS代码 alert();ECMAScript JS- ES BOM DOM node中只能运行ECMAScript，无法使用 BOM 和 DOM 目前我们的JS是运行在浏览器内核中 PHP是什么？是一门脚本语言也是一个运行环境 为什么Node选中了JS， 说到底就是一个JS运行环境 目前有两个分支 Node.js 0.12.7 官方版本 要求尽善尽美 IO.js 是社区的产物，不是官方的东西，io.js有很多新特性，迭代非常快，社区推进非常快 15年两者合并，发布node第一个正式版 4.0， 迭代速度又慢了 node 5.x == io.js node 4.0 == node 1.2.Node环境搭建1.2.1.Mac 安装包的方式 pkg NVM（Node Version Manager） 1234$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash$ echo '. ~/.nvm/nvm.sh' &gt;&gt; .bash_profile$ nvm install stable$ nvm alias default stable 1.2.2.Windows 安装包的方式 msi_x64 msi_x86 NVM（Node Version Manager） nvm(node version manager) 因为NODE版本比较多，开发人员可能依赖很多版本 通过NVM，可以轻松切换于不同的版本之间 1 NVM_HOME=C:\Develop\nvm NVM_SYMLINK=C:\Develop\nodejs NPM_HOME=C:\Develop\nvm\npm PATH=%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME% 1.2.3.环境变量 环境变量就是操作系统提供的系统级别用于存储变量的地方 系统变量和用户变量 系统变量指的是所用当前系统用户共享的变量 自己的电脑一般只有一个用户 建议将自己配置的环境变量放在用户变量中，用户变量比较干净 环境变量的变量名是不区分大小写的 变量间运行相互引用 特殊值： PATH变量（不区分大小写） PATH 相当于一个路径的引用 只要添加到PATH变量中的路径，都可以在任何目录下搜索 命令行 可以用来执行当前目录下的文件 命令 cd :change directory Node.js是一个轻内核（本身没有什么功能）的东东，所有的功能都要功能包提供 node官方提供了一些最基础的包 1.3.Node用途REPL环境（控制台环境）1.3.1.开发Web应用程序 做动态网站 开发提供数据的服务端API 1.3.2.前端开发工具基础 Node.js给前端乃至整个开发行业带来一场工业革命 刀跟火种 1.4.Node开发Web应用Demo1.4.1.复习请求与响应客户端发送到服务端的东西称之为请求报文服务端返回给客户端的东西称之为响应报文 1.5.NPM1.5.1.什么是NPMhttps://www.npmjs.com/ Node Package Manager Node应用程序依赖包的管理工具 安装卸载更新之类的操作 1.5.2.为什么使用NPM 包很多 场景：我需要用一个A，A依赖B，B依赖C 常见的包管理工具都有循环依赖的功能 你只需记住你要什么东西 1.5.3.常见的NPM操作// 安装一个包，默认安装最新稳定版本npm install package_name// –save// 初始化操作，给项目添加一个配置文件npm init// –yes参数走默认配置 如果官方数据源太慢使用 https://npm.taobao.org/ 2.Bower2.1.什么是Bower 官网 web应用程序依赖项管理工具 2.2.为什么使用Bower 方便便捷的方式管理包，zhuangbi 2.3.Bower实践 npm install -g bower // -g:global 修改npm全局路径，就是在用户目录下添加.npmrc文件 3.Sass/LESS 4.Gulp4.1.Gulp简介 链接： 官网 中文网 就是用来机械化的完成重复性质的工作 gulp的机制就是将重复工作抽象成一个个的任务， 4.2.Gulp准备工作 安装Node.js 安装 gulp 命令行工具 npm install -g gulp 初始化 gulp 项目 创建任务 - gulpfile.js 4.3.基本使用4.4.常用插件 编译 Less：gulp-less 创建本地服务器：gulp-connect 合并文件：gulp-concat 最小化 js 文件：gulp-uglify 重命名文件：gulp-rename 最小化 css 文件：gulp-minify-css 压缩html文件 gulp-minify-html 最小化图像：gulp-imagemin]]></content>
+    <title><![CDATA[Angular入门]]></title>
+    <url>%2F2017%2F06%2F07%2Fangular_1%2F</url>
+    <content type="text"><![CDATA[推荐工具 在线编辑器 http://codepen.io/ https://jsfiddle.net/ Angular 简介什么是 AngularJS 一款非常优秀的前端高级 JS 框架 最早由 Misko Hevery 等人创建 2009 年被 Google 公式收购，用于其多款产品 目前有一个全职的开发团队继续开发和维护这个库 有了这一类框架就可以轻松构建 SPA 应用程序 轻松构建 SPA（单一页面应用程序） 单一页面应用程序： 只有一个页面（整个应用的一个载体） 内容全部是由AJAX方式呈现出啦的 其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。 为什么使用 AngularJS 更少的代码，实现更强劲的功能 将一些以前在后台开发中使用的思想带入前端开发 带领当前市面上的框架走向模式化或者架构化 AngularJS 的核心特性 MVC 模块化 自动化双向数据绑定 指令系统 相关链接 http://www.apjs.net/ http://www.angularjs.cn/ http://docs.angularjs.cn/api https://material.angularjs.org http://angular-ui.github.io/ Angular 上手安装 Angular 下载 Angular.js 的包 https://github.com/angular/angular.js/releases 使用 CDN 上的 Angular.js http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js 使用 Bower 安装 1bower install angular 使用 NPM 安装 1npm install angular 每种方式安装包，本质都是将angular的库下载到当前文件夹中 简单示例12 angular中最重要的概念是指令（directive） ng-model 是双向数据绑定的指令，效果就是将当前元素的value属性和模型中的user.name建立绑定关系 JS: BOM DOM ES 分析 Angular 示例使用总结运行官方文档CDN的优势Content Dev 快 节省自己服务器的带宽压力和流量 Angular 基础概念MVC 思想什么是 MVC 思想 将应用程序的组成划分为三个部分：Model View Controller 控制器的作用就是初始化模型用的； 模型就是用于存储数据的 视图用于展现数据 登陆案例 模型 我们数据库中所有用户的信息 接受控制器传来的用户名和密码进行校验的业务逻辑并返回true/false 控制器 接受用户在界面上填写的用户名和密码 将用户名和密码交给模型 视图 给用户呈现一个表单 接受用户输入内容，并将其提交给控制器 根据控制器返回的数据，响应用户页面 模块（Module） 划分应用程序结构 我们可以通过angular.module创建一个模块 angular.module方法传递两个参数才是创建模块，一个参数是获取模块 控制器（Controller） 通过$scope和视图关联 视图模型（$scope）表达式（Expression）单向数据绑定双向数据绑定Angular 指令系统]]></content>
       <categories>
-        <category>Nodejs</category>
+        <category>Angular</category>
       </categories>
       <tags>
         <tag>npm</tag>
+        <tag>Angular</tag>
         <tag>github</tag>
-        <tag>Nodejs</tag>
       </tags>
   </entry>
   <entry>
@@ -171,16 +182,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Angular入门]]></title>
-    <url>%2F2017%2F06%2F07%2Fangular_1%2F</url>
-    <content type="text"><![CDATA[推荐工具 在线编辑器 http://codepen.io/ https://jsfiddle.net/ Angular 简介什么是 AngularJS 一款非常优秀的前端高级 JS 框架 最早由 Misko Hevery 等人创建 2009 年被 Google 公式收购，用于其多款产品 目前有一个全职的开发团队继续开发和维护这个库 有了这一类框架就可以轻松构建 SPA 应用程序 轻松构建 SPA（单一页面应用程序） 单一页面应用程序： 只有一个页面（整个应用的一个载体） 内容全部是由AJAX方式呈现出啦的 其核心就是通过指令扩展了 HTML，通过表达式绑定数据到 HTML。 为什么使用 AngularJS 更少的代码，实现更强劲的功能 将一些以前在后台开发中使用的思想带入前端开发 带领当前市面上的框架走向模式化或者架构化 AngularJS 的核心特性 MVC 模块化 自动化双向数据绑定 指令系统 相关链接 http://www.apjs.net/ http://www.angularjs.cn/ http://docs.angularjs.cn/api https://material.angularjs.org http://angular-ui.github.io/ Angular 上手安装 Angular 下载 Angular.js 的包 https://github.com/angular/angular.js/releases 使用 CDN 上的 Angular.js http://apps.bdimg.com/libs/angular.js/1.4.9/angular.min.js 使用 Bower 安装 1bower install angular 使用 NPM 安装 1npm install angular 每种方式安装包，本质都是将angular的库下载到当前文件夹中 简单示例12 angular中最重要的概念是指令（directive） ng-model 是双向数据绑定的指令，效果就是将当前元素的value属性和模型中的user.name建立绑定关系 JS: BOM DOM ES 分析 Angular 示例使用总结运行官方文档CDN的优势Content Dev 快 节省自己服务器的带宽压力和流量 Angular 基础概念MVC 思想什么是 MVC 思想 将应用程序的组成划分为三个部分：Model View Controller 控制器的作用就是初始化模型用的； 模型就是用于存储数据的 视图用于展现数据 登陆案例 模型 我们数据库中所有用户的信息 接受控制器传来的用户名和密码进行校验的业务逻辑并返回true/false 控制器 接受用户在界面上填写的用户名和密码 将用户名和密码交给模型 视图 给用户呈现一个表单 接受用户输入内容，并将其提交给控制器 根据控制器返回的数据，响应用户页面 模块（Module） 划分应用程序结构 我们可以通过angular.module创建一个模块 angular.module方法传递两个参数才是创建模块，一个参数是获取模块 控制器（Controller） 通过$scope和视图关联 视图模型（$scope）表达式（Expression）单向数据绑定双向数据绑定Angular 指令系统]]></content>
+    <title><![CDATA[构建前端自动化工作流环境]]></title>
+    <url>%2F2017%2F06%2F07%2Fnodejs_1%2F</url>
+    <content type="text"><![CDATA[学习目标 了解什么是Node，什么是NPM；（Node.js） 掌握Bower的使用； 熟练使用Less/Sass； 搭建一个自己的自动化工作流环境； 自动编译 自动合并 自动刷新 自动部署 GIT 与 GITHUB master 托管源文件 gh-pages 托管部署文件 在github搭建自己的blog 为什么要有自动化的流程 在我们的开发过程中有大量的重复操作 DRY Don’t repeat yourself 开发人员的精力应放在哪？创造，新的一切 前端开发的编译操作 1.Node环境1.1.什么是Node Node.js 可能类似jquery.js 不是JS文件，也不是一个JS框架（） 而是Server side Javascript runtime, 服务端的一个JS运行时 我们可以在NODE运行JS代码 alert();ECMAScript JS- ES BOM DOM node中只能运行ECMAScript，无法使用 BOM 和 DOM 目前我们的JS是运行在浏览器内核中 PHP是什么？是一门脚本语言也是一个运行环境 为什么Node选中了JS， 说到底就是一个JS运行环境 目前有两个分支 Node.js 0.12.7 官方版本 要求尽善尽美 IO.js 是社区的产物，不是官方的东西，io.js有很多新特性，迭代非常快，社区推进非常快 15年两者合并，发布node第一个正式版 4.0， 迭代速度又慢了 node 5.x == io.js node 4.0 == node 1.2.Node环境搭建1.2.1.Mac 安装包的方式 pkg NVM（Node Version Manager） 1234$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash$ echo '. ~/.nvm/nvm.sh' &gt;&gt; .bash_profile$ nvm install stable$ nvm alias default stable 1.2.2.Windows 安装包的方式 msi_x64 msi_x86 NVM（Node Version Manager） nvm(node version manager) 因为NODE版本比较多，开发人员可能依赖很多版本 通过NVM，可以轻松切换于不同的版本之间 1 NVM_HOME=C:\Develop\nvm NVM_SYMLINK=C:\Develop\nodejs NPM_HOME=C:\Develop\nvm\npm PATH=%NVM_HOME%;%NVM_SYMLINK%;%NPM_HOME% 1.2.3.环境变量 环境变量就是操作系统提供的系统级别用于存储变量的地方 系统变量和用户变量 系统变量指的是所用当前系统用户共享的变量 自己的电脑一般只有一个用户 建议将自己配置的环境变量放在用户变量中，用户变量比较干净 环境变量的变量名是不区分大小写的 变量间运行相互引用 特殊值： PATH变量（不区分大小写） PATH 相当于一个路径的引用 只要添加到PATH变量中的路径，都可以在任何目录下搜索 命令行 可以用来执行当前目录下的文件 命令 cd :change directory Node.js是一个轻内核（本身没有什么功能）的东东，所有的功能都要功能包提供 node官方提供了一些最基础的包 1.3.Node用途REPL环境（控制台环境）1.3.1.开发Web应用程序 做动态网站 开发提供数据的服务端API 1.3.2.前端开发工具基础 Node.js给前端乃至整个开发行业带来一场工业革命 刀跟火种 1.4.Node开发Web应用Demo1.4.1.复习请求与响应客户端发送到服务端的东西称之为请求报文服务端返回给客户端的东西称之为响应报文 1.5.NPM1.5.1.什么是NPMhttps://www.npmjs.com/ Node Package Manager Node应用程序依赖包的管理工具 安装卸载更新之类的操作 1.5.2.为什么使用NPM 包很多 场景：我需要用一个A，A依赖B，B依赖C 常见的包管理工具都有循环依赖的功能 你只需记住你要什么东西 1.5.3.常见的NPM操作// 安装一个包，默认安装最新稳定版本npm install package_name// –save// 初始化操作，给项目添加一个配置文件npm init// –yes参数走默认配置 如果官方数据源太慢使用 https://npm.taobao.org/ 2.Bower2.1.什么是Bower 官网 web应用程序依赖项管理工具 2.2.为什么使用Bower 方便便捷的方式管理包，zhuangbi 2.3.Bower实践 npm install -g bower // -g:global 修改npm全局路径，就是在用户目录下添加.npmrc文件 3.Sass/LESS 4.Gulp4.1.Gulp简介 链接： 官网 中文网 就是用来机械化的完成重复性质的工作 gulp的机制就是将重复工作抽象成一个个的任务， 4.2.Gulp准备工作 安装Node.js 安装 gulp 命令行工具 npm install -g gulp 初始化 gulp 项目 创建任务 - gulpfile.js 4.3.基本使用4.4.常用插件 编译 Less：gulp-less 创建本地服务器：gulp-connect 合并文件：gulp-concat 最小化 js 文件：gulp-uglify 重命名文件：gulp-rename 最小化 css 文件：gulp-minify-css 压缩html文件 gulp-minify-html 最小化图像：gulp-imagemin]]></content>
       <categories>
-        <category>Angular</category>
+        <category>Nodejs</category>
       </categories>
       <tags>
         <tag>npm</tag>
-        <tag>Angular</tag>
         <tag>github</tag>
+        <tag>Nodejs</tag>
       </tags>
   </entry>
   <entry>

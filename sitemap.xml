@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://thawsoar.github.io/2018/08/03/python_oop%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://thawsoar.github.io/2018/08/05/arithmetic-array-1/</loc>
     
-    <lastmod>2018-08-03T08:00:36.788Z</lastmod>
+    <lastmod>2018-08-05T15:35:32.668Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://thawsoar.github.io/arithmetic/index.html</loc>
+    
+    <lastmod>2018-08-05T15:17:47.674Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://thawsoar.github.io/photo/index.html</loc>
     
-    <lastmod>2018-08-03T05:45:53.154Z</lastmod>
+    <lastmod>2018-08-05T15:17:17.050Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://thawsoar.github.io/2018/08/03/python_oop%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</loc>
+    
+    <lastmod>2018-08-03T08:00:36.788Z</lastmod>
     
   </url>
   
