@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://thawsoar.github.io/"/>
-  <updated>2018-08-05T15:38:31.023Z</updated>
+  <updated>2018-08-06T09:36:54.011Z</updated>
   <id>https://thawsoar.github.io/</id>
   
   <author>
@@ -20,14 +20,27 @@
     <link href="https://thawsoar.github.io/2018/08/05/arithmetic-array-1/"/>
     <id>https://thawsoar.github.io/2018/08/05/arithmetic-array-1/</id>
     <published>2018-08-05T15:27:02.000Z</published>
-    <updated>2018-08-05T15:38:31.023Z</updated>
+    <updated>2018-08-06T09:36:54.011Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="习题1"><a href="#习题1" class="headerlink" title="习题1"></a>习题1</h4><blockquote>
 <p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
 </blockquote>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h4><div class="note default"><p>给定数组 nums = [1,1,2],<br>函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。<br>你不需要考虑数组中超出新长度后面的元素。</p></div>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> removeDuplicates = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = nums.length - <span class="number">1</span>; j &gt; i; j--) &#123;</div><div class="line">            <span class="keyword">if</span> (nums[i] == nums[j]) &#123;</div><div class="line">                nums.splice(j, <span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> nums.length</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h4 id="正确解答"><a href="#正确解答" class="headerlink" title="正确解答"></a>正确解答</h4><blockquote>
+<ul>
+<li>T(n) = O(n^2)</li>
+<li>Runtime: slow<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> removeDuplicates = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> i = <span class="number">0</span>, j ,len = nums.length;</div><div class="line">    <span class="keyword">for</span>(j = i + <span class="number">1</span>; j &lt; len ; j++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i] !== nums[j] )&#123;</div><div class="line">            nums[++i] = nums[j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    nums.splice(i + <span class="number">1</span>);   </div><div class="line">    <span class="keyword">return</span> nums.length;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
 <a id="more"></a>
+<h4 id="我的解答"><a href="#我的解答" class="headerlink" title="我的解答"></a>我的解答</h4><blockquote>
+<ul>
+<li>T(n) = O(n)</li>
+<li>Runtime: slow</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> removeDuplicates = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</div><div class="line">     <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = nums.length - <span class="number">1</span>; j &gt; i; j--) &#123;</div><div class="line">            <span class="keyword">if</span> (nums[i] == nums[j]) &#123;</div><div class="line">                nums.splice(j, <span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> nums.length</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <hr>
 <h4 id="习题2"><a href="#习题2" class="headerlink" title="习题2"></a>习题2</h4><blockquote>
 <p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。<br>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）<br>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
@@ -41,7 +54,13 @@
 &lt;p&gt;给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。&lt;br&gt;不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例:&quot;&gt;&lt;/a&gt;示例:&lt;/h4&gt;&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;给定数组 nums = [1,1,2],&lt;br&gt;函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。&lt;br&gt;你不需要考虑数组中超出新长度后面的元素。&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; removeDuplicates = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;nums&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; nums.length; i++) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; j = nums.length - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; j &amp;gt; i; j--) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (nums[i] == nums[j]) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                nums.splice(j, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; nums.length&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;正确解答&quot;&gt;&lt;a href=&quot;#正确解答&quot; class=&quot;headerlink&quot; title=&quot;正确解答&quot;&gt;&lt;/a&gt;正确解答&lt;/h4&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;T(n) = O(n^2)&lt;/li&gt;
+&lt;li&gt;Runtime: slow&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; removeDuplicates = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;nums&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, j ,len = nums.length;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(j = i + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; j &amp;lt; len ; j++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(nums[i] !== nums[j] )&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            nums[++i] = nums[j];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    nums.splice(i + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; nums.length;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -57,7 +76,7 @@
     <link href="https://thawsoar.github.io/2018/08/03/python_oop%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/"/>
     <id>https://thawsoar.github.io/2018/08/03/python_oop高级编程/</id>
     <published>2018-08-03T06:16:58.000Z</published>
-    <updated>2018-08-03T08:00:36.788Z</updated>
+    <updated>2018-08-06T09:28:04.696Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="slots-限制类实例的属性"><a href="#slots-限制类实例的属性" class="headerlink" title="__slots__ 限制类实例的属性"></a><code>__slots__</code> 限制类实例的属性</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></div><div class="line">    __slots__ = (<span class="string">'name'</span>, <span class="string">'age'</span>) <span class="comment"># 用tuple定义允许绑定的属性名称</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = Student() <span class="comment"># 创建新的实例</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s.name = <span class="string">'Michael'</span> <span class="comment"># 绑定属性'name'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s.age = <span class="number">25</span> <span class="comment"># 绑定属性'age'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s.score = <span class="number">99</span> <span class="comment"># 绑定属性'score'</span></div><div class="line">Traceback (most recent call last):</div><div class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</div><div class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'score'</span></div></pre></td></tr></table></figure>
 <div class="note warning"><p>由于<code>&#39;score&#39;</code>没有被放到<code>__slots__</code>中，所以不能绑定score属性，试图绑定score将得到AttributeError的错误。</p><p>使用<code>__slots__</code>要注意，<code>__slots__</code>定义的属性仅对当前类实例起作用，对继承的子类是不起作用的</p><p>除非在子类中也定义<code>__slots__</code>，这样，子类实例允许定义的属性就是自身的<code>__slots__</code>加上父类的<code>__slots__</code></p></div>
@@ -1225,9 +1244,9 @@
     
       <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
     
-      <category term="Angular" scheme="https://thawsoar.github.io/tags/Angular/"/>
-    
       <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
+    
+      <category term="Angular" scheme="https://thawsoar.github.io/tags/Angular/"/>
     
   </entry>
   
@@ -1463,9 +1482,9 @@
     
       <category term="npm" scheme="https://thawsoar.github.io/tags/npm/"/>
     
-      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
-    
       <category term="git" scheme="https://thawsoar.github.io/tags/git/"/>
+    
+      <category term="github" scheme="https://thawsoar.github.io/tags/github/"/>
     
   </entry>
   
