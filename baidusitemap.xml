@@ -1,172 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
     <loc>https://thawsoar.github.io/2018/08/05/arithmetic-array-1/</loc>
-    
     <lastmod>2018-08-07T01:10:31.015Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2018/08/03/python_oop%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</loc>
-    
     <lastmod>2018-08-06T09:28:04.696Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://thawsoar.github.io/arithmetic/index.html</loc>
-    
-    <lastmod>2018-08-05T15:17:47.674Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://thawsoar.github.io/photo/index.html</loc>
-    
-    <lastmod>2018-08-05T15:17:17.050Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://thawsoar.github.io/categories/index.html</loc>
-    
-    <lastmod>2018-08-03T01:37:34.763Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2018/08/02/Hexo-Next-Theme-%E5%86%85%E5%B5%8C%E6%A0%87%E7%AD%BE/</loc>
-    
     <lastmod>2018-08-02T09:05:29.840Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/12/03/less_notes/</loc>
-    
     <lastmod>2018-08-02T08:29:27.886Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2018/07/27/python_decorator/</loc>
-    
     <lastmod>2018-08-02T07:27:12.029Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2018/08/01/python_oop/</loc>
-    
     <lastmod>2018-08-02T06:38:46.195Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2018/07/31/python_module/</loc>
-    
     <lastmod>2018-08-02T06:38:21.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://thawsoar.github.io/tags/index.html</loc>
-    
-    <lastmod>2018-08-02T06:16:33.730Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/06/09/welcome/</loc>
-    
     <lastmod>2018-07-30T06:49:12.751Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2018/07/27/life_facebook_quote/</loc>
-    
     <lastmod>2018-07-27T08:57:26.408Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://thawsoar.github.io/about/index.html</loc>
-    
-    <lastmod>2018-07-27T07:48:14.101Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/10/22/trueland/</loc>
-    
     <lastmod>2018-07-27T06:24:04.889Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2018/07/25/python_closure/</loc>
-    
     <lastmod>2018-07-25T15:14:44.506Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/06/14/sqlsever_review/</loc>
-    
     <lastmod>2017-06-26T23:34:57.239Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/06/20/bootstrap_web/</loc>
-    
     <lastmod>2017-06-21T12:46:42.972Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/06/07/nodejs_1/</loc>
-    
     <lastmod>2017-06-21T04:46:01.107Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/06/07/git_1/</loc>
-    
     <lastmod>2017-06-21T04:44:26.566Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/06/07/angular_1/</loc>
-    
     <lastmod>2017-06-21T04:44:15.543Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/06/15/canvas_clock/</loc>
-    
     <lastmod>2017-06-19T02:58:17.383Z</lastmod>
-    
-  </url>
-  
-  <url>
+  </url>  <url>
     <loc>https://thawsoar.github.io/2017/06/06/markdow/</loc>
-    
     <lastmod>2017-06-11T10:17:51.606Z</lastmod>
-    
   </url>
-  
-  <url>
-    <loc>https://thawsoar.github.io/index/index.html</loc>
-    
-    <lastmod>2017-06-09T09:20:39.938Z</lastmod>
-    
-  </url>
-  
 </urlset>
